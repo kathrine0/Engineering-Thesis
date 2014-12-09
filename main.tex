@@ -146,7 +146,7 @@
 			\begin{itemize}
 				\item bardzo  dobra obsługa \textit{IntelliSense} dla języka C\#;
 				\item wiele pomocnych rozszerzeń, np. \textit{Web Essentials};
-				\item wsparcie dla składni języków HTML\footnote{\emph{HyperText Markup Language} - hipertekstowy język znaczników wykorzystywany do tworzenia stron internetowych.}, CSS\footnote{\emph{Cascading Style Sheets} - kaskadowe arkusze stylów służące do opisu formy prezentacji strony WWW.} i JavaScript;
+				\item wsparcie dla składni języków HTML\footnote{\emph{HyperText Markup Language} -- hipertekstowy język znaczników wykorzystywany do tworzenia stron internetowych.}, CSS\footnote{\emph{Cascading Style Sheets} -- kaskadowe arkusze stylów służące do opisu formy prezentacji strony WWW.} i JavaScript;
 				\item wbudowany emulator Windows Phone;
 				\item gotowe szablony, które przyspieszają pracę z projektem.
 			\end{itemize}
@@ -160,49 +160,49 @@
 		
 		\section{Technologia wykorzystana w części serwerowej}
 		
-		Część serwerowa, realizowana jako WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2\footnote{Informacje na temat platformy dostępne pod adresem \url{http://msdn.microsoft.com/en-us/library/dn448365\%28v=vs.118\%29.aspx}}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
+		Część serwerowa, realizowana jako WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2 \cite{id:WebApi}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
 		
-		W tej części wykorzystano szereg bibliotek. Aby przyspieszyć pracę i zapewnić większe bezpieczeństwo aplikacji, do celów identyfikacji i uwierzytelniania użytkowników została wykorzystana biblioteka AspNet.Identity\footnote{Biblioteka dostępna pod adresem \url{https://aspnetidentity.codeplex.com/}}.
+		W tej części wykorzystano szereg bibliotek. Aby przyspieszyć pracę i zapewnić większe bezpieczeństwo aplikacji, do celów identyfikacji i uwierzytelniania użytkowników została wykorzystana biblioteka AspNet.Identity \cite{id:ASPIdentity}.
 		
 		Do pracy z kolekcjami wykorzystano bibliotekę LINQ. Jest to zestaw niezwykle przydatnych narzędzi, które ułatwiają pracę z takimi strukturami jak listy, kolejki i inne implementujące interfejs \texttt{IEnumerable}.
 		
-		Nieodzowna okazała się być biblioteka Newtonsoft.Json\footnote{Strona projektu dostępna pod adresem \url{http://james.newtonking.com/json}}, która wspomaga formatowanie obiektów na kod JSON\footnote{\emph{JavaScript Object Notation} - tekstowy format wymiany danych}. Wszystkie akcje zwracające dane zwracają je właśnie w tym formacie. Komunikat w formacie JSON jest literałem obiektu języka JavaScript. Dane przekazywane są jako tablica asocjacyjna a wszystkie dane są zmiennymi.
+		Nieodzowna okazała się być biblioteka Newtonsoft.Json \cite{id:NewtonsoftJSON}, która wspomaga formatowanie obiektów na kod JSON\footnote{\emph{JavaScript Object Notation} -- tekstowy format wymiany danych}. Wszystkie akcje zwracające dane zwracają je właśnie w tym formacie. Komunikat w formacie JSON jest literałem obiektu języka JavaScript. Dane przekazywane są jako tablica asocjacyjna a wszystkie dane są zmiennymi.
 		
-		Jako że WebService działa w innej domenie niż aplikacja użytkownika, niezbędne było dodanie odpowiednich nagłówków HTTP, aby umożliwić zapytania z innej domeny (\emph{Cross Origin Requests}). Bardzo ułatwia to biblioteka Microsoft.AspNet.Cors\footnote{Biblioteka do pobrania pod adresem \url{https://www.nuget.org/packages/Microsoft.AspNet.Cors/}}. Dodaje ona szereg nagłówków wraz z odpowiednio dobranymi parametrami.
+		Jako że WebService działa w innej domenie niż aplikacja użytkownika, niezbędne było dodanie odpowiednich nagłówków HTTP, aby umożliwić zapytania z innej domeny (\emph{Cross Origin Requests}). Bardzo ułatwia to biblioteka Microsoft.AspNet.Cors \cite{id:ASPCors}. Dodaje ona szereg nagłówków wraz z odpowiednio dobranymi parametrami.
 		
-		WebService komunikuje się z bazą danych, która działa w oparciu o silnik SQL Server 2014\footnote{Opis rozwiązania dostępny pod adresem \url{http://www.microsoft.com/pl-pl/server-cloud/products/sql-server/}}. Komunikacja odbywa się z wykorzystaniem biblioteki Entity Framework\footnote{Opis biblioteki dostępny pod adresem \url{http://msdn.microsoft.com/en-us/data/ef.aspx}}. Jest to biblioteka typu ORM\footnote{\emph{Object-Relational Mapping} - mapowanie obiektowo-relacyjne. },
-		która umożliwia mapowanie wyników pobranych z bazy danych na wcześniej przygotowane modele. Modele te są następnie mapowane na modele przejściowe (\emph{ViewModels}) za pomocą biblioteki AutoMapper\footnote{Biblioteka dostępna pod adresem \url{https://github.com/AutoMapper/AutoMapper}}.
+		WebService komunikuje się z bazą danych, która działa w oparciu o silnik SQL Server 2014 \cite{id:SQLServer}. Komunikacja odbywa się z wykorzystaniem biblioteki Entity Framework \cite{id:EntityFramework}. Jest to biblioteka typu ORM\footnote{\emph{Object-Relational Mapping} -- mapowanie obiektowo-relacyjne. },
+		która umożliwia mapowanie wyników pobranych z bazy danych na wcześniej przygotowane modele. Modele te są następnie mapowane na modele przejściowe (\emph{ViewModels}) za pomocą biblioteki AutoMapper \cite{id:Automapper}.
 		
 		\section{Technologia wykorzystana w części internetowej} 
 			
 		Aplikacja internetowa napisana została w modelu \emph{client-side}. Oznacza to, że cała aplikacja interpretowana jest po stronie przeglądarki i nie wymaga specjalistycznego serwera. Aby działała poprawnie, wystarczy dowolny serwer HTTP. Kod został napisany przy użyciu następujących języków: Javascript, HTML i LESS\footnote{\emph{Leaner CSS} -- dynamiczny język arkuszy stylów.}. 
         %		
-		Aplikacja stworzona jest w oparciu o platformę AngularJS\footnote{Oficjalna strona projektu dostępna pod adresem \url{https://angularjs.org/}}. Jest to zestaw otwartych bibliotek języka JavaScript wspierany przez firmę Google. Umożliwia tworzenie aplikacji internetowych, z których można korzystać bez przeładowania strony (\emph{Single Page Application}). Dane ładowane są w tle dzięki asynchronicznym zapytaniom do WebService realizowanym przez JavaScript.
+		Aplikacja stworzona jest w oparciu o platformę AngularJS \cite{keylist}. Jest to zestaw otwartych bibliotek języka JavaScript wspierany przez firmę Google. Umożliwia tworzenie aplikacji internetowych, z których można korzystać bez przeładowania strony (\emph{Single Page Application}). Dane ładowane są w tle dzięki asynchronicznym zapytaniom do WebService realizowanym przez JavaScript.
 		
 		Zostały również zastosowane poboczne biblioteki. Do najważniejszych zależą:
 		
 		\begin{description}
 			
-			\item[LeafletJS]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://leafletjs.com/}} -- 
-			umożliwia sprawne dodawanie map do strony. Do wyświetlania map wybrany został silnik OpenStreetMap\footnote{Oficjalna strona projektu znajduje się pod adresem \url{http://www.openstreetmap.org/}} ze względu na swoją otwartą licencję.
-			\item[jQuery]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://jquery.com/}} -- 
+			\item[LeafletJS] \cite{id:Leaflet} -- 
+			umożliwia sprawne dodawanie map do strony. Do wyświetlania map wybrany został silnik OpenStreetMap \cite{id:OpenStreetMaps} ze względu na swoją otwartą licencję.
+			\item[jQuery] \cite{id:jQuery} -- 
 			jest to zestaw bibliotek pomocniczych dla języka JavaScript. Rozszerza funkcjonalność i upraszcza składnię. W prostszy sposób pozwala na dostęp i manipulację elementami DOM.
-			\item[Bootstrap]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://getbootstrap.com/}} -- 
+			\item[Bootstrap] \cite{id:Bootstrap} -- 
 			zestaw bibliotek, który dołączony jest do Twitter Bootstrap. Dostarcza takie moduły jak np. interaktywne wyskakujące okna, animacje zamknięcie i in.
-			\item[AngularTranslate.js]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://angular-translate.github.io/}} -- 
+			\item[AngularTranslate.js] \cite{id:AngularTranslate} -- 
 			biblioteka rozszerzająca możliwości platformy Angular o implementację wielojęzyczności.  
 		
 		\end{description}
 				
-		Za część graficzną aplikacji odpowiada zmodyfikowany przez autorkę szablon AdminLTE\footnote{Szablon dostępny pod adresem \url{http://almsaeedstudio.com/AdminLTE/}} napisany w oparciu o Twitter Bootstrap. Szablon opisany jest językiem LESS, który jest następnie transformowany do CSS.
+		Za część graficzną aplikacji odpowiada zmodyfikowany przez autorkę szablon AdminLTE \cite{id:AdminLTE} napisany w oparciu o Twitter Bootstrap. Szablon opisany jest językiem LESS, który jest następnie transformowany do CSS.
 		
 		\section{Technologia wykorzystana w części mobilnej}
 	
-		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps\footnote{\url{http://dev.windows.com/en-us/develop/building-universal-windows-apps}}, więc cała logika wydzielona jest do osobnego projektu.
+		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps, więc cała logika wydzielona jest do osobnego projektu.
 		
 		Aplikacja wykonana została przy wykorzystaniu platformy .NET, języka C\# oraz XAML. Zaimplementowany został wzorzec architektoniczny MVVM (\emph{Model View ViewModel}, \emph{vide} rozdział \ref{sec:ArchitekturaAplikacjiMobilnej}). W tym celu do projektu dołączona została biblioteka MVVM Light \cite{id:MVVMLight}. 
 		
-		Aplikacja pobiera dane z WebService i zapisuje je w swojej lokalnej bazie danych. Działa ona dzięki SQLight\footnote{Strona projektu dostępna pod adresem \url{http://www.sqlite.org/}}. Do projektu dołączony jest adapter SQLite. Pobrane dane parsowane są do obiektów za pomocą biblioteki Newtonsoft.JSON.
+		Aplikacja pobiera dane z WebService i zapisuje je w swojej lokalnej bazie danych. Działa ona dzięki SQLight \cite{id:SQLite}. Do projektu dołączony jest adapter SQLite. Pobrane dane parsowane są do obiektów za pomocą biblioteki Newtonsoft.JSON.
 
 	\chapter{Specyfikacja wewnętrzna}
 		\section{Architektura}
