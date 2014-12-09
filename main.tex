@@ -19,13 +19,10 @@
 % ustawienia obrazow %
 \usepackage{graphicx}
 \usepackage{caption}
+\usepackage{subcaption}
 
 \graphicspath{ {./assets/} }
 \DeclareGraphicsExtensions{.pdf,.png,.jpg}
-
-%ustawienia svg 
-\usepackage{svg}
-%\setsvg{inkscape=inkscape -z -D,svgpath=./assets/images/}
 
 %nazwa aplikacji
 \newcommand{\appName}{\emph{TravelGuide} }
@@ -297,101 +294,108 @@
 		
 		\subsection{Instrukcja obsługi aplikacji mobilnej}
 		
+				\begin{figure}[H]
+					
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile1.png}					
+						\caption{\label{subfig:mobile_splash}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile2.png}					
+						\caption{\label{subfig:mobile_login}}	
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile3.png}					
+						\caption{\label{subfig:mobile_register}	}
+					\end{subfigure}
+					\hfill			
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile4.png}					\caption{\label{subfig:mobile_recommended}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile5.png}						
+						\caption{\label{subfig:mobile_buy}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile6.png}
+						\caption{\label{subfig:mobile_guides}}	
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile4.png}					
+						\caption{\label{subfig:mobile_recommended}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile5.png}	
+						\caption{\label{subfig:mobile_buy}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile6.png}
+						\caption{\label{subfig:mobile_guides}}	
+					\end{subfigure}
+					
+				\end{figure}
+				\begin{figure}[H]
+					\ContinuedFloat
+					
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile7.png}	
+						\caption{\label{subfig:mobile_guidedetail}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile8.png}	
+						\caption{\label{subfig:mobile_guidedetail2}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile9.png}
+						\caption{\label{subfig:mobile_map}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile10.png}
+						\caption{\label{subfig:mobile_marker}}		
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile11.png}	
+						\caption{\label{subfig:mobile_place}}	
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile12.png}	
+						\caption{\label{subfig:mobile_navigation}}	
+					\end{subfigure}	
+					\caption{}
+				\end{figure}
+				
+				
+		
 		Niech przykładowym użytkownikiem systemu będzie Jacek Podróżnik. Jacek wybiera się na krótki urlop do Lizbony i chciałby zaopatrzyć się w aplikację na swój smarfon, która pomoże mu jak najlepiej poznać nowe miejsce.  
 		
-		Jacek pobiera aplikację z \emph{Windows Store}. Program jest gotowy do użytku zaraz po instalacji. Po włączeniu widoczny jest ekran powitalny z logo (rys. \ref{fig:mobile_splash}). Chociaż aplikacja może działać w trybie \emph{offline}, podczas pierwszego włączenia wymagane jest połączenie z Internetem. 
+		Jacek pobiera aplikację z \emph{Windows Store}. Program jest gotowy do użytku zaraz po instalacji. Po włączeniu widoczny jest ekran powitalny z logo (rys.\ref{subfig:mobile_splash}). Chociaż aplikacja może działać w trybie \emph{offline}, podczas pierwszego włączenia wymagane jest połączenie z Internetem. 
 		
-		Ekran powitalny gaśnie po kilku sekundach i użytkownik jest kierowany do strony logowania (rys. \ref{fig:mobile_login}). Jeżeli nie posiada on konta może je założyć lub pominąć logowanie i przejść od razu do użytkowania aplikacji. Jacek wybiera opcję rejestracji i jest przenoszony do widoku, w którym musi podać swój adres e-mail oraz hasło z potwierdzeniem (rys. \ref{fig:mobile_register}). 
+		Ekran powitalny gaśnie po kilku sekundach i użytkownik jest kierowany do strony logowania (rys. \ref{subfig:mobile_login}). Jeżeli nie posiada on konta może je założyć lub pominąć logowanie i przejść od razu do użytkowania aplikacji. Jacek wybiera opcję rejestracji i jest przenoszony do widoku, w którym musi podać swój adres e-mail oraz hasło z potwierdzeniem (rys. \ref{subfig:mobile_register}). 
 		
-		Jeżeli podczas rejestracji wystąpią błędy, użytkownik zostanie o tym powiadomiony za pomocą wyskakującego okienka z komunikatem. W przypadku Jacka proces przebiega pomyślnie, i zostaje on przekierowany na stronę z listą polecanych przewodników (\ref{fig:mobile_recommended}). Tutaj może wybrać interesujący go przewodnik dotykając go na ekranie swojego urządzenia.
+		Jeżeli podczas rejestracji wystąpią błędy, użytkownik zostanie o tym powiadomiony za pomocą wyskakującego okienka z komunikatem. W przypadku Jacka proces przebiega pomyślnie, i zostaje on przekierowany na stronę z listą polecanych przewodników (\ref{subfig:mobile_recommended}). Tutaj może wybrać interesujący go przewodnik dotykając go na ekranie swojego urządzenia.
 		
-		Jacek wybiera przewodnik po Lizbonie i zostaje przekierowany do widoku pobierania (rys. \ref{fig:mobile_buy}). W momencie, kiedy naciska zielony przycisk ,,Pobierz'', aplikacja rozpoczyna pobieranie danych w tle. W tym czasie użytkownik zostaje poinformowany, że aby w pełni używać programu w trybie \emph{offline} powinien również pobrać mapy dla danego miejsca. Po zamknięciu okienka, Jacek zostaje ponownie przekierowany do widoku przewodników. Tym razem na liście widać świeżo pobrany przewodnik o Lizbonie (rys. \ref{fig:mobile_guides}). 
+		Jacek wybiera przewodnik po Lizbonie i zostaje przekierowany do widoku pobierania (rys. \ref{subfig:mobile_buy}). W momencie, kiedy naciska zielony przycisk ,,Pobierz'', aplikacja rozpoczyna pobieranie danych w tle. W tym czasie użytkownik zostaje poinformowany, że aby w pełni używać programu w trybie \emph{offline} powinien również pobrać mapy dla danego miejsca. Po zamknięciu okienka, Jacek zostaje ponownie przekierowany do widoku przewodników. Tym razem na liście widać świeżo pobrany przewodnik o Lizbonie (rys. \ref{subfig:mobile_guides}). 
 		
-		Podróżnik dotyka miniaturki Lizbony i przechodzi do właściwej części przewodnika (rys. \ref{fig:mobile_guidedetail}). W tej sekcji Jacek może poczytać informacje dotyczące miasta (rys. \ref{fig:mobile_guidedetail2}). Między kolejnymi elementami użytkownik może poruszać się przeciągając palcem po ekranie lub korzystając z przycisków pod mapą. 
+		Podróżnik dotyka miniaturki Lizbony i przechodzi do właściwej części przewodnika (rys. \ref{subfig:mobile_guidedetail}). W tej sekcji Jacek może poczytać informacje dotyczące miasta (rys. \ref{subfig:mobile_guidedetail2}). Między kolejnymi elementami użytkownik może poruszać się przeciągając palcem po ekranie lub korzystając z przycisków pod mapą. 
 		
-		Zapoznawszy się z informacjami, Jacek chce dowiedzieć się o ciekawych miejscach w okolicy. Dotyka więc obrazek mapy i zostaje przeniesiony do prawdziwej, interaktywnej mapy z oznaczonymi punktami charakterystycznymi (rys. \ref{fig:mobile_map}). Po dotknięciu dowolnego z punktów wyświetlona zostaje chmurka z nazwą obiektu i odnośnikiem do szczegółów (rys. \ref{fig:mobile_marker}). 
+		Zapoznawszy się z informacjami, Jacek chce dowiedzieć się o ciekawych miejscach w okolicy. Dotyka więc obrazek mapy i zostaje przeniesiony do prawdziwej, interaktywnej mapy z oznaczonymi punktami charakterystycznymi (rys. \ref{subfig:mobile_map}). Po dotknięciu dowolnego z punktów wyświetlona zostaje chmurka z nazwą obiektu i odnośnikiem do szczegółów (rys. \ref{subfig:mobile_marker}). 
 		
-		Jacek dotyka zielony przycisk ze strzałką i zostaje przeniesiony do strony poświęconej danemu obiektowi (rys. \ref{fig:mobile_place}). Tu może dowiedzieć się więcej o miejscu oraz zobaczyć miniaturkę zdjęcia.
+		Jacek dotyka zielony przycisk ze strzałką i zostaje przeniesiony do strony poświęconej danemu obiektowi (rys. \ref{subfig:mobile_place}). Tu może dowiedzieć się więcej o miejscu oraz zobaczyć miniaturkę zdjęcia.
 		
 		Powrót do poprzednich widoków odbywa się w sposób standardowy z obsługą systemu \emph{Windows Phone 8.1}; za pomocą fizycznego przycisku wstecz. 		 
 
-%				\begin{figure}
-%					\centering
-%					\begin{subfigure}[b]{0.3\textwidth}
-%						\includegraphics[width=\textwidth]{screenshots/mobile/mobile1.png}
-%						\label{fig:mobile_splash}	
-%						\caption{}
-%					\end{subfigure}
-%					
-%				\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile2.png}	
-			\label{fig:mobile_login}
-			\caption{}	
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile3.png}	
-			\label{fig:mobile_register}	
-			\caption{}
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile4.png}	
-			\label{fig:mobile_recommended}	
-			\caption{}
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile5.png}	
-			\label{fig:mobile_buy}	
-			\caption{}
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile6.png}
-			\label{fig:mobile_guides}	
-			\caption{}	
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile7.png}	
-			\label{fig:mobile_guidedetail}	
-			\caption{}
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile8.png}	
-			\label{fig:mobile_guidedetail2}	
-			\caption{}
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile9.png}
-			\label{fig:mobile_map}		
-			\caption{}
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile10.png}
-			\label{fig:mobile_marker}
-			\caption{}		
-		\end{figure}
-		
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile11.png}	
-			\label{fig:mobile_place}
-			\caption{}	
-		\end{figure}
-				
-		\begin{figure}
-			\includegraphics[width=0.3\textwidth]{screenshots/mobile/mobile12.png}	
-			\label{fig:mobile_navigation}	
-			\caption{}	
-		\end{figure}
-		
-		
 		\subsection{Instrukcja obsługi aplikacji internetowej}
 		
 		\section{Wymagania}
