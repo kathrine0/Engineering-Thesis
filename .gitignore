@@ -79,7 +79,7 @@
 *.xdy
 
 # additional restrictions
-*.pdf
+#*.pdf
 *.undo
 *.texnicle
 .DS_Store
