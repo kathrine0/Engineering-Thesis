@@ -105,6 +105,38 @@
 \mainmatter % powoduje, ze wlasciwa czesc pracy ma strony numerowe od 1 cyframi arabskimi
 	
 	\chapter{Wstęp}
+	
+	\ksremark{Trochę bym przeredagował ten rozdział. Zlikwidowałbym tytuły poszczególnych sekcji. Trochę poprzedstawiałem to, co jest. Ale trzeba by się temu jeszcze przyjrzeć, żeby wygładzić tekst.}
+	
+		\begin{figure}		
+				\centering
+				\includegraphics[width=1.0\textwidth]{images/fly4freeAnkieta.pdf}
+				\caption{Wyniki ankiety przeprowadzonej wśród użytkowników forum fly4free.pl}
+				\label{fig:fly4freeAnkieta}
+			\end{figure}
+			% nie umiem zrobić, żeby font był taki jak w reszcie dokumentu :( pdf_tex mnie nie słucha :(
+			% KS: W gotowym rysunku to moze byc trudne.
+		
+		    \ksremark{Zdanie wstępu, mówiące o brakujących rozwiązaniach, które są wspomniane w następnym zdaniu.}
+			Obecnie na rynku istnieje nisza, jeśli chodzi o tego typu rozwiązania. W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
+			%
+			Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
+			
+			Celem niniejszego projektu jest stworzenie przyjaznej platformy dedykowanej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składa się aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
+			%			
+			Aplikacja \appName prezentuje informacje w podobny sposób jak tradycyjny książkowy przewodnik przy jednoczesnej możliwości szybkiej aktualizacji informacji. Ponadto dzięki temu, że zawiera się w smartfonie podróżnika, zwalnia go z noszenia ciężkich książek lub nieporęcznych drukowanych kartek. 
+			%	
+			Dzięki wykorzystaniu nowoczesnych technologii aplikacja może podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych. 
+		
+	        \ksremark{Tu jeszcze trzeba opisać organizację pracy. Rozdział \ref{id:cha:wprowadzenie} opisuje \ldots\ Rozdział \ref{id:cha:technologia} przedstawia użyte technologie, zarówno w części mobilnej (podrozdział \ref{...}), jak i webowej  (podrozdział \ref{...})  \ldots}
+	
+			
+	
+	
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	
+	    \section{Stare}
+	
 		\section{Temat}
 	
 		\section{Cel}
@@ -119,6 +151,7 @@
 			\label{fig:fly4freeAnkieta}
 		\end{figure}
 		% nie umiem zrobić, żeby font był taki jak w reszcie dokumentu :( pdf_tex mnie nie słucha :(
+		% KS: W gotowym rysunku to moze byc trudne.
 	
 		Obecnie na rynku istnieje nisza, jeśli chodzi o tego typu rozwiązania. W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
 		
@@ -129,11 +162,18 @@
 		Dzięki wykorzystaniu nowoczesnych technologii, aplikacja może podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych. 
 	
 	
+	
+	
 	\chapter{Wprowadzenie do problemu}
+	\label{id:cha:wprowadzenie}
 	%Co tu powinno się znaleźć?
 	\ksremark{Na razie proszę się tym nie przejmować. Zajmiemy się tym, gdy będzie więcej treści.}
 	
 	\chapter{Technologia}
+	\label{id:cha:technologia}
+	
+	\ksremark{Rozdział opisuje technologie i narzędzia użyte do stworzenia części webowej, serwerowej i mobilnej aplikacji.}
+	
 		\section{Narzędzia}		
 			\subsection{Środowisko programistyczne}
 				
@@ -157,7 +197,9 @@
 
 			Repozytorium zostało umieszczone w serwisie Github.com\footnote{Serwis dostępny pod adresem \url{http://github.com}}, który agreguje projekty z całego świata. Portal oferuje przejrzysty interfejs oraz możliwość graficznego przeglądania historii projektu.
 		
-		\section{Technologia wykorzystana w części serwerowej}
+%		\section{Technologia wykorzystana w części serwerowej}
+		\section{Aplikacja serwerowa}
+		\ksremark{Skróciłem tytuł podrozdziału.}
 		
 		Część serwerowa, realizowana jako WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2 \cite{id:WebApi}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
 		
@@ -172,7 +214,9 @@
 		WebService komunikuje się z bazą danych, która działa w oparciu o silnik SQL Server 2014 \cite{id:SQLServer}. Komunikacja odbywa się z wykorzystaniem biblioteki Entity Framework \cite{id:EntityFramework}. Jest to biblioteka typu ORM\footnote{\emph{Object-Relational Mapping} -- mapowanie obiektowo-relacyjne. },
 		która umożliwia mapowanie wyników pobranych z bazy danych na wcześniej przygotowane modele. Modele te są następnie mapowane na modele przejściowe (\emph{ViewModels}) za pomocą biblioteki AutoMapper \cite{id:Automapper}.
 		
-		\section{Technologia wykorzystana w części internetowej} 
+%		\section{Technologia wykorzystana w części internetowej} 
+		\section{Aplikacja internetowa} 
+		\ksremark{Skróciłem tytuł podrozdziału.}
 			
 		Aplikacja internetowa napisana została w modelu \emph{client-side}. Oznacza to, że cała aplikacja interpretowana jest po stronie przeglądarki i nie wymaga specjalistycznego serwera. Aby działała poprawnie, wystarczy dowolny serwer HTTP. Kod został napisany przy użyciu następujących języków: Javascript, HTML i LESS\footnote{\emph{Leaner CSS} -- dynamiczny język arkuszy stylów.}. 
         %		
@@ -195,13 +239,20 @@
 				
 		Za część graficzną aplikacji odpowiada zmodyfikowany przez autorkę szablon AdminLTE \cite{id:AdminLTE} napisany w oparciu o Twitter Bootstrap. Szablon opisany jest językiem LESS, który jest następnie transformowany do CSS.
 		
-		\section{Technologia wykorzystana w części mobilnej}
+%		\section{Technologia wykorzystana w części mobilnej}
+		\section{Aplikacja mobilna}
+		\ksremark{Skróciłem tytuł podrozdziału.}
+		
 	
 		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps, więc cała logika wydzielona jest do osobnego projektu.
 		
 		Aplikacja wykonana została przy wykorzystaniu platformy .NET, języka C\# oraz XAML. Zaimplementowany został wzorzec architektoniczny MVVM (\emph{Model View ViewModel}, \emph{vide} rozdział \ref{sec:ArchitekturaAplikacjiMobilnej}). W tym celu do projektu dołączona została biblioteka MVVM Light \cite{id:MVVMLight}. 
 		
 		Aplikacja pobiera dane z WebService i zapisuje je w swojej lokalnej bazie danych. Działa ona dzięki SQLight \cite{id:SQLite}. Do projektu dołączony jest adapter SQLite. Pobrane dane parsowane są do obiektów za pomocą biblioteki Newtonsoft.JSON.
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 
 	\chapter{Specyfikacja wewnętrzna}
 		\section{Architektura}
@@ -217,12 +268,7 @@
 			
 			\subsection{Architektura aplikacji serwerowej}
 			
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\textwidth]{images/architektura_server.pdf}
-				\caption{Architektura aplikacji serwerowej}
-				\label{fig:architektura_server}
-			\end{figure}
+			
 			
 			Aplikacja serwerowa stworzona jest przy wykorzystaniu platformy ASP.NET WebApi 2 i zgodnie ze wzorcem architektonicznym REST\footnote{\emph{Representational State Transfer}}. Wzorzec ten zakłada kilka warunków:
 			
@@ -236,38 +282,41 @@
 				
 			\end{description}
 			
+			\begin{figure}
+							\centering
+							\includegraphics[width=0.5\textwidth]{images/architektura_server.pdf}
+							\caption{Architektura aplikacji serwerowej}
+							\label{fig:architektura_server}
+		    \end{figure}
+						
 			Wewnętrznie aplikacja składa się z wielu warstw, które komunikują się ze sobą. Każde odebrane zapytanie HTTP jest obsługiwane przez odpowiednią akcję kontrolera. Zapytania realizowane są czterema standardowymi metodami HTTP: \emph{GET}, \emph{POST}, \emph{PUT}, \emph{DELETE}.
 			
 			Zazwyczaj akcja wymaga interakcji z bazą danych. Kontroler nie komunikuje się z nią jednak bezpośrednio. Zamiast tego składa odpowiednio sparametryzowane zapytanie do warstwy repozytorium. Parametrem może być cyfra (\texttt{Integer}), ciąg znaków (\texttt{String}) lub obiekt typu modelu wiążącego (\emph{Binding Model}). Parametr może być także pusty. 
 			
 			Repozytorium przetwarza żądanie. Jeżeli parametrem był obiekt typu modelu wiążącego mapuje go na model, a następnie za pomocą \emph{Entity Framework} komunikuje się z bazą danych. Rezultat jest następnie ponownie mapowany na model wiążący i przekazywany do akcji kontrolera. Kontroler zwraca wynik w postaci odpowiedzi HTTP (\emph{HTTP Response}).
 			
-			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
+			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
 			
 			\subsection{Architektura aplikacji internetowej}		
 			
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\textwidth]{images/architektura_webapp.pdf}
-				\caption{Architektura aplikacji internetowej}
-				\label{fig:architektura_webapp}
-			\end{figure}
+			
 
 			Aplikacja internetowa została stworzona przy użyciu platformy AngularJS i~w~całości działa bez przeładowania strony (\emph{Single Page Application}). Zawiera główny widok napisany w języku HTML, do którego w zależności od kontekstu załączane są widoki cząstkowe (\emph{partial views}). Z każdym widokiem powiązany jest kontroler. 
 			
 			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z~powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~wiązany (\emph{Bind}) z~widokiem.								
 
-			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_webapp}.			
+			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
+			
+			\begin{figure}
+							\centering
+							\includegraphics[width=0.5\textwidth]{images/architektura_webapp.pdf}
+							\caption{Architektura aplikacji internetowej}
+							\label{fig:architektura_webapp}
+    		\end{figure}		
 			
 			\subsection{Architektura aplikacji mobilnej}
 			\label{sec:ArchitekturaAplikacjiMobilnej}	
 			
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\textwidth]{images/architektura_mobile.pdf}
-				\caption{Architektura aplikacji mobilnej}
-				\label{fig:architektura_mobile}
-			\end{figure}
 			
 			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych. \ksremark{Tu przydałby się rysunek modelu MVVM.}
 			
@@ -282,6 +331,12 @@
 			Za komunikację z aplikacją serwerową odpowiada warstwa serwisów (\emph{Service}), która wysyła do niej odpowiednie zapytania w formacie RESTful. 
 			
 			Warstwa pośrednia nie wie o istnieniu modeli. Od repozytorium otrzymuje ona jedynie kolekcje modeli wiążących. Finalnie są one przetwarzane i przekazywane do warstwy widoku za pomocą mechanizmu wiązania (\emph{binding}).
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\textwidth]{images/architektura_mobile.pdf}
+				\caption{Architektura aplikacji mobilnej}
+				\label{fig:architektura_mobile}
+			\end{figure}
 			
 			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_mobile}. 
 			
@@ -291,7 +346,7 @@
 		
 	\chapter{Specyfikacja zewnętrzna}
 		\section{Instrukcja obsługi}
-		
+		\ksremark{Tu warto by napisać, że zostanie przedstawiona \emph{happy path}.}
 		\subsection{Instrukcja obsługi aplikacji mobilnej}
 		
 				\begin{figure}[H]
@@ -386,7 +441,7 @@
 		
 		Jeżeli podczas rejestracji wystąpią błędy, użytkownik zostanie o tym powiadomiony za pomocą wyskakującego okienka z komunikatem. W przypadku Jacka proces przebiega pomyślnie, i zostaje on przekierowany na stronę z listą polecanych przewodników (\ref{subfig:mobile_recommended}). Tutaj może wybrać interesujący go przewodnik dotykając go na ekranie swojego urządzenia.
 		
-		Jacek wybiera przewodnik po Lizbonie i zostaje przekierowany do widoku pobierania (rys. \ref{subfig:mobile_buy}). W momencie, kiedy naciska zielony przycisk ,,Pobierz'', aplikacja rozpoczyna pobieranie danych w tle. W tym czasie użytkownik zostaje poinformowany, że aby w pełni używać programu w trybie \emph{offline} powinien również pobrać mapy dla danego miejsca. Po zamknięciu okienka, Jacek zostaje ponownie przekierowany do widoku przewodników. Tym razem na liście widać świeżo pobrany przewodnik o Lizbonie (rys. \ref{subfig:mobile_guides}). 
+		Jacek wybiera przewodnik po Lizbonie i zostaje przekierowany do widoku pobierania (rys. \ref{subfig:mobile_buy}). W momencie, kiedy naciska zielony przycisk ,,Pobierz'', aplikacja rozpoczyna pobieranie danych w tle. W tym czasie użytkownik zostaje poinformowany, że aby w pełni używać programu w trybie \emph{offline}\ksremark{przecinek} powinien również pobrać mapy dla danego miejsca. Po zamknięciu okienka, Jacek zostaje ponownie przekierowany do widoku przewodników. Tym razem na liście widać świeżo pobrany przewodnik o Lizbonie (rys. \ref{subfig:mobile_guides}). 
 		
 		Podróżnik dotyka miniaturki Lizbony i przechodzi do właściwej części przewodnika (rys. \ref{subfig:mobile_guidedetail}). W tej sekcji Jacek może poczytać informacje dotyczące miasta (rys. \ref{subfig:mobile_guidedetail2}). Między kolejnymi elementami użytkownik może poruszać się przeciągając palcem po ekranie lub korzystając z przycisków pod mapą. 
 		
