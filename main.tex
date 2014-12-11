@@ -8,10 +8,6 @@
 \usepackage{comment}
 \usepackage{hyperref}
  
-
-\renewcommand{\includegraphics}[2][]{} % brak plikow z obrazkami
-
-
 \frenchspacing
 
 \input{todo.tex}
@@ -22,12 +18,11 @@
 
 % ustawienia obrazow %
 \usepackage{graphicx}
-\graphicspath{ {./assets/images/} }
-\DeclareGraphicsExtensions{.pdf,.png,.jpg}
+\usepackage{caption}
+\usepackage{subcaption}
 
-%ustawienia svg 
-\usepackage{svg}
-%\setsvg{inkscape=inkscape -z -D,svgpath=./assets/images/}
+\graphicspath{ {./assets/} }
+\DeclareGraphicsExtensions{.pdf,.png,.jpg}
 
 %nazwa aplikacji
 \newcommand{\appName}{\emph{TravelGuide} }
@@ -110,6 +105,38 @@
 \mainmatter % powoduje, ze wlasciwa czesc pracy ma strony numerowe od 1 cyframi arabskimi
 	
 	\chapter{Wstęp}
+	
+	\ksremark{Trochę bym przeredagował ten rozdział. Zlikwidowałbym tytuły poszczególnych sekcji. Trochę poprzedstawiałem to, co jest. Ale trzeba by się temu jeszcze przyjrzeć, żeby wygładzić tekst.}
+	
+		\begin{figure}		
+				\centering
+				\includegraphics[width=1.0\textwidth]{images/fly4freeAnkieta.pdf}
+				\caption{Wyniki ankiety przeprowadzonej wśród użytkowników forum fly4free.pl}
+				\label{fig:fly4freeAnkieta}
+			\end{figure}
+			% nie umiem zrobić, żeby font był taki jak w reszcie dokumentu :( pdf_tex mnie nie słucha :(
+			% KS: W gotowym rysunku to moze byc trudne.
+		
+		    \ksremark{Zdanie wstępu, mówiące o brakujących rozwiązaniach, które są wspomniane w następnym zdaniu.}
+			Obecnie na rynku istnieje nisza, jeśli chodzi o tego typu rozwiązania. W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
+			%
+			Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
+			
+			Celem niniejszego projektu jest stworzenie przyjaznej platformy dedykowanej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składa się aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
+			%			
+			Aplikacja \appName prezentuje informacje w podobny sposób jak tradycyjny książkowy przewodnik przy jednoczesnej możliwości szybkiej aktualizacji informacji. Ponadto dzięki temu, że zawiera się w smartfonie podróżnika, zwalnia go z noszenia ciężkich książek lub nieporęcznych drukowanych kartek. 
+			%	
+			Dzięki wykorzystaniu nowoczesnych technologii aplikacja może podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych. 
+		
+	        \ksremark{Tu jeszcze trzeba opisać organizację pracy. Rozdział \ref{id:cha:wprowadzenie} opisuje \ldots\ Rozdział \ref{id:cha:technologia} przedstawia użyte technologie, zarówno w części mobilnej (podrozdział \ref{...}), jak i webowej  (podrozdział \ref{...})  \ldots}
+	
+			
+	
+	
+	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+	
+	    \section{Stare}
+	
 		\section{Temat}
 	
 		\section{Cel}
@@ -119,30 +146,38 @@
 	
 		\begin{figure}		
 			\centering
-			\includegraphics[width=1.0\textwidth]{fly4freeAnkieta.pdf}
+			\includegraphics[width=1.0\textwidth]{images/fly4freeAnkieta.pdf}
 			\caption{Wyniki ankiety przeprowadzonej wśród użytkowników forum fly4free.pl}
 			\label{fig:fly4freeAnkieta}
 		\end{figure}
 		% nie umiem zrobić, żeby font był taki jak w reszcie dokumentu :( pdf_tex mnie nie słucha :(
+		% KS: W gotowym rysunku to moze byc trudne.
 	
 		Obecnie na rynku istnieje nisza, jeśli chodzi o tego typu rozwiązania. W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
 		
-		Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free} \ksremark{Tu bym zrobił cytowanie bibliograficzne.}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
+		Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
 		
 		Aplikacja \appName ma na celu połączenie zalet obu tych rozwiązań. Reprezentuje informacje w podobny sposób jak tradycyjny, książkowy przewodnik przy jednoczesnej możliwości szybkiej aktualizacji informacji. Ponadto dzięki temu, że zawiera się w smartfonie podróżnika, zwalnia go z noszenia ciężkich książek lub nieporęcznych drukowanych kartek. 
 			
 		Dzięki wykorzystaniu nowoczesnych technologii, aplikacja może podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych. 
 	
 	
+	
+	
 	\chapter{Wprowadzenie do problemu}
+	\label{id:cha:wprowadzenie}
 	%Co tu powinno się znaleźć?
 	\ksremark{Na razie proszę się tym nie przejmować. Zajmiemy się tym, gdy będzie więcej treści.}
 	
 	\chapter{Technologia}
+	\label{id:cha:technologia}
+	
+	\ksremark{Rozdział opisuje technologie i narzędzia użyte do stworzenia części webowej, serwerowej i mobilnej aplikacji.}
+	
 		\section{Narzędzia}		
 			\subsection{Środowisko programistyczne}
 				
-			Całość projektu została zrealizowana za pomocą Visual Studio 2013. Jest to jedno z popularniejszych środowisk programistycznych, wyprodukowane przez firmę Microsoft. Mimo,\ksremark{bez przecinka} że nie jest to środowisko bezpłatne, projekt mógł zostać zrealizowany bez ponoszenia kosztów dzięki licencji akademickiej \textit{DreamSpark}. 
+			Całość projektu została zrealizowana za pomocą Visual Studio 2013. Jest to jedno z popularniejszych środowisk programistycznych, wyprodukowane przez firmę Microsoft. Mimo że nie jest to środowisko bezpłatne, projekt mógł zostać zrealizowany bez ponoszenia kosztów dzięki licencji akademickiej \textit{DreamSpark}. 
 			
 			Visual Studio 2013 w pełni wspiera rozwijanie oprogramowania w platformie .NET; zarówno rozwiązania mobilne jak i internetowe. Poza tym, dzięki szeregowi dostępnych bibliotek, wspomaga pracę z HTML, LESS oraz JavaScript.
 			
@@ -150,158 +185,293 @@
 			\begin{itemize}
 				\item bardzo  dobra obsługa \textit{IntelliSense} dla języka C\#;
 				\item wiele pomocnych rozszerzeń, np. \textit{Web Essentials};
-				\item wsparcie dla składni języków HTML\footnote{\emph{HyperText Markup Language} - hipertekstowy język znaczników wykorzystywany do tworzenia stron internetowych.}, CSS\footnote{\emph{Cascading Style Sheets} - kaskadowe arkusze stylów służące do opisu formy prezentacji strony WWW.} i JavaScript;
+				\item wsparcie dla składni języków HTML\footnote{\emph{HyperText Markup Language} -- hipertekstowy język znaczników wykorzystywany do tworzenia stron internetowych.}, CSS\footnote{\emph{Cascading Style Sheets} -- kaskadowe arkusze stylów służące do opisu formy prezentacji strony WWW.} i JavaScript;
 				\item wbudowany emulator Windows Phone;
 				\item gotowe szablony, które przyspieszają pracę z projektem.
 			\end{itemize}
 			
 			\subsection{System kontroli wersji}
 			
-			Pomimo,\ksremark{bez przecinka} że projekt realizowany był indywidualnie, zdecydowano się na wykorzystanie systemu kontroli wersji. Na rynku dostępnych jest wiele takich systemów. Do najpopularniejszych należą: GIT \cite{id:GIT} \ksremark{Zamiast przypisu zrobiłbym cytowanie.}% \footnote{Oficjalna strona projektu znajduje się pod adresem \url{http://git-scm.com/}}
-			, Mercurial\footnote{Oficjalna strona projektu znajduje się pod adresem \url{http://mercurial.selenic.com/}} \ksremark{tu podobnie}, SVN\footnote{Oficjalna strona projektu znajduje się pod adresem \url{https://subversion.apache.org/}}, Bazaar\footnote{Oficjalna strona projektu znajduje się pod adresem \url{http://bazaar.canonical.com/}} oraz TFS\footnote{Informacje o projekcie znajdują się pod adresem \url{http://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx}}. 
-			Podczas projektu zdecydowano się na wykorzystanie systemu GIT. Został on wybrany z wielu powodów. Jest to system rozproszony, więc jego repozytoria są relatywnie małe (np. w porównaniu do SVN). Ponadto,\ksremark{bez przecinka} GIT oferuje wiele funkcjonalności, które ułatwiają pracę z projektem, m.in. tzw. gałęzie \ksremark{SVN też umożliwia rozgałęzianie}, etykiety czy lokalną przestrzeń roboczą. Nie bez znaczenia był także fakt, że autorka ma doświadczenie z tym systemem kontroli wersji.
-			%przydałby się przypis % KS: tak przydałby się :-)
+			Pomimo że projekt realizowany był indywidualnie, zdecydowano się na wykorzystanie systemu kontroli wersji. Na rynku dostępnych jest wiele takich systemów. Do najpopularniejszych należą: GIT \cite{id:GIT}, Mercurial \cite{id:Mecurial}, SVN \cite{id:SVN}, Bazaar \cite{id:Bazaar} oraz TFS \cite{id:TFS}.
+			Podczas projektu zdecydowano się na wykorzystanie systemu GIT. Został on wybrany z wielu powodów. Jest to system rozproszony, więc jego repozytoria są relatywnie małe (np. w porównaniu do SVN). Ponadto GIT oferuje wiele funkcjonalności, które ułatwiają pracę z projektem, m.in. tzw. gałęzie \ksremark{SVN też umożliwia rozgałęzianie}, etykiety czy lokalną przestrzeń roboczą. Nie bez znaczenia był także fakt, że autorka ma doświadczenie z tym systemem kontroli wersji.
+
 			Repozytorium zostało umieszczone w serwisie Github.com\footnote{Serwis dostępny pod adresem \url{http://github.com}}, który agreguje projekty z całego świata. Portal oferuje przejrzysty interfejs oraz możliwość graficznego przeglądania historii projektu.
 		
-		\section{Technologia wykorzystana w części serwerowej}
+%		\section{Technologia wykorzystana w części serwerowej}
+		\section{Aplikacja serwerowa}
+		\ksremark{Skróciłem tytuł podrozdziału.}
 		
-		Część serwerowa, \ksremark{zamiast <<czyli tzw.>> napisałbym <<realizowana jako>>} czyli tzw. WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2\footnote{Informacje na temat platformy dostępne pod adresem \url{http://msdn.microsoft.com/en-us/library/dn448365\%28v=vs.118\%29.aspx}}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
+		Część serwerowa, realizowana jako WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2 \cite{id:WebApi}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
 		
-		W tej części wykorzystano szereg bibliotek. Aby przyspieszyć pracę i zapewnić większe bezpieczeństwo aplikacji, do celów identyfikacji i uwierzytelniania użytkowników została wykorzystana biblioteka AspNet.Identity\footnote{Biblioteka dostępna pod adresem \url{https://aspnetidentity.codeplex.com/}}.
+		W tej części wykorzystano szereg bibliotek. Aby przyspieszyć pracę i zapewnić większe bezpieczeństwo aplikacji, do celów identyfikacji i uwierzytelniania użytkowników została wykorzystana biblioteka AspNet.Identity \cite{id:ASPIdentity}.
 		
 		Do pracy z kolekcjami wykorzystano bibliotekę LINQ. Jest to zestaw niezwykle przydatnych narzędzi, które ułatwiają pracę z takimi strukturami jak listy, kolejki i inne implementujące interfejs \texttt{IEnumerable}.
 		
-		Nieodzowna okazała się być biblioteka Newtonsoft.Json\footnote{Strona projektu dostępna pod adresem \url{http://james.newtonking.com/json}}, która wspomaga formatowanie obiektów na kod JSON\footnote{\emph{JavaScript Object Notation} - tekstowy format wymiany danych}. Wszystkie akcje zwracające dane zwracają je właśnie w tym formacie. Komunikat w formacie JSON jest literałem obiektu języka JavaScript. Dane przekazywane są jako tablica asocjacyjna a wszystkie dane są zmiennymi.
+		Nieodzowna okazała się być biblioteka Newtonsoft.Json \cite{id:NewtonsoftJSON}, która wspomaga formatowanie obiektów na kod JSON\footnote{\emph{JavaScript Object Notation} -- tekstowy format wymiany danych}. Wszystkie akcje zwracające dane zwracają je właśnie w tym formacie. Komunikat w formacie JSON jest literałem obiektu języka JavaScript. Dane przekazywane są jako tablica asocjacyjna a wszystkie dane są zmiennymi.
 		
-		Jako,\ksremark{bez przecinka} że WebService działa w innej domenie niż aplikacja użytkownika, niezbędne było dodanie odpowiednich nagłówków HTTP\ksremark{przecinek} aby umożliwić \ksremark{zamiast <<tzw. \emph{Cross Origin Requests}, czyli zapytania z innej domeny>> napisałbym <<zapytania z innej domeny (\emph{Cross Origin Requests})>>.}. Bardzo ułatwia to biblioteka Microsoft.AspNet.Cors\footnote{Biblioteka do pobrania pod adresem \url{https://www.nuget.org/packages/Microsoft.AspNet.Cors/}}. Dodaje ona szereg nagłówków wraz z odpowiednio dobranymi parametrami.
+		Jako że WebService działa w innej domenie niż aplikacja użytkownika, niezbędne było dodanie odpowiednich nagłówków HTTP, aby umożliwić zapytania z innej domeny (\emph{Cross Origin Requests}). Bardzo ułatwia to biblioteka Microsoft.AspNet.Cors \cite{id:ASPCors}. Dodaje ona szereg nagłówków wraz z odpowiednio dobranymi parametrami.
 		
-		WebService komunikuje się z bazą danych, która działa w oparciu o silnik SQL Server 2014\footnote{Opis rozwiązania dostępny pod adresem \url{http://www.microsoft.com/pl-pl/server-cloud/products/sql-server/}}. Komunikacja odbywa się z wykorzystaniem biblioteki Entity Framework\footnote{Opis biblioteki dostępny pod adresem \url{http://msdn.microsoft.com/en-us/data/ef.aspx}}. Jest to biblioteka typu ORM\footnote{\emph{Object-Relational Mapping} - mapowanie obiektowo-relacyjne. },
-		która umożliwia mapowanie wyników pobranych z bazy danych na wcześniej przygotowane modele. \ksremark{<<Owe modele>> $\rightarrow$ <<Modele (te)>>} są następnie mapowane na modele przejściowe (\emph{ViewModels}) za pomocą biblioteki AutoMapper\footnote{Biblioteka dostępna pod adresem \url{https://github.com/AutoMapper/AutoMapper}}.
+		WebService komunikuje się z bazą danych, która działa w oparciu o silnik SQL Server 2014 \cite{id:SQLServer}. Komunikacja odbywa się z wykorzystaniem biblioteki Entity Framework \cite{id:EntityFramework}. Jest to biblioteka typu ORM\footnote{\emph{Object-Relational Mapping} -- mapowanie obiektowo-relacyjne. },
+		która umożliwia mapowanie wyników pobranych z bazy danych na wcześniej przygotowane modele. Modele te są następnie mapowane na modele przejściowe (\emph{ViewModels}) za pomocą biblioteki AutoMapper \cite{id:Automapper}.
 		
-		\section{Technologia wykorzystana w części internetowej} 
+%		\section{Technologia wykorzystana w części internetowej} 
+		\section{Aplikacja internetowa} 
+		\ksremark{Skróciłem tytuł podrozdziału.}
 			
 		Aplikacja internetowa napisana została w modelu \emph{client-side}. Oznacza to, że cała aplikacja interpretowana jest po stronie przeglądarki i nie wymaga specjalistycznego serwera. Aby działała poprawnie, wystarczy dowolny serwer HTTP. Kod został napisany przy użyciu następujących języków: Javascript, HTML i LESS\footnote{\emph{Leaner CSS} -- dynamiczny język arkuszy stylów.}. 
         %		
-		Aplikacja stworzona jest w oparciu o platformę AngularJS\footnote{Oficjalna strona projektu dostępna pod adresem \url{https://angularjs.org/}}. Jest to zestaw otwartych bibliotek języka JavaScript wspierany przez firmę Google. Umożliwia tworzenie aplikacji \ksremark{zamiast <<typu \emph{Single Page Application}, czyli aplikacji internetowych, z których można korzystać bez przeładowania strony>> napisałbym <<internetowych, z których można korzystać bez przeładowania strony (\emph{Single Page Application})>>}. Dane ładowane są w tle dzięki asynchronicznym zapytaniom do WebService realizowanym przez JavaScript.
+		Aplikacja stworzona jest w oparciu o platformę AngularJS \cite{keylist}. Jest to zestaw otwartych bibliotek języka JavaScript wspierany przez firmę Google. Umożliwia tworzenie aplikacji internetowych, z których można korzystać bez przeładowania strony (\emph{Single Page Application}). Dane ładowane są w tle dzięki asynchronicznym zapytaniom do WebService realizowanym przez JavaScript.
 		
 		Zostały również zastosowane poboczne biblioteki. Do najważniejszych zależą:
 		
 		\begin{description}
 			
-			\item[LeafletJS]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://leafletjs.com/}} -- 
-			umożliwia sprawne dodawanie map do strony. Do wyświetlania map wybrany został silnik OpenStreetMap\footnote{Oficjalna strona projektu znajduje się pod adresem \url{http://www.openstreetmap.org/}} ze względu na swoją otwartą licencję.
-			\item[jQuery]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://jquery.com/}} -- 
+			\item[LeafletJS] \cite{id:Leaflet} -- 
+			umożliwia sprawne dodawanie map do strony. Do wyświetlania map wybrany został silnik OpenStreetMap \cite{id:OpenStreetMaps} ze względu na swoją otwartą licencję.
+			\item[jQuery] \cite{id:jQuery} -- 
 			jest to zestaw bibliotek pomocniczych dla języka JavaScript. Rozszerza funkcjonalność i upraszcza składnię. W prostszy sposób pozwala na dostęp i manipulację elementami DOM.
-			\item[Bootstrap]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://getbootstrap.com/}} -- 
+			\item[Bootstrap] \cite{id:Bootstrap} -- 
 			zestaw bibliotek, który dołączony jest do Twitter Bootstrap. Dostarcza takie moduły jak np. interaktywne wyskakujące okna, animacje zamknięcie i in.
-			\item[AngularTranslate.js]\footnote{Oficjalna strona biblioteki znajduje się pod adresem \url{http://angular-translate.github.io/}} -- 
+			\item[AngularTranslate.js] \cite{id:AngularTranslate} -- 
 			biblioteka rozszerzająca możliwości platformy Angular o implementację wielojęzyczności.  
 		
 		\end{description}
 				
-		Za część graficzną aplikacji odpowiada zmodyfikowany przez autorkę szablon AdminLTE\footnote{Szablon dostępny pod adresem \url{http://almsaeedstudio.com/AdminLTE/}} napisany w oparciu o Twitter Bootstrap. Szablon opisany jest językiem LESS, który jest następnie transformowany do CSS.
+		Za część graficzną aplikacji odpowiada zmodyfikowany przez autorkę szablon AdminLTE \cite{id:AdminLTE} napisany w oparciu o Twitter Bootstrap. Szablon opisany jest językiem LESS, który jest następnie transformowany do CSS.
 		
-		\section{Technologia wykorzystana w części mobilnej}
+%		\section{Technologia wykorzystana w części mobilnej}
+		\section{Aplikacja mobilna}
+		\ksremark{Skróciłem tytuł podrozdziału.}
+		
 	
-		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps\footnote{\url{http://dev.windows.com/en-us/develop/building-universal-windows-apps}}, więc cała logika wydzielona jest do osobnego projektu.
+		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps, więc cała logika wydzielona jest do osobnego projektu.
 		
-		Aplikacja wykonana została przy wykorzystaniu platformy .NET, języka C\# oraz XAML. Zaimplementowany został wzorzec architektoniczny MVVM \ksremark{zamiast przypisu: <<(\emph{Model View ViewModel}, \emph{vide} rozdział \ref{sec:ArchitekturaAplikacjiMobilnej})>>}\footnote{\emph{Model View ViewModel} - informacje na temat wzorca w rozdziale \ref{sec:ArchitekturaAplikacjiMobilnej}}. W tym celu do projektu dołączona została biblioteka MVVM Light \ksremark{cytowanie do manuala/strony www/\ldots}. %informacje na temat wzorca przeniesione do części o architekturze. Czy taka referencja jest OK?
+		Aplikacja wykonana została przy wykorzystaniu platformy .NET, języka C\# oraz XAML. Zaimplementowany został wzorzec architektoniczny MVVM (\emph{Model View ViewModel}, \emph{vide} rozdział \ref{sec:ArchitekturaAplikacjiMobilnej}). W tym celu do projektu dołączona została biblioteka MVVM Light \cite{id:MVVMLight}. 
 		
-		Aplikacja pobiera dane z WebService i zapisuje je w swojej lokalnej bazie danych. Działa ona dzięki SQLight\footnote{Strona projektu dostępna pod adresem \url{http://www.sqlite.org/}}. Do projektu dołączony jest adapter SQLite. Pobrane dane parsowane są do obiektów za pomocą biblioteki Newtonsoft.JSON.
+		Aplikacja pobiera dane z WebService i zapisuje je w swojej lokalnej bazie danych. Działa ona dzięki SQLight \cite{id:SQLite}. Do projektu dołączony jest adapter SQLite. Pobrane dane parsowane są do obiektów za pomocą biblioteki Newtonsoft.JSON.
+
+
+% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
+
 
 	\chapter{Specyfikacja wewnętrzna}
 		\section{Architektura}
 		
 		\begin{figure}		
 			\centering
-			\includegraphics[width=0.5\textwidth]{architektura.pdf}
+			\includegraphics[width=0.5\textwidth]{images/architektura.pdf}
 			\caption{Architektura systemu}
 			\label{fig:architektura}
 		\end{figure}
 		
-		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa\ksremark{spacja}(\emph{WebService}). Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
+		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa (\emph{WebService}). Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
 			
 			\subsection{Architektura aplikacji serwerowej}
 			
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\textwidth]{architektura_server.pdf}
-				\caption{Architektura aplikacji serwerowej}
-				\label{fig:architektura_server}
-			\end{figure}
+			
 			
 			Aplikacja serwerowa stworzona jest przy wykorzystaniu platformy ASP.NET WebApi 2 i zgodnie ze wzorcem architektonicznym REST\footnote{\emph{Representational State Transfer}}. Wzorzec ten zakłada kilka warunków:
 			
 			\begin{description}
 				
-				\item[Klient-serwer] - \ksremark{nie dywiz `-', ale pauza `--'} aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków\ksremark{przecinek} a ze światem \ksremark{<<świat>> wydaje się OK} %czy to nie będzie zbyt kolokialne? Ale jak to ująć inaczej?...
- 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
-				\item[Bezstanowość] - każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName,\ksremark{bez spacji przed przecinkiem} za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
-				\item[Wielowarstwowość] - klient nie wie\ksremark{,} czy jest podłączony bezpośrednio do serwera\ksremark{,} czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane\ksremark{,} aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
-				\item[Cache'owalność] - \ksremark{to jakoś trzeba będzie napisać po polsku} %jak to przetłumaczyć? :(
+				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
+				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
+				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
+				\item[Cache'owalność] -- \ksremark{to jakoś trzeba będzie napisać po polsku} %jak to przetłumaczyć? :(
 				serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej cache przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
 				
 			\end{description}
 			
-			Wewnętrznie,\ksremark{bez przecinka} aplikacja składa się z wielu warstw, które komunikują się ze sobą. Każde odebrane zapytanie HTTP jest obsługiwane przez odpowiednią akcję kontrolera. Zapytania realizowane są czterema standardowymi metodami HTTP: \emph{GET}, \emph{POST}, \emph{PUT}, \emph{DELETE}.
+			\begin{figure}
+							\centering
+							\includegraphics[width=0.5\textwidth]{images/architektura_server.pdf}
+							\caption{Architektura aplikacji serwerowej}
+							\label{fig:architektura_server}
+		    \end{figure}
+						
+			Wewnętrznie aplikacja składa się z wielu warstw, które komunikują się ze sobą. Każde odebrane zapytanie HTTP jest obsługiwane przez odpowiednią akcję kontrolera. Zapytania realizowane są czterema standardowymi metodami HTTP: \emph{GET}, \emph{POST}, \emph{PUT}, \emph{DELETE}.
 			
-			Zazwyczaj,\ksremark{bez przecinka} akcja wymaga interakcji z bazą danych. Kontroler nie komunikuje się z nią jednak bezpośrednio. Zamiast tego składa odpowiednio sparametryzowane zapytanie do warstwy repozytorium. Parametrem może być cyfra (\texttt{Integer}), ciąg znaków (\texttt{String}) lub obiekt typu modelu bindującego (\emph{Binding Model}). Parametr może być także pusty. 
+			Zazwyczaj akcja wymaga interakcji z bazą danych. Kontroler nie komunikuje się z nią jednak bezpośrednio. Zamiast tego składa odpowiednio sparametryzowane zapytanie do warstwy repozytorium. Parametrem może być cyfra (\texttt{Integer}), ciąg znaków (\texttt{String}) lub obiekt typu modelu wiążącego (\emph{Binding Model}). Parametr może być także pusty. 
 			
-			Repozytorium przetwarza żądanie. Jeżeli parametrem był obiekt typu modelu bindującego mapuje go na model\ksremark{przecinek} a następnie za pomocą \emph{Entity Framework} komunikuje się z bazą danych. Rezultat jest następnie ponownie mapowany na model bindujący i przekazywany do akcji kontrolera. Kontroler zwraca wynik w postaci odpowiedzi HTTP (\emph{HTTP Response}).
+			Repozytorium przetwarza żądanie. Jeżeli parametrem był obiekt typu modelu wiążącego mapuje go na model, a następnie za pomocą \emph{Entity Framework} komunikuje się z bazą danych. Rezultat jest następnie ponownie mapowany na model wiążący i przekazywany do akcji kontrolera. Kontroler zwraca wynik w postaci odpowiedzi HTTP (\emph{HTTP Response}).
 			
-			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_server}. 
-			% i w oparciu o wzorzec MVC\footnote{\emph{Model-View-Controller} - wzorzec Model-Widok-Kontroler.}. Wzorzec ten polega na rozdzieleniu kodu tak, że model jest reprezentacją problemu lub logiki aplikacji. Widok odpowiada tylko za wyświetlanie danych, z kolei kontroler pośredniczy między widokiem i modelem.
-			
+			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
 			
 			\subsection{Architektura aplikacji internetowej}		
 			
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\textwidth]{architektura_webapp.pdf}
-				\caption{Architektura aplikacji internetowej}
-				\label{fig:architektura_webapp}
-			\end{figure}
-
-			Aplikacja internetowa została stworzona przy użyciu platformy AngularJS i~w~całości działa \ksremark{zamiast <<jako \emph{Single Page Application}, czyli  bez przeładowania strony>> napisałbym <<bez przełądowania strony (\emph{Single Page Application})>>}. Zawiera główny widok napisany w języku HTML, do którego w zależności od kontekstu załączane są widoki cząstkowe (\emph{partial views}). Z każdym widokiem powiązany jest kontroler. 
 			
-			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~bindowany z~widokiem.								
 
-			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_webapp}.			
+			Aplikacja internetowa została stworzona przy użyciu platformy AngularJS i~w~całości działa bez przeładowania strony (\emph{Single Page Application}). Zawiera główny widok napisany w języku HTML, do którego w zależności od kontekstu załączane są widoki cząstkowe (\emph{partial views}). Z każdym widokiem powiązany jest kontroler. 
+			
+			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z~powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~wiązany (\emph{Bind}) z~widokiem.								
+
+			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
+			
+			\begin{figure}
+							\centering
+							\includegraphics[width=0.5\textwidth]{images/architektura_webapp.pdf}
+							\caption{Architektura aplikacji internetowej}
+							\label{fig:architektura_webapp}
+    		\end{figure}		
 			
 			\subsection{Architektura aplikacji mobilnej}
 			\label{sec:ArchitekturaAplikacjiMobilnej}	
 			
-			\begin{figure}
-				\centering
-				\includegraphics[width=1\textwidth]{architektura_mobile.pdf}
-				\caption{Architektura aplikacji mobilnej}
-				\label{fig:architektura_mobile}
-			\end{figure}
 			
-			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM \ksremark{rozwinięcie angielkiego akronimu}. Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one następnie łączone \ksremark{zamiast <<następnie łączone>> napisałbym <<połączone>>} za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych. \ksremark{Tu przydałby się rysunek modelu MVVM.}
+			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych. \ksremark{Tu przydałby się rysunek modelu MVVM.}
 			
 			Program przy pierwszym uruchomieniu łączy się z aplikacją serwerową i~pobiera dane, do których uprawniony jest zalogowany użytkownik. Dane te są zapisywane w lokalnej bazie danych obsługiwanej przez silnik SQLite. 
 			
 			Użytkownik wchodzi w interakcję z aplikacją przy pomocy zachowań typowych dla obsługi aplikacji mobilnych. Są to gesty takie jak dotknięcie ekranu, dłuższe przytrzymanie ekranu czy posuwisty ruch dłonią po ekranie smartfona. 
-			Po stronie aplikacji,\ksremark{bez przecinka} odbiorcą takich poleceń jest warstwa widoku (\emph{View}). Komunikuje się ona następnie z warstwą pośrednią (\emph{ViewModel}) wprost lub za pomocą konwerterów (\emph{Converter}). Komunikacja odbywa się dzięki wykorzystaniu poleceń (\emph{commands} \ksremark{Dla spójności napisałbym słowo \emph{commands} wielką literą.}). 
+			Po stronie aplikacji odbiorcą takich poleceń jest warstwa widoku (\emph{View}). Komunikuje się ona następnie z warstwą pośrednią (\emph{ViewModel}) wprost lub za pomocą konwerterów (\emph{Converter}). Komunikacja odbywa się dzięki wykorzystaniu poleceń (\emph{Commands}. 
 			
-			Warstwa pośrednia realizuje zadanie zadane przez użytkownika. Jeżeli wymaga to komunikacji z bazą danych, łączy się ona z warstwą repozytorium (\emph{Repository}). Repozytorium operuje na dwóch typach obiektów: na modelach (\emph{Model}) i na modelach bindujących \ksremark{wiążących} (\emph{Binding model}). Modele odwzorowują schemat bazy danych w postaci obiektów języka C\# i są wykorzystywane w komunikacji z nią. Modele bindujące \ksremark{wiążące} to modele zmodyfikowane na potrzeby danego zadania \ksremark{To zdanie jest trochę niejasne, warto by je nieco rozwinąć.}. Za komunikację z aplikacją serwerową odpowiada warstwa serwisów (\emph{Service}), która wysyła do niej odpowiednie zapytania w formacie RESTful. 
+			Warstwa pośrednia realizuje zadanie zadane przez użytkownika. Jeżeli wymaga to komunikacji z bazą danych, łączy się ona z warstwą repozytorium (\emph{Repository}). Repozytorium operuje na dwóch typach obiektów: na modelach (\emph{Model}) i na modelach wiążących (\emph{Binding model}). Modele odwzorowują schemat bazy danych w postaci obiektów języka C\# i są wykorzystywane w komunikacji z nią. Modele wiążące to modele zmodyfikowane na potrzeby danego zadania.  % \ksremark{To zdanie jest trochę niejasne, warto by je nieco rozwinąć.}
+			Są one zmodyfikowane o dodatkowe pola, zbędne pola nie są zaś uwzględnione. Przykładowo, model wiążący wykorzystywany do rejestracji użytkownika stworzony jest na bazie modelu użytkownika. Nie uwzględnia on takich informacji jak ,,Data rejestracji'' bądź ,,Konto Aktywne''. Z drugiej strony jest uzupełniony o takie pole jak ,,Powtórz hasło''.
 			
-			Warstwa pośrednia nie wie o istnieniu modeli. Od repozytorium otrzymuje ona jedynie kolekcje modeli bindujących. Finalnie,\ksremark{bez przecinka} są one przetwarzane i przekazywane do warstwy widoku za pomocą mechanizmu bindowania \ksremark{wiązania / wiążącego} (\emph{bindings}).
+			Za komunikację z aplikacją serwerową odpowiada warstwa serwisów (\emph{Service}), która wysyła do niej odpowiednie zapytania w formacie RESTful. 
+			
+			Warstwa pośrednia nie wie o istnieniu modeli. Od repozytorium otrzymuje ona jedynie kolekcje modeli wiążących. Finalnie są one przetwarzane i przekazywane do warstwy widoku za pomocą mechanizmu wiązania (\emph{binding}).
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\textwidth]{images/architektura_mobile.pdf}
+				\caption{Architektura aplikacji mobilnej}
+				\label{fig:architektura_mobile}
+			\end{figure}
 			
 			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_mobile}. 
 			
-		
 		\section{Najważniejsze algorytmy}
 		\section{Przypadki użycia}
 		
 		
 	\chapter{Specyfikacja zewnętrzna}
 		\section{Instrukcja obsługi}
+		\ksremark{Tu warto by napisać, że zostanie przedstawiona \emph{happy path}.}
+		\subsection{Instrukcja obsługi aplikacji mobilnej}
+		
+				\begin{figure}[H]
+					
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile1.png}					
+						\caption{\label{subfig:mobile_splash}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile2.png}					
+						\caption{\label{subfig:mobile_login}}	
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile3.png}					
+						\caption{\label{subfig:mobile_register}	}
+					\end{subfigure}
+					\hfill			
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile4.png}					\caption{\label{subfig:mobile_recommended}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile5.png}						
+						\caption{\label{subfig:mobile_buy}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile6.png}
+						\caption{\label{subfig:mobile_guides}}	
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile4.png}					
+						\caption{\label{subfig:mobile_recommended}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile5.png}	
+						\caption{\label{subfig:mobile_buy}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile6.png}
+						\caption{\label{subfig:mobile_guides}}	
+					\end{subfigure}
+					
+				\end{figure}
+				\begin{figure}[H]
+					\ContinuedFloat
+					
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile7.png}	
+						\caption{\label{subfig:mobile_guidedetail}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile8.png}	
+						\caption{\label{subfig:mobile_guidedetail2}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile9.png}
+						\caption{\label{subfig:mobile_map}}
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile10.png}
+						\caption{\label{subfig:mobile_marker}}		
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile11.png}	
+						\caption{\label{subfig:mobile_place}}	
+					\end{subfigure}
+					\hfill
+					\begin{subfigure}{0.3\textwidth}
+						\includegraphics[width=\textwidth]{screenshots/mobile/mobile12.png}	
+						\caption{\label{subfig:mobile_navigation}}	
+					\end{subfigure}	
+					\caption{}
+				\end{figure}
+				
+				
+		
+		Niech przykładowym użytkownikiem systemu będzie Jacek Podróżnik. Jacek wybiera się na krótki urlop do Lizbony i chciałby zaopatrzyć się w aplikację na swój smarfon, która pomoże mu jak najlepiej poznać nowe miejsce.  
+		
+		Jacek pobiera aplikację z \emph{Windows Store}. Program jest gotowy do użytku zaraz po instalacji. Po włączeniu widoczny jest ekran powitalny z logo (rys.\ref{subfig:mobile_splash}). Chociaż aplikacja może działać w trybie \emph{offline}, podczas pierwszego włączenia wymagane jest połączenie z Internetem. 
+		
+		Ekran powitalny gaśnie po kilku sekundach i użytkownik jest kierowany do strony logowania (rys. \ref{subfig:mobile_login}). Jeżeli nie posiada on konta może je założyć lub pominąć logowanie i przejść od razu do użytkowania aplikacji. Jacek wybiera opcję rejestracji i jest przenoszony do widoku, w którym musi podać swój adres e-mail oraz hasło z potwierdzeniem (rys. \ref{subfig:mobile_register}). 
+		
+		Jeżeli podczas rejestracji wystąpią błędy, użytkownik zostanie o tym powiadomiony za pomocą wyskakującego okienka z komunikatem. W przypadku Jacka proces przebiega pomyślnie, i zostaje on przekierowany na stronę z listą polecanych przewodników (\ref{subfig:mobile_recommended}). Tutaj może wybrać interesujący go przewodnik dotykając go na ekranie swojego urządzenia.
+		
+		Jacek wybiera przewodnik po Lizbonie i zostaje przekierowany do widoku pobierania (rys. \ref{subfig:mobile_buy}). W momencie, kiedy naciska zielony przycisk ,,Pobierz'', aplikacja rozpoczyna pobieranie danych w tle. W tym czasie użytkownik zostaje poinformowany, że aby w pełni używać programu w trybie \emph{offline}\ksremark{przecinek} powinien również pobrać mapy dla danego miejsca. Po zamknięciu okienka, Jacek zostaje ponownie przekierowany do widoku przewodników. Tym razem na liście widać świeżo pobrany przewodnik o Lizbonie (rys. \ref{subfig:mobile_guides}). 
+		
+		Podróżnik dotyka miniaturki Lizbony i przechodzi do właściwej części przewodnika (rys. \ref{subfig:mobile_guidedetail}). W tej sekcji Jacek może poczytać informacje dotyczące miasta (rys. \ref{subfig:mobile_guidedetail2}). Między kolejnymi elementami użytkownik może poruszać się przeciągając palcem po ekranie lub korzystając z przycisków pod mapą. 
+		
+		Zapoznawszy się z informacjami, Jacek chce dowiedzieć się o ciekawych miejscach w okolicy. Dotyka więc obrazek mapy i zostaje przeniesiony do prawdziwej, interaktywnej mapy z oznaczonymi punktami charakterystycznymi (rys. \ref{subfig:mobile_map}). Po dotknięciu dowolnego z punktów wyświetlona zostaje chmurka z nazwą obiektu i odnośnikiem do szczegółów (rys. \ref{subfig:mobile_marker}). 
+		
+		Jacek dotyka zielony przycisk ze strzałką i zostaje przeniesiony do strony poświęconej danemu obiektowi (rys. \ref{subfig:mobile_place}). Tu może dowiedzieć się więcej o miejscu oraz zobaczyć miniaturkę zdjęcia.
+		
+		Powrót do poprzednich widoków odbywa się w sposób standardowy z obsługą systemu \emph{Windows Phone 8.1}; za pomocą fizycznego przycisku wstecz. 		 
+
+		\subsection{Instrukcja obsługi aplikacji internetowej}
+		
 		\section{Wymagania}
-		%wspierane przeglądarki
-		%wspierane telefony
+		
+		Aplikacja mobilna zaprojektowana jest z myślą o platformie \emph{Windows Phone 8.1}. Na chwilę obecną nie jest dostępna dla użytkowników systemów \emph{Android} czy \emph{iOS}, jednakże docelowo zostanie dodane wsparcie dla tych platform. Jeżeli użytkownik posiada telefon z systemem \emph{Windows Phone 8}, powinien najpierw zaktualizować swój system. Następnie może pobrać i korzystać z aplikacji. System \emph{Windows Phone 7} nie jest wspierany.
+		
+		Aplikacja internetowa do poprawnego działania wymaga nowoczesnej przeglądarki z włączoną obsługą JavaScript. Wspierane przeglądarki:
+		\begin{itemize}
+			\item Google Chrome w wersji 39 lub nowszy;
+			\item Mozilla Firefox w wersji 32 lub nowszy;
+			\item Opera w wersji 26 lub nowsza;
+			\item Internet Explorer 11 lub nowszy.
+		\end{itemize}
+		
+		Aplikacja internetowa działa także na urządzeniach o mniejszych rozdzielczościach takich jak tablety czy telefony.
+		
 		\section{Instalacja}
+		
+		Aplikacja mobilna \appName w chwili obecnej zainstalowana może być jedynie na telefonach z odblokowaną opcją deweloperską. Docelowo jednak program zostanie umieszczony w sklepie \emph{Windows Store}, skąd będzie dostępny do pobrania dla użytkowników polsko- i angielskojęzycznych. 
+		
+		Aplikacja internetowa nie wymaga instalacji. Dostępna jest dla każdego, kto jest podłączony do Internetu, dysponuje kompatybilną przeglądarką internetową i posiada uprawnienia do dodawania nowych przewodników. 
 		
 	\chapter{Testowanie}
 	
