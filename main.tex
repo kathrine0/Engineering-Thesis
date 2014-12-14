@@ -163,7 +163,7 @@
 	\chapter{Technologia}
 	\label{id:cha:technologia}
 	
-	\ksremark{Rozdział opisuje technologie i narzędzia użyte do stworzenia części webowej, serwerowej i mobilnej aplikacji.}
+	Rozdział opisuje technologie i narzędzia użyte do stworzenia części webowej, serwerowej i mobilnej aplikacji.
 	
 		\section{Narzędzia}		
 			\subsection{Środowisko programistyczne}
@@ -190,7 +190,6 @@
 		
 %		\section{Technologia wykorzystana w części serwerowej}
 		\section{Aplikacja serwerowa}
-		\ksremark{Skróciłem tytuł podrozdziału.}
 		
 		Część serwerowa, realizowana jako WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2 \cite{id:WebApi}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
 		
@@ -207,7 +206,6 @@
 		
 %		\section{Technologia wykorzystana w części internetowej} 
 		\section{Aplikacja internetowa} 
-		\ksremark{Skróciłem tytuł podrozdziału.}
 			
 		Aplikacja internetowa napisana została w modelu \emph{client-side}. Oznacza to, że cała aplikacja interpretowana jest po stronie przeglądarki i nie wymaga specjalistycznego serwera. Aby działała poprawnie, wystarczy dowolny serwer HTTP. Kod został napisany przy użyciu następujących języków: Javascript, HTML i LESS\footnote{\emph{Leaner CSS} -- dynamiczny język arkuszy stylów.}. 
         %		
@@ -231,9 +229,7 @@
 		Za część graficzną aplikacji odpowiada zmodyfikowany przez autorkę szablon AdminLTE \cite{id:AdminLTE} napisany w oparciu o Twitter Bootstrap. Szablon opisany jest językiem LESS, który jest następnie transformowany do CSS.
 		
 %		\section{Technologia wykorzystana w części mobilnej}
-		\section{Aplikacja mobilna}
-		\ksremark{Skróciłem tytuł podrozdziału.}
-		
+		\section{Aplikacja mobilna}		
 	
 		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps, więc cała logika wydzielona jest do osobnego projektu.
 		
@@ -286,7 +282,7 @@
 			
 			Repozytorium przetwarza żądanie. Jeżeli parametrem był obiekt typu modelu wiążącego mapuje go na model, a następnie za pomocą \emph{Entity Framework} komunikuje się z bazą danych. Rezultat jest następnie ponownie mapowany na model wiążący i przekazywany do akcji kontrolera. Kontroler zwraca wynik w postaci odpowiedzi HTTP (\emph{HTTP Response}).
 			
-			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
+			Schemat architektury aplikacji serwerowej przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
 			
 			\subsection{Architektura aplikacji internetowej}		
 			
@@ -296,7 +292,7 @@
 			
 			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z~powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~wiązany (\emph{Bind}) z~widokiem.								
 
-			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
+			Schemat architektury aplikacji internetowej przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
 			
 			\begin{figure}
 							\centering
