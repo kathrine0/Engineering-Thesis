@@ -7,6 +7,7 @@
 \usepackage{indentfirst}
 \usepackage{comment}
 \usepackage{hyperref}
+\usepackage{mathtools}
  
 \frenchspacing
 
@@ -28,40 +29,65 @@
 \newcommand{\appName}{\emph{TravelGuide} }
 %czy mogę zmienić nazwę aplikacji na "TravelGuide" zamiast "Wirtualny Przewodnik"? Czyli tak, jak jest logo, etc.?
 
+% ustawienia matematyczne
+\DeclareMathOperator{\haversin}{haversin}
+
 % listing kodu
 \usepackage{listings}
 \usepackage{color}
 
-\lstdefinelanguage{JavaScript}{
-	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-	keywordstyle=\color{blue}\bfseries,
-	ndkeywords={class, export, boolean, throw, implements, import, this},
-	ndkeywordstyle=\color{darkgray}\bfseries,
-	identifierstyle=\color{black},
-	sensitive=false,
-	comment=[l]{//},
-	morecomment=[s]{/*}{*/},
-	commentstyle=\color{purple}\ttfamily,
-	stringstyle=\color{red}\ttfamily,
-	morestring=[b]',
-	morestring=[b]"
+\lstloadlanguages{
+	csh
 }
 
+\definecolor{red}{rgb}{0.6,0,0} % for strings
+\definecolor{blue}{rgb}{0,0,0.6}
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
 \lstset{
-	language=JavaScript,
-	extendedchars=true,
-	basicstyle=\small\tt,
-	showstringspaces=false,
-	showspaces=false,
-	numbers=left,
-	numberstyle=\footnotesize,
-	numbersep=9pt,
-	tabsize=4,
-	breaklines=true,
-	showtabs=false,
-	captionpos=b,
-	belowskip=1.5em,
-	aboveskip=1.5em
+	language=csh,
+	basicstyle=\footnotesize\ttfamily, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	numbersep=5pt, 
+	tabsize=2, 
+	extendedchars=true, 
+	breaklines=true, 
+	frame=b,
+	stringstyle=\color{blue}\ttfamily, 
+	showspaces=false, 
+	showtabs=false, 
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	commentstyle=\color{green},
+	morecomment=[l]{//}, %use comment-line-style!
+	morecomment=[s]{/*}{*/}, %for multiline comments
+	showstringspaces=false, 
+	morekeywords={  abstract, event, new, struct,
+		as, explicit, null, switch,
+		base, extern, object, this,
+		bool, false, operator, throw,
+		break, finally, out, true,
+		byte, fixed, override, try,
+		case, float, params, typeof,
+		catch, for, private, uint,
+		char, foreach, protected, ulong,
+		checked, goto, public, unchecked,
+		class, if, readonly, unsafe,
+		const, implicit, ref, ushort,
+		continue, in, return, using,
+		decimal, int, sbyte, virtual,
+		default, interface, sealed, volatile,
+		delegate, internal, short, void,
+		do, is, sizeof, while,
+		double, lock, stackalloc,
+		else, long, static,
+		enum, namespace, string, var},
+	keywordstyle=\color{cyan},
+	identifierstyle=\color{red},
 }
 
 % document settings
@@ -326,6 +352,78 @@
 			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_mobile}. 
 			
 		\section{Najważniejsze algorytmy}
+				
+			\subsection{Funkcja Haversin}
+			
+			Aby obliczyć odległość między dwoma obiektami na mapie została wykorzystana funkcja Harvesin. Jest to funkcja, która pozwala na obliczenie linii ortodromy mając dane szerokości i długości geograficzne punktów. 
+			
+			Matematyczne równanie dla tej funkcji prezentuje się następująco:
+			
+			$haversin (\dfrac{d}{r}) = \haversin(\phi_{2} - \phi_{1}) + \cos(\phi_{1})\cos(\phi_{2})\haversin(\lambda_{2} - \lambda_{1})$
+			
+			gdzie:
+			
+			\begin{itemize}
+				\item \textit{haversin} -- funkcja haversin:
+				
+				$\haversin(\theta) = sin^{2}(\dfrac{\theta}{2}) = \dfrac{1-\cos(\theta)}{2}$,
+				
+				\item \textit{d} -- dystans między dwoma punktami (po kole wielkim\footnote{Koło wielkie - największe koło, jakie można wpisać w kulę. Jego średnica jest równa średnicy kuli, a samo koło dzieli ją na dwie symetryczne połowy zwane półkulami.}),
+				
+				\item \textit{r} -- promień kuli,
+				
+				\item $\phi_{1}$, $\phi_{2}$ -- szerokość geograficzna obu punktów,
+				
+				\item $\lambda_{1}$, $\lambda_{2}$ -- wysokość geograficzna obu punktów.
+			\end{itemize}
+		
+		Szukaną wartością jest \textit{d}. Drogą przekształceń matematycznych dystans można wyznaczyć następująco:
+		
+				$d = r\haversin^{-1}(h) = 2r \arcsin(\sqrt{h})$, gdzie
+				
+				$h = \haversin(\dfrac{d}{r}) $, zatem
+				
+				$d = 2r \arcsin(\sqrt{\haversin(\phi_{2} - \phi_{1}) + \cos(\phi_{1})\cos(\phi_{2})\haversin(\lambda_{2} - \lambda_{1})}) \Rightarrow $
+				
+				\boldmath{$d = 2r \arcsin(\sqrt{sin^{2}(\frac{\phi_{2} - \phi_{1}}{2}) + \cos(\phi_{1})\cos(\phi_{2})\sin^{2}(\frac{\lambda_{2} - \lambda_{1}}{2}) }) $}
+		
+		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:haversin}.
+		
+		\begin{lstlisting}[label={lst:haversin},caption=Funkcja obliczająca dystans pomiędzy pozycją użytkownika a punktem na mapie]
+		
+		public void SetDistance(Geoposition currentPosition)
+		{
+			const double degreesToRadians = (Math.PI / 180.0);
+			const double earthRadius = 6371; // kilometers
+			
+			// convert latitude and longitude values to radians
+			var prevRadLat = _placeLatitude * degreesToRadians;
+			var prevRadLong = _placeLongitude * degreesToRadians;
+			var currRadLat = currentPosition.Coordinate.Point.Position.Latitude * degreesToRadians;
+			var currRadLong = currentPosition.Coordinate.Point.Position.Longitude * degreesToRadians;
+			
+			// calculate radian delta between each position.
+			var radDeltaLat = currRadLat - prevRadLat;
+			var radDeltaLong = currRadLong - prevRadLong;
+			
+			// calculate distance
+			var expr1 = (Math.Sin(radDeltaLat / 2.0) *
+			Math.Sin(radDeltaLat / 2.0)) +
+			
+			(Math.Cos(prevRadLat) *
+			Math.Cos(currRadLat) *
+			Math.Sin(radDeltaLong / 2.0) *
+			Math.Sin(radDeltaLong / 2.0));
+			
+			var expr2 = 2.0 * Math.Atan2(Math.Sqrt(expr1),
+			Math.Sqrt(1 - expr1));
+			
+			var distance = (earthRadius * expr2);
+			this.Distance = distance * 1000;  // return results as meters
+		}
+		
+		\end{lstlisting}
+		%Czy komentarze powinny być po polsku?
 		\section{Przypadki użycia}
 		
 		
@@ -515,7 +613,7 @@
 		
 			\subsubsection{Tworzenie przewodnika}
 			
-			Marian uruchamia przeglądarkę internetową i wpisuje adres www aplikacji \appName. Przeglądarka przenosi go do ekranu logowanie (rys. \ref{subfig:web_login}). Marian wpisuje swoją nazwę użytkownika i hasło a następnie klika przycisk ,,Zaloguj''. Zostaje przekierowany na stronę powitalną (rys. \ref{subfig:web_welcome}). Następnie wybiera z menu podręcznego opcję ,,Przewodniki'' \ensuremath{\rightarrow} ,,Dodaj''. Przeglądarka przekierowuje go do kreatora dodawania nowego przewodnika (rys. \ref{subfig:web_add}). 
+			Marian uruchamia przeglądarkę internetową i wpisuje adres www aplikacji \appName. Przeglądarka przenosi go do ekranu logowanie (rys. \ref{subfig:web_login}). Marian wpisuje swoją nazwę użytkownika i hasło a następnie klika przycisk ,,Zaloguj''. Zostaje przekierowany na stronę powitalną (rys. \ref{subfig:web_welcome}). Następnie wybiera z menu podręcznego opcję ,,Przewodniki'' $\rightarrow$ ,,Dodaj''. Przeglądarka przekierowuje go do kreatora dodawania nowego przewodnika (rys. \ref{subfig:web_add}). 
 			
 			W kroku pierwszym Marian powinien wymagane pola: wpisać nazwę przewodnika w polu \textit{Nazwa} i opis w polu \textit{Opis}. Następnie, klika na mapę aby zaznaczyć odpowiednie miejsce. Po kliknięciu na mapę pokazuje się na niej niebieski znacznik. Jeżeli Marian popełni błąd, może myszką przeciągnąć znacznik na odpowiednie miejsce. Finalnie, Marian dodaje zdjęcie główne dla przewodnika (okładkę). Może to zrobić na dwa sposoby: przeciągając zdjęcie na szare pole (metoda \textit{Drag and Drop}\footnote{Metoda przeciągnij i upuść}) lub klikając przycisk ,,Dodaj zdjęcie'' i wybierając odpowiedni obrazek z dysku twardego komputera. 
 			
@@ -540,7 +638,7 @@
 			
 			\subsubsection{Przegląd i publikacja}
 		
-		Korzystając z menu podręcznego Marian wybiera opcję ,,Przewodniki'' \ensuremath{\rightarrow} ,,Pokaż''. Zostaje przekierowany do widoku tabeli, w której znajdują się wszystkie dodane przez niego przewodniki (rys. \ref{subfig:web_all}). Oprócz okładki, nazwy i opisu widzi on także status każdego przewodnika. Nieopublikowane przewodniki nie są dostępne do pobrania przez użytkowników aplikacji mobilnej. Aby opublikować swój przewodnik Marian musi nacisnąć przycisk ,,Publikuj''. Od teraz przewodnik może być pobrany na urządzenie mobilne a jego status oznaczony jest zieloną etykietą ,,Opublikowany''. 
+		Korzystając z menu podręcznego Marian wybiera opcję ,,Przewodniki'' $\rightarrow$ ,,Pokaż''. Zostaje przekierowany do widoku tabeli, w której znajdują się wszystkie dodane przez niego przewodniki (rys. \ref{subfig:web_all}). Oprócz okładki, nazwy i opisu widzi on także status każdego przewodnika. Nieopublikowane przewodniki nie są dostępne do pobrania przez użytkowników aplikacji mobilnej. Aby opublikować swój przewodnik Marian musi nacisnąć przycisk ,,Publikuj''. Od teraz przewodnik może być pobrany na urządzenie mobilne a jego status oznaczony jest zieloną etykietą ,,Opublikowany''. 
 		
 	
 		
