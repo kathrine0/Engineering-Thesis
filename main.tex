@@ -676,67 +676,134 @@
 	\setlength{\tabcolsep}{6pt}
 	\renewcommand{\arraystretch}{1.5}
 		
-		\section{Testowanie aplikacji internetowej}
-		
-			\subsection{Tworzenie przewodnika}
-			
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
-				\hline
-				\textbf{Cel testu} & Testowanie poprawnego dodawania przewodnika \\
-				\hline
-				\textbf{Sposób dostępu} & Widok wywołany z poziomu menu ,,Przewodniki'' $\rightarrow$ ,,Dodaj''. Użytkownik powinien posiadać uprawnienia do tworzenia przewodników. \\
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
-				\hline
-				\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
-				\hline
-				
-				1. Wpisanie nazwy przewodnika ,,Lizbona'' w pole ,,Nazwa''. & 2. -- \\
-				3. Wpisanie opisu ,,Lorem ipsum dolor sit amet'' w pole ,,Opis''. & 4. -- \\
-				5. Odnalezienie na mapie miasta Lizbona i kliknięcie w to miejsce. & 6. Wyświetlenie niebieskiego znacznika w miejscu kliknięcia. \\
-				7. Przeciągnięcie w szare pole zdjęcia z dysku twardego w formacie png o wymiarach większych niż 500x500 px. & 8. Wyświetlenie wybranego zdjęcia w szarym polu. \\
-				9. Kliknięcie przycisku ,,Zapisz i kontynuuj''. & 10. Przekierowanie do strony ,,Dodaj atrybuty'' i informacja o sukcesie. \\
-				\hline
-			\end{tabular}
+		\section{Testowanie aplikacji internetowej}		
+			\subsection{Tworzenie przewodnika}			
+				\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+					\hline
+					\textbf{Cel testu} & Testowanie poprawnego dodawania przewodnika \\
+					\hline
+					\textbf{Sposób dostępu} & Widok wywołany z poziomu menu ,,Przewodniki'' $\rightarrow$ ,,Dodaj''. Użytkownik powinien posiadać uprawnienia do tworzenia przewodników. \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
+					\hline
+					\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
+					\hline
+					
+					1. Wpisanie nazwy przewodnika ,,Lizbona'' w pole ,,Nazwa''. & 2. -- \\
+					3. Wpisanie opisu ,,Lorem ipsum dolor sit amet'' w pole ,,Opis''. & 4. -- \\
+					5. Odnalezienie na mapie miasta Lizbona i kliknięcie w to miejsce. & 6. Wyświetlenie niebieskiego znacznika w miejscu kliknięcia. \\
+					7. Przeciągnięcie w szare pole zdjęcia z dysku twardego w formacie png o wymiarach większych niż 500x500 px. & 8. Wyświetlenie wybranego zdjęcia w szarym polu. \\
+					9. Kliknięcie przycisku ,,Zapisz i kontynuuj''. & 10. Przekierowanie do strony ,,Dodaj atrybuty'' i informacja o sukcesie. \\
+					\hline
+				\end{tabular}
 			
 			\subsection{Tworzenie przewodnika z błędami}
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}					
-				\hline
-				\textbf{Cel testu} & Testowanie walidacji pól podczas dodawania przewodnika \\
-				\hline
-				\textbf{Sposób dostępu} & Widok wywołany z poziomu menu ,,Przewodniki'' $\rightarrow$ ,,Dodaj''. Użytkownik powinien posiadać uprawnienia do tworzenia przewodników. \\
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
-				\hline
-				\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
-				\hline
-				
-				1. Pozostawienie pole ,,Nazwa'' i pole ,,Opis'' pustym. & 2. -- \\
-				3. Przeciągnięcie w szare pole zdjęcia z dysku twardego w formacie png o wymiarach większych niż 500x500 px. & 4. Wyświetlenie wybranego zdjęcia w szarym polu. \\
-				5. Kliknięcie przycisku ,,Zapisz i kontynuuj''. & 6. Wyświetlenie informacji błędach: ,,Nazwa nie może być pusta'', ,,Opis nie może być pusty'', ,,Proszę wybrać miejsce''. \\
-				\hline
-			\end{tabular}
+				\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}					
+					\hline
+					\textbf{Cel testu} & Testowanie walidacji pól podczas dodawania przewodnika \\
+					\hline
+					\textbf{Sposób dostępu} & Widok wywołany z poziomu menu ,,Przewodniki'' $\rightarrow$ ,,Dodaj''. Użytkownik powinien posiadać uprawnienia do tworzenia przewodników. \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
+					\hline
+					\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
+					\hline
+					
+					1. Pozostawienie pole ,,Nazwa'' i pole ,,Opis'' pustym. & 2. -- \\
+					3. Przeciągnięcie w szare pole zdjęcia z dysku twardego w formacie png o wymiarach większych niż 500x500 px. & 4. Wyświetlenie wybranego zdjęcia w szarym polu. \\
+					5. Kliknięcie przycisku ,,Zapisz i kontynuuj''. & 6. Wyświetlenie informacji błędach: ,,Nazwa nie może być pusta'', ,,Opis nie może być pusty'', ,,Proszę wybrać miejsce''. \\
+					\hline
+				\end{tabular}
 			
 			\subsection{Modyfikacja atrybutu przewodnika}
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}					
-				\hline
-				\textbf{Cel testu} & Testowanie edycji atrybutu przewodnika \\
-				\hline
-				\textbf{Sposób dostępu} & Widok wywołany z poziomu menu ,,Przewodniki'' $\rightarrow$ ,,Pokaż''. Wybrany przewodnik: ,,Lizbona''. Użytkownik powinien posiadać uprawnienia do tworzenia przewodników i być twórcą przewodnika ,,Lizbona''. \\
-				\hline
-				\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
-				\hline
-				\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
-				\hline
-				1. Odnalezienie atrybutu ,,Historia'' i kliknięcie ,,Edytuj''. & 2. Podmiana tekstów wybranego atrybutu na pola tekstowe. Podmiana obrazku symbolu na przycisk. \\
-				3. Zmiana tytułu atrybutu na ,,Lizboński renesans''. Dodanie ,,Lorem ipsum'' do opisu. & 4. --\\
-				5. Kliknięcie przycisku z ikoną symbolu. & 6. Wyświetlenie wyskakującego okna z dostępnymi symbolami. \\
-				7. Wybranie symbolu z 3 rzędu, 2 kolumny. & 8. Wyświetlenie nowo wybranego symbolu w miejscu starego. \\
-				9. Kliknięcie przycisku ,,Zapisz'' & 10. Podmiana pól tekstowych i przycisku symbolu na statyczny tekst z uwzględnieniem zmian. \\				
-				\hline
+				\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}					
+					\hline
+					\textbf{Cel testu} & Testowanie edycji atrybutu przewodnika \\
+					\hline
+					\textbf{Sposób dostępu} & Widok wywołany z poziomu menu ,,Przewodniki'' $\rightarrow$ ,,Pokaż''. Wybrany przewodnik: ,,Lizbona''. Użytkownik powinien posiadać uprawnienia do tworzenia przewodników i być twórcą przewodnika ,,Lizbona''. \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
+					\hline
+					\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
+					\hline
+					1. Odnalezienie atrybutu ,,Historia'' i kliknięcie ,,Edytuj''. & 2. Podmiana tekstów wybranego atrybutu na pola tekstowe. Podmiana obrazku symbolu na przycisk. \\
+					3. Zmiana tytułu atrybutu na ,,Lizboński renesans''. Dodanie ,,Lorem ipsum'' do opisu. & 4. --\\
+					5. Kliknięcie przycisku z ikoną symbolu. & 6. Wyświetlenie wyskakującego okna z dostępnymi symbolami. \\
+					7. Wybranie symbolu z 3 rzędu, 2 kolumny. & 8. Wyświetlenie nowo wybranego symbolu w miejscu starego. \\
+					9. Kliknięcie przycisku ,,Zapisz'' & 10. Podmiana pól tekstowych i przycisku symbolu na statyczny tekst z uwzględnieniem zmian. \\				
+					\hline
+				\end{tabular}
+		
+		\section{Testowanie aplikacji mobilnej}		
+			\subsection{Odczytanie informacji o obiekcie turystycznym z przewodnika}
+		
+				\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+					\hline
+					\textbf{Cel testu} & Testowanie poprawnego odczytu informacji o danym miejscu \\
+					\hline
+					\textbf{Sposób dostępu} & Widok wywołany poprzez włączenie aplikacji. Użytkownik powinien być zalogowany i mieć przewodnik ,,Lizbona'' już pobrany na swój telefon. \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
+					\hline
+					\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
+					\hline
+					1. Wybranie listy pobranych przewodników pozycję ,,Lizbona''. & 2 Wyświetlenie widoku przewodnika. \\
+					3. Dotknięcie obrazku mapy. & 4. Wyświetlenie widoku mapy wraz z markerami miejsc. \\
+					5. Wybranie markera opisanego jako ,,Castelo de Sao Jorge''. & 6. Wyświetlenie chmurki z nazwą miejsca. \\
+					7. Dotknięcie przycisku z białą strzałką na zielonym tle. & 8. Wyświetlenie widoku miejsca wraz z jego opisem. \\
+					\hline
 			\end{tabular}
 		
-		\section{Testowanie aplikacji mobilnej}
+			\subsection{Nawigacja z kompasem}
+		
+				\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+					\hline
+					\textbf{Cel testu} & Testowanie poprawnego działania nawigacji z kompasem \\
+					\hline
+					\textbf{Sposób dostępu} & Widok wywołany poprzez wybranie z pobranych przewodników pozycji ,,Lizbona'' i przejście do mapy. Użytkownik powinien być zalogowany i mieć ten przewodnik już pobrany na swój telefon. GPS powinien być aktywny. \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
+					\hline
+					\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
+					\hline
+					1. Dotknięcie zielonego markera GPS w prawym, dolnym roku. & 2. Wycentrowanie mapy do aktualnej pozycji użytkownika. \\
+					3. Ponowne dotknięcie markera GPS. & 4. Wyświetlenie szarego pola możliwych pozycji i obrót mapy tak, aby północ wskazywała faktyczną północ telefonu. \\
+					5. Obrót telefonem & 6. Obrót mapy zgodnie z obrotem telefonu. \\
+					\hline
+				\end{tabular}
+	
+			\subsection{Pobranie danych}
+			
+				\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+					\hline
+					\textbf{Cel testu} & Testowanie poprawnego działania pobierania danych \\
+					\hline
+					\textbf{Sposób dostępu} & Widok wywołany poprzez włączenie aplikacji. Użytkownik powinien być zalogowany. Transfer danych powinien być aktywny. \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
+					\hline
+					\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
+					\hline
+					1. Dotknięcie ikony ,,odśwież'' znajdującej się na pasku aplikacji. & 2. Wyświetlenie kółka postępu. \\
+					3. Oczekiwanie & 4. Wyświetlenie pobranych przewodników w dwóch kategoriach: ,,Pobrane'' i ,,Polecane'' \\
+					\hline
+				\end{tabular}
+			
+			\subsection{Nieudana próba pobrania danych}
+				\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+					\hline
+					\textbf{Cel testu} & Testowanie obsługi błędów podczas pobierania danych \\
+					\hline
+					\textbf{Sposób dostępu} & Widok wywołany poprzez włączenie aplikacji. Użytkownik powinien być zalogowany. Transfer danych powinien być wyłączony. \\
+					\hline
+					\multicolumn{2}{|c|}{\textbf{Scenariusz (kroki testowe)}} \\			
+					\hline
+					\textbf{Akcja użytkownika} & \textbf{Odpowiedź systemu} \\
+					\hline
+					1. Dotknięcie ikony ,,odśwież'' znajdującej się na pasku aplikacji. & 2. Wyświetlenie kółka postępu. \\
+					3. Oczekiwanie & 4. Wyświetlenie komunikatu o braku połączeniu z Internetem. Wyświetlenie poprzednich pozycji na listach. \\
+					\hline
+				\end{tabular}
 	
 	\chapter{Wnioski końcowe}
 	\label{id:cha:wnioski_koncowe}
