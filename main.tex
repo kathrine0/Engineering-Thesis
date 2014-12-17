@@ -272,8 +272,7 @@
 				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
 				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
 				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
-				\item[Cache'owalność] -- \ksremark{to jakoś trzeba będzie napisać po polsku: może <<lokalność>>?} %jak to przetłumaczyć? :(
-				serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
+				\item[Lokalność]\footnote{ang. \textit{cachable}} -- serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
 				
 			\end{description}
 			
