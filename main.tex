@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[a4paper]{book}
 %11pt,a4paper,twoside
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
@@ -8,6 +8,7 @@
 \usepackage{comment}
 \usepackage{hyperref}
 \usepackage{mathtools}
+\usepackage{wasysym} % symbole astronomiczne
  
 \frenchspacing
 
@@ -134,10 +135,12 @@
 	
 	\ksremark{Trochę bym przeredagował ten rozdział. Zlikwidowałbym tytuły poszczególnych sekcji. Trochę poprzedstawiałem to, co jest. Ale trzeba by się temu jeszcze przyjrzeć, żeby wygładzić tekst.}
 	
-		    \ksremark{Zdanie wstępu, mówiące o brakujących rozwiązaniach, które są wspomniane w następnym zdaniu.}
-			Obecnie na rynku istnieje nisza, jeśli chodzi o tego typu rozwiązania. W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
+		    \ksremark{Trochę ,,poetyckiego'' wprowadzenia.}
+			
 			%
 			Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
+			
+			W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
 			
 			Celem niniejszego projektu jest stworzenie przyjaznej platformy dedykowanej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składa się aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
 			%			
@@ -276,6 +279,7 @@
 		\end{figure}
 		
 		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa (\emph{WebService}). Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
+		\ksremark{Dodałbym jedno, dwa zdania opisujące rysunek.}
 			
 			\subsection{Architektura aplikacji serwerowej}
 			
@@ -288,8 +292,8 @@
 				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
 				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
 				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
-				\item[Cache'owalność] -- \ksremark{to jakoś trzeba będzie napisać po polsku} %jak to przetłumaczyć? :(
-				serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej cache przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
+				\item[Cache'owalność] -- \ksremark{to jakoś trzeba będzie napisać po polsku: może <<lokalność>>?} %jak to przetłumaczyć? :(
+				serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
 				
 			\end{description}
 			
@@ -353,11 +357,47 @@
 			
 		\section{Najważniejsze algorytmy}
 				
-			\subsection{Funkcja Haversin}
+			\subsection{Wyznaczanie odległości między punktami na mapie}
+						
+			\ksremark{To trzeba przerobić, bo nie do końca jest poprawne, $\mathrm{haversin}(\theta) = \mathrm{sem}(\theta) = \sin^2\left(\frac{\theta}{2}\right) $ jest dość rzadko dziś używaną funkcją. Kiedyś była popularniejsza, bo obliczenia nawigacyjne i astronomiczne wykonywano ręcznie, więc tablicowano funkcje $\mathrm{haversin}(\theta)$ dla łatwiejszych rachunków.}
+			
+			{\color{blue}
+			Obliczenie długości ortodromy łączącej punkty $A$ i $B$ o współrzędnych geograficznych odpowiednio $A(\varphi_a, \lambda_a)$ i $B(\varphi_b, \lambda_b)$ na sferze jest dość proste. Wystarczy skonstruować trójkąt sferyczny biorąc jeden z biegunów. Z prawa kosinusów dla trójkąta sferycznego mamy \cite{id:Mietelski1989Atronomia}:
+			\begin{comment}
+			@book{id:Mietelski1989Atronomia,
+			   author = {Jan Mietelski},
+			   title  = {Astronomia w geografii},
+			   year   = {1989},
+			   publisher = {Pa{\'{n}}stwowe Wydawnictwo Naukowe},
+			}
+			\end{comment}
+			\begin{align}
+			\cos l & = \cos (\pi/2 - \varphi_a) \cos (\pi/2 - \varphi_b) + \sin (\pi/2 - \varphi_a) \sin (\pi/2 - \varphi_b) \cos (\lambda_a - \lambda_b),
+			\end{align}
+			gdzie $l$ to kąt ortodromy, wzór można przekształcić
+			\begin{align}
+			\cos l & = \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b).\label{id:eq:cos:l:2}						
+			\end{align}
+			Wyznaczenie długości $d$ ortodromy jest proste:
+			\begin{align}
+			d & =   R_{\earth} l,
+			\end{align}
+			gdzie $R_{\earth} \approx 6371{,}0\,$km to średni promień Ziemi.
+			Uwzględniając równanie \eqref{id:eq:cos:l:2} otrzymujemy
+			\begin{align}
+		    d & =   R_{\earth} \arccos \left( \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b) \right),\label{id:eq:d}
+			\end{align}
+			Z tego względu, że dla blisko położonych punktów mogą pojawić się problemy numeryczne (co w dzisiejszych czasach jest już rzadsze), można wzór \eqref{id:eq:d} przekształcić do łatwiejszej obliczeniowo postaci
+			\begin{align}
+            d = 2R_{\earth} \arcsin\sqrt{\sin^{2}\left(\frac{\varphi_a - \varphi_b}{2}\right) + \cos\varphi_a\cos\varphi_b\sin^{2}\left(\frac{\lambda_a - \lambda_b}{2}\right) }.
+			\end{align}
+						
+			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. 
+			}
 			
 			Aby obliczyć odległość między dwoma obiektami na mapie została wykorzystana funkcja Harvesin. Jest to funkcja, która pozwala na obliczenie linii ortodromy mając dane szerokości i długości geograficzne punktów. 
-			
-			Matematyczne równanie dla tej funkcji prezentuje się następująco:
+						
+    		Matematyczne równanie dla tej funkcji prezentuje się następująco:
 			
 			$haversin (\dfrac{d}{r}) = \haversin(\phi_{2} - \phi_{1}) + \cos(\phi_{1})\cos(\phi_{2})\haversin(\lambda_{2} - \lambda_{1})$
 			
@@ -452,7 +492,9 @@
 	
 	
 		\section{Instrukcja obsługi}
-		\ksremark{Tu warto by napisać, że zostanie przedstawiona \emph{happy path}.}
+		
+		Poniższa sekcja zawiera instrukcję obsługi aplikacji mobilnej i aplikacji internetowej dla użytkowników końcowych. 
+		
 		\subsection{Instrukcja obsługi aplikacji mobilnej}
 		
 				\begin{figure}[H]
