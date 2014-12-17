@@ -1,4 +1,4 @@
-\documentclass{book}
+\documentclass[a4paper]{book}
 %11pt,a4paper,twoside
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
@@ -7,6 +7,8 @@
 \usepackage{indentfirst}
 \usepackage{comment}
 \usepackage{hyperref}
+\usepackage{mathtools}
+\usepackage{wasysym} % symbole astronomiczne
  
 \frenchspacing
 
@@ -28,40 +30,65 @@
 \newcommand{\appName}{\emph{TravelGuide} }
 %czy mogę zmienić nazwę aplikacji na "TravelGuide" zamiast "Wirtualny Przewodnik"? Czyli tak, jak jest logo, etc.?
 
+% ustawienia matematyczne
+\DeclareMathOperator{\haversin}{haversin}
+
 % listing kodu
 \usepackage{listings}
 \usepackage{color}
 
-\lstdefinelanguage{JavaScript}{
-	keywords={typeof, new, true, false, catch, function, return, null, catch, switch, var, if, in, while, do, else, case, break},
-	keywordstyle=\color{blue}\bfseries,
-	ndkeywords={class, export, boolean, throw, implements, import, this},
-	ndkeywordstyle=\color{darkgray}\bfseries,
-	identifierstyle=\color{black},
-	sensitive=false,
-	comment=[l]{//},
-	morecomment=[s]{/*}{*/},
-	commentstyle=\color{purple}\ttfamily,
-	stringstyle=\color{red}\ttfamily,
-	morestring=[b]',
-	morestring=[b]"
+\lstloadlanguages{
+	csh
 }
 
+\definecolor{red}{rgb}{0.6,0,0} % for strings
+\definecolor{blue}{rgb}{0,0,0.6}
+\definecolor{green}{rgb}{0,0.8,0}
+\definecolor{cyan}{rgb}{0.0,0.6,0.6}
+
 \lstset{
-	language=JavaScript,
-	extendedchars=true,
-	basicstyle=\small\tt,
-	showstringspaces=false,
-	showspaces=false,
-	numbers=left,
-	numberstyle=\footnotesize,
-	numbersep=9pt,
-	tabsize=4,
-	breaklines=true,
-	showtabs=false,
-	captionpos=b,
-	belowskip=1.5em,
-	aboveskip=1.5em
+	language=csh,
+	basicstyle=\footnotesize\ttfamily, 
+	numbers=left, 
+	numberstyle=\tiny, 
+	numbersep=5pt, 
+	tabsize=2, 
+	extendedchars=true, 
+	breaklines=true, 
+	frame=b,
+	stringstyle=\color{blue}\ttfamily, 
+	showspaces=false, 
+	showtabs=false, 
+	xleftmargin=17pt,
+	framexleftmargin=17pt,
+	framexrightmargin=5pt,
+	framexbottommargin=4pt,
+	commentstyle=\color{green},
+	morecomment=[l]{//}, %use comment-line-style!
+	morecomment=[s]{/*}{*/}, %for multiline comments
+	showstringspaces=false, 
+	morekeywords={  abstract, event, new, struct,
+		as, explicit, null, switch,
+		base, extern, object, this,
+		bool, false, operator, throw,
+		break, finally, out, true,
+		byte, fixed, override, try,
+		case, float, params, typeof,
+		catch, for, private, uint,
+		char, foreach, protected, ulong,
+		checked, goto, public, unchecked,
+		class, if, readonly, unsafe,
+		const, implicit, ref, ushort,
+		continue, in, return, using,
+		decimal, int, sbyte, virtual,
+		default, interface, sealed, volatile,
+		delegate, internal, short, void,
+		do, is, sizeof, while,
+		double, lock, stackalloc,
+		else, long, static,
+		enum, namespace, string, var},
+	keywordstyle=\color{cyan},
+	identifierstyle=\color{red},
 }
 
 % document settings
@@ -108,19 +135,12 @@
 	
 	\ksremark{Trochę bym przeredagował ten rozdział. Zlikwidowałbym tytuły poszczególnych sekcji. Trochę poprzedstawiałem to, co jest. Ale trzeba by się temu jeszcze przyjrzeć, żeby wygładzić tekst.}
 	
-		\begin{figure}		
-				\centering
-				\includegraphics[width=1.0\textwidth]{images/fly4freeAnkieta.pdf}
-				\caption{Wyniki ankiety przeprowadzonej wśród użytkowników forum fly4free.pl}
-				\label{fig:fly4freeAnkieta}
-			\end{figure}
-			% nie umiem zrobić, żeby font był taki jak w reszcie dokumentu :( pdf_tex mnie nie słucha :(
-			% KS: W gotowym rysunku to moze byc trudne.
-		
-		    \ksremark{Zdanie wstępu, mówiące o brakujących rozwiązaniach, które są wspomniane w następnym zdaniu.}
-			Obecnie na rynku istnieje nisza, jeśli chodzi o tego typu rozwiązania. W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
+		    \ksremark{Trochę ,,poetyckiego'' wprowadzenia.}
+			
 			%
 			Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
+			
+			W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
 			
 			Celem niniejszego projektu jest stworzenie przyjaznej platformy dedykowanej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składa się aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
 			%			
@@ -129,8 +149,6 @@
 			Dzięki wykorzystaniu nowoczesnych technologii aplikacja może podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych. 
 		
 	        \ksremark{Tu jeszcze trzeba opisać organizację pracy. Rozdział \ref{id:cha:wprowadzenie} opisuje \ldots\ Rozdział \ref{id:cha:technologia} przedstawia użyte technologie, zarówno w części mobilnej (podrozdział \ref{...}), jak i webowej  (podrozdział \ref{...})  \ldots}
-	
-			
 	
 	
 	% % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
@@ -172,7 +190,7 @@
 	\chapter{Technologia}
 	\label{id:cha:technologia}
 	
-	\ksremark{Rozdział opisuje technologie i narzędzia użyte do stworzenia części webowej, serwerowej i mobilnej aplikacji.}
+	Rozdział opisuje technologie i narzędzia użyte do stworzenia części webowej, serwerowej i mobilnej aplikacji.
 	
 		\section{Narzędzia}		
 			\subsection{Środowisko programistyczne}
@@ -199,7 +217,6 @@
 		
 %		\section{Technologia wykorzystana w części serwerowej}
 		\section{Aplikacja serwerowa}
-		\ksremark{Skróciłem tytuł podrozdziału.}
 		
 		Część serwerowa, realizowana jako WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2 \cite{id:WebApi}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
 		
@@ -216,7 +233,6 @@
 		
 %		\section{Technologia wykorzystana w części internetowej} 
 		\section{Aplikacja internetowa} 
-		\ksremark{Skróciłem tytuł podrozdziału.}
 			
 		Aplikacja internetowa napisana została w modelu \emph{client-side}. Oznacza to, że cała aplikacja interpretowana jest po stronie przeglądarki i nie wymaga specjalistycznego serwera. Aby działała poprawnie, wystarczy dowolny serwer HTTP. Kod został napisany przy użyciu następujących języków: Javascript, HTML i LESS\footnote{\emph{Leaner CSS} -- dynamiczny język arkuszy stylów.}. 
         %		
@@ -240,9 +256,7 @@
 		Za część graficzną aplikacji odpowiada zmodyfikowany przez autorkę szablon AdminLTE \cite{id:AdminLTE} napisany w oparciu o Twitter Bootstrap. Szablon opisany jest językiem LESS, który jest następnie transformowany do CSS.
 		
 %		\section{Technologia wykorzystana w części mobilnej}
-		\section{Aplikacja mobilna}
-		\ksremark{Skróciłem tytuł podrozdziału.}
-		
+		\section{Aplikacja mobilna}		
 	
 		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps, więc cała logika wydzielona jest do osobnego projektu.
 		
@@ -265,6 +279,7 @@
 		\end{figure}
 		
 		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa (\emph{WebService}). Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
+		\ksremark{Dodałbym jedno, dwa zdania opisujące rysunek.}
 			
 			\subsection{Architektura aplikacji serwerowej}
 			
@@ -277,8 +292,8 @@
 				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
 				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
 				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
-				\item[Cache'owalność] -- \ksremark{to jakoś trzeba będzie napisać po polsku} %jak to przetłumaczyć? :(
-				serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej cache przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
+				\item[Cache'owalność] -- \ksremark{to jakoś trzeba będzie napisać po polsku: może <<lokalność>>?} %jak to przetłumaczyć? :(
+				serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
 				
 			\end{description}
 			
@@ -295,7 +310,7 @@
 			
 			Repozytorium przetwarza żądanie. Jeżeli parametrem był obiekt typu modelu wiążącego mapuje go na model, a następnie za pomocą \emph{Entity Framework} komunikuje się z bazą danych. Rezultat jest następnie ponownie mapowany na model wiążący i przekazywany do akcji kontrolera. Kontroler zwraca wynik w postaci odpowiedzi HTTP (\emph{HTTP Response}).
 			
-			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
+			Schemat architektury aplikacji serwerowej przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
 			
 			\subsection{Architektura aplikacji internetowej}		
 			
@@ -305,7 +320,7 @@
 			
 			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z~powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~wiązany (\emph{Bind}) z~widokiem.								
 
-			Schemat architektury aplikacji mobilnej \ksremark{na pewno mobilnej?} przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
+			Schemat architektury aplikacji internetowej przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
 			
 			\begin{figure}
 							\centering
@@ -341,10 +356,143 @@
 			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_mobile}. 
 			
 		\section{Najważniejsze algorytmy}
+				
+			\subsection{Funkcja Haversin}
+            \ksremark{Zmieniłbym tytuł np. na <<Wyznaczanie odległości między punktami>>.}
+			
+						
+			\ksremark{To trzeba przerobić, bo nie do końca jest poprawne, $\mathrm{haversin}(\theta) = \mathrm{sem}(\theta) = \sin^2\left(\frac{\theta}{2}\right) $ jest dość rzadko dziś używaną funkcją. Kiedyś była popularniejsza, bo obliczenia nawigacyjne i astronomiczne wykonywano ręcznie, więc tablicowano funkcje $\mathrm{haversin}(\theta)$ dla łatwiejszych rachunków.}
+			
+			{\color{blue}
+			Obliczenie długości ortodromy łączącej punkty $A$ i $B$ o współrzędnych geograficznych odpowiednio $A(\varphi_a, \lambda_a)$ i $B(\varphi_b, \lambda_b)$ na sferze jest dość proste. Wystarczy skonstruować trójkąt sferyczny biorąc jeden z biegunów. Z prawa kosinusów dla trójkąta sferycznego mamy \cite{id:Mietelski1989Atronomia}:
+			\begin{comment}
+			@book{id:Mietelski1989Atronomia,
+			   author = {Jan Mietelski},
+			   title  = {Astronomia w geografii},
+			   year   = {1989},
+			   publisher = {Pa{\'{n}}stwowe Wydawnictwo Naukowe},
+			}
+			\end{comment}
+			\begin{align}
+			\cos l & = \cos (\pi/2 - \varphi_a) \cos (\pi/2 - \varphi_b) + \sin (\pi/2 - \varphi_a) \sin (\pi/2 - \varphi_b) \cos (\lambda_a - \lambda_b),
+			\end{align}
+			gdzie $l$ to kąt ortodromy, wzór można przekształcić
+			\begin{align}
+			\cos l & = \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b).\label{id:eq:cos:l:2}						
+			\end{align}
+			Wyznaczenie długości $d$ ortodromy jest proste:
+			\begin{align}
+			d & =   R_{\earth} l,
+			\end{align}
+			gdzie $R_{\earth} \approx 6371{,}0\,$km to średni promień Ziemi.
+			Uwzględniając równanie \eqref{id:eq:cos:l:2} otrzymujemy
+			\begin{align}
+		    d & =   R_{\earth} \arccos \left( \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b) \right),\label{id:eq:d}
+			\end{align}
+			Z tego względu, że dla blisko położonych punktów mogą pojawić się problemy numeryczne (co w dzisiejszych czasach jest już rzadsze), można wzór \eqref{id:eq:d} przekształcić do łatwiejszej obliczeniowo postaci
+			\begin{align}
+            d = 2R_{\earth} \arcsin\sqrt{\sin^{2}\left(\frac{\varphi_a - \varphi_b}{2}\right) + \cos\varphi_a\cos\varphi_b\sin^{2}\left(\frac{\lambda_a - \lambda_b}{2}\right) }.
+			\end{align}
+						
+			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. 
+			}
+			
+			Aby obliczyć odległość między dwoma obiektami na mapie została wykorzystana funkcja Harvesin. Jest to funkcja, która pozwala na obliczenie linii ortodromy mając dane szerokości i długości geograficzne punktów. 
+						
+    		Matematyczne równanie dla tej funkcji prezentuje się następująco:
+			
+			$haversin (\dfrac{d}{r}) = \haversin(\phi_{2} - \phi_{1}) + \cos(\phi_{1})\cos(\phi_{2})\haversin(\lambda_{2} - \lambda_{1})$
+			
+			gdzie:
+			
+			\begin{itemize}
+				\item \textit{haversin} -- funkcja haversin:
+				
+				$\haversin(\theta) = sin^{2}(\dfrac{\theta}{2}) = \dfrac{1-\cos(\theta)}{2}$,
+				
+				\item \textit{d} -- dystans między dwoma punktami (po kole wielkim\footnote{Koło wielkie - największe koło, jakie można wpisać w kulę. Jego średnica jest równa średnicy kuli, a samo koło dzieli ją na dwie symetryczne połowy zwane półkulami.}),
+				
+				\item \textit{r} -- promień kuli,
+				
+				\item $\phi_{1}$, $\phi_{2}$ -- szerokość geograficzna obu punktów,
+				
+				\item $\lambda_{1}$, $\lambda_{2}$ -- wysokość geograficzna obu punktów.
+			\end{itemize}
+		
+		Szukaną wartością jest \textit{d}. Drogą przekształceń matematycznych dystans można wyznaczyć następująco:
+		
+				$d = r\haversin^{-1}(h) = 2r \arcsin(\sqrt{h})$, gdzie
+				
+				$h = \haversin(\dfrac{d}{r}) $, zatem
+				
+				$d = 2r \arcsin(\sqrt{\haversin(\phi_{2} - \phi_{1}) + \cos(\phi_{1})\cos(\phi_{2})\haversin(\lambda_{2} - \lambda_{1})}) \Rightarrow $
+				
+				\boldmath{$d = 2r \arcsin(\sqrt{sin^{2}(\frac{\phi_{2} - \phi_{1}}{2}) + \cos(\phi_{1})\cos(\phi_{2})\sin^{2}(\frac{\lambda_{2} - \lambda_{1}}{2}) }) $}
+		
+		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:haversin}.
+		
+		\begin{lstlisting}[label={lst:haversin},caption=Funkcja obliczająca dystans pomiędzy pozycją użytkownika a punktem na mapie]
+		
+		public void SetDistance(Geoposition currentPosition)
+		{
+			const double degreesToRadians = (Math.PI / 180.0);
+			const double earthRadius = 6371; // kilometers
+			
+			// convert latitude and longitude values to radians
+			var prevRadLat = _placeLatitude * degreesToRadians;
+			var prevRadLong = _placeLongitude * degreesToRadians;
+			var currRadLat = currentPosition.Coordinate.Point.Position.Latitude * degreesToRadians;
+			var currRadLong = currentPosition.Coordinate.Point.Position.Longitude * degreesToRadians;
+			
+			// calculate radian delta between each position.
+			var radDeltaLat = currRadLat - prevRadLat;
+			var radDeltaLong = currRadLong - prevRadLong;
+			
+			// calculate distance
+			var expr1 = (Math.Sin(radDeltaLat / 2.0) *
+			Math.Sin(radDeltaLat / 2.0)) +
+			
+			(Math.Cos(prevRadLat) *
+			Math.Cos(currRadLat) *
+			Math.Sin(radDeltaLong / 2.0) *
+			Math.Sin(radDeltaLong / 2.0));
+			
+			var expr2 = 2.0 * Math.Atan2(Math.Sqrt(expr1),
+			Math.Sqrt(1 - expr1));
+			
+			var distance = (earthRadius * expr2);
+			this.Distance = distance * 1000;  // return results as meters
+		}
+		
+		\end{lstlisting}
+
+		%Czy komentarze w kodzie powinny być po polsku?
+
 		\section{Przypadki użycia}
 		
 		
 	\chapter{Specyfikacja zewnętrzna}
+		\section{Wymagania}
+		
+		Aplikacja mobilna zaprojektowana jest z myślą o platformie \emph{Windows Phone 8.1}. Na chwilę obecną nie jest dostępna dla użytkowników systemów \emph{Android} czy \emph{iOS}, jednakże docelowo zostanie dodane wsparcie dla tych platform. Jeżeli użytkownik posiada telefon z systemem \emph{Windows Phone 8}, powinien najpierw zaktualizować swój system. Następnie może pobrać i korzystać z aplikacji. System \emph{Windows Phone 7} nie jest wspierany.
+		
+		Aplikacja internetowa do poprawnego działania wymaga nowoczesnej przeglądarki z włączoną obsługą JavaScript. Wspierane przeglądarki:
+		\begin{itemize}
+			\item Google Chrome w wersji 39 lub nowszy;
+			\item Mozilla Firefox w wersji 32 lub nowszy;
+			\item Opera w wersji 26 lub nowsza;
+			\item Internet Explorer 11 lub nowszy.
+		\end{itemize}
+		
+		Aplikacja internetowa działa także na urządzeniach o mniejszych rozdzielczościach takich jak tablety czy telefony.
+		
+		\section{Instalacja}
+		
+		Aplikacja mobilna \appName w chwili obecnej zainstalowana może być jedynie na telefonach z odblokowaną opcją deweloperską. Docelowo jednak program zostanie umieszczony w sklepie \emph{Windows Store}, skąd będzie dostępny do pobrania dla użytkowników polsko- i angielskojęzycznych. 
+		
+		Aplikacja internetowa nie wymaga instalacji. Dostępna jest dla każdego, kto jest podłączony do Internetu, dysponuje kompatybilną przeglądarką internetową i posiada uprawnienia do dodawania nowych przewodników. 
+	
+	
 		\section{Instrukcja obsługi}
 		\ksremark{Tu warto by napisać, że zostanie przedstawiona \emph{happy path}.}
 		\subsection{Instrukcja obsługi aplikacji mobilnej}
@@ -378,22 +526,7 @@
 					\begin{subfigure}{0.3\textwidth}
 						\includegraphics[width=\textwidth]{screenshots/mobile/mobile6.png}
 						\caption{\label{subfig:mobile_guides}}	
-					\end{subfigure}
-					\hfill
-					\begin{subfigure}{0.3\textwidth}
-						\includegraphics[width=\textwidth]{screenshots/mobile/mobile4.png}					
-						\caption{\label{subfig:mobile_recommended}}
-					\end{subfigure}
-					\hfill
-					\begin{subfigure}{0.3\textwidth}
-						\includegraphics[width=\textwidth]{screenshots/mobile/mobile5.png}	
-						\caption{\label{subfig:mobile_buy}}
-					\end{subfigure}
-					\hfill
-					\begin{subfigure}{0.3\textwidth}
-						\includegraphics[width=\textwidth]{screenshots/mobile/mobile6.png}
-						\caption{\label{subfig:mobile_guides}}	
-					\end{subfigure}
+					\end{subfigure}			
 					
 				\end{figure}
 				\begin{figure}[H]
@@ -430,9 +563,7 @@
 					\end{subfigure}	
 					\caption{}
 				\end{figure}
-				
-				
-		
+									
 		Niech przykładowym użytkownikiem systemu będzie Jacek Podróżnik. Jacek wybiera się na krótki urlop do Lizbony i chciałby zaopatrzyć się w aplikację na swój smarfon, która pomoże mu jak najlepiej poznać nowe miejsce.  
 		
 		Jacek pobiera aplikację z \emph{Windows Store}. Program jest gotowy do użytku zaraz po instalacji. Po włączeniu widoczny jest ekran powitalny z logo (rys.\ref{subfig:mobile_splash}). Chociaż aplikacja może działać w trybie \emph{offline}, podczas pierwszego włączenia wymagane jest połączenie z Internetem. 
@@ -441,7 +572,7 @@
 		
 		Jeżeli podczas rejestracji wystąpią błędy, użytkownik zostanie o tym powiadomiony za pomocą wyskakującego okienka z komunikatem. W przypadku Jacka proces przebiega pomyślnie, i zostaje on przekierowany na stronę z listą polecanych przewodników (\ref{subfig:mobile_recommended}). Tutaj może wybrać interesujący go przewodnik dotykając go na ekranie swojego urządzenia.
 		
-		Jacek wybiera przewodnik po Lizbonie i zostaje przekierowany do widoku pobierania (rys. \ref{subfig:mobile_buy}). W momencie, kiedy naciska zielony przycisk ,,Pobierz'', aplikacja rozpoczyna pobieranie danych w tle. W tym czasie użytkownik zostaje poinformowany, że aby w pełni używać programu w trybie \emph{offline}\ksremark{przecinek} powinien również pobrać mapy dla danego miejsca. Po zamknięciu okienka, Jacek zostaje ponownie przekierowany do widoku przewodników. Tym razem na liście widać świeżo pobrany przewodnik o Lizbonie (rys. \ref{subfig:mobile_guides}). 
+		Jacek wybiera przewodnik po Lizbonie i zostaje przekierowany do widoku pobierania (rys. \ref{subfig:mobile_buy}). W momencie, kiedy naciska zielony przycisk ,,Pobierz'', aplikacja rozpoczyna pobieranie danych w tle. W tym czasie użytkownik zostaje poinformowany, że aby w pełni używać programu w trybie \emph{offline}, powinien również pobrać mapy dla danego miejsca. Po zamknięciu okienka, Jacek zostaje ponownie przekierowany do widoku przewodników. Tym razem na liście widać świeżo pobrany przewodnik o Lizbonie (rys. \ref{subfig:mobile_guides}). 
 		
 		Podróżnik dotyka miniaturki Lizbony i przechodzi do właściwej części przewodnika (rys. \ref{subfig:mobile_guidedetail}). W tej sekcji Jacek może poczytać informacje dotyczące miasta (rys. \ref{subfig:mobile_guidedetail2}). Między kolejnymi elementami użytkownik może poruszać się przeciągając palcem po ekranie lub korzystając z przycisków pod mapą. 
 		
@@ -453,25 +584,107 @@
 
 		\subsection{Instrukcja obsługi aplikacji internetowej}
 		
-		\section{Wymagania}
+		\begin{figure}[H]
+			
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/1logowanie.png}					
+				\caption{\label{subfig:web_login}}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/2powitanie.png}					
+				\caption{\label{subfig:web_welcome}}	
+			\end{subfigure}
+			
+		\end{figure}
+		\begin{figure}[H]
+			\ContinuedFloat
+			
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/3dodawanie.png}					
+				\caption{\label{subfig:web_add}	}
+			\end{subfigure}
+			\hfill			
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/4dodawanie2.png}					
+				\caption{\label{subfig:web_add2}}
+			\end{subfigure}
+			
+		\end{figure}
+		\begin{figure}[H]
+			\ContinuedFloat
+			
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/5dodawanie3.png}						
+				\caption{\label{subfig:web_add3}}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/6widok.png}
+				\caption{\label{subfig:web_view}}	
+			\end{subfigure}
+			
+		\end{figure}
+		\begin{figure}[H]
+			\ContinuedFloat
+			
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/7edycja.png}					
+				\caption{\label{subfig:web_edit}}
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/8edycja2.png}	
+				\caption{\label{subfig:web_edit2}}
+			\end{subfigure}
+			
+		\end{figure}
+		\begin{figure}[H]
+			\ContinuedFloat
+			
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/9edycja3.png}
+				\caption{\label{subfig:web_edit3}}	
+			\end{subfigure}
+			\hfill
+			\begin{subfigure}{1\textwidth}
+				\includegraphics[width=\textwidth]{screenshots/web/10wszystkie.png}
+				\caption{\label{subfig:web_all}}	
+			\end{subfigure}
+		\end{figure}
 		
-		Aplikacja mobilna zaprojektowana jest z myślą o platformie \emph{Windows Phone 8.1}. Na chwilę obecną nie jest dostępna dla użytkowników systemów \emph{Android} czy \emph{iOS}, jednakże docelowo zostanie dodane wsparcie dla tych platform. Jeżeli użytkownik posiada telefon z systemem \emph{Windows Phone 8}, powinien najpierw zaktualizować swój system. Następnie może pobrać i korzystać z aplikacji. System \emph{Windows Phone 7} nie jest wspierany.
+		Niech przykładowym użytkownikiem systemu będzie Marian Pisarz. Marian chce dodać nowy przewodnik o Lizbonie i udostępnić go podróżnikom. Chce również mieć możliwość edycji dodanego przez siebie przewodnika. Poniższy rozdział opisuje sposób dodawania, modyfikacji, przeglądania i publikacji przewodników przez twórców.
 		
-		Aplikacja internetowa do poprawnego działania wymaga nowoczesnej przeglądarki z włączoną obsługą JavaScript. Wspierane przeglądarki:
-		\begin{itemize}
-			\item Google Chrome w wersji 39 lub nowszy;
-			\item Mozilla Firefox w wersji 32 lub nowszy;
-			\item Opera w wersji 26 lub nowsza;
-			\item Internet Explorer 11 lub nowszy.
-		\end{itemize}
+			\subsubsection{Tworzenie przewodnika}
+			
+			Marian uruchamia przeglądarkę internetową i wpisuje adres www aplikacji \appName. Przeglądarka przenosi go do ekranu logowanie (rys. \ref{subfig:web_login}). Marian wpisuje swoją nazwę użytkownika i hasło a następnie klika przycisk ,,Zaloguj''. Zostaje przekierowany na stronę powitalną (rys. \ref{subfig:web_welcome}). Następnie wybiera z menu podręcznego opcję ,,Przewodniki'' $\rightarrow$ ,,Dodaj''. Przeglądarka przekierowuje go do kreatora dodawania nowego przewodnika (rys. \ref{subfig:web_add}). 
+			
+			W kroku pierwszym Marian powinien wymagane pola: wpisać nazwę przewodnika w polu \textit{Nazwa} i opis w polu \textit{Opis}. Następnie, klika na mapę aby zaznaczyć odpowiednie miejsce. Po kliknięciu na mapę pokazuje się na niej niebieski znacznik. Jeżeli Marian popełni błąd, może myszką przeciągnąć znacznik na odpowiednie miejsce. Finalnie, Marian dodaje zdjęcie główne dla przewodnika (okładkę). Może to zrobić na dwa sposoby: przeciągając zdjęcie na szare pole (metoda \textit{Drag and Drop}\footnote{Metoda przeciągnij i upuść}) lub klikając przycisk ,,Dodaj zdjęcie'' i wybierając odpowiedni obrazek z dysku twardego komputera. 
+			
+			Jeżeli Marian nie wypełni któregoś z pól, przy próbie zapisu otrzyma informację, że dane pole jest wymagane. Jeśli formularz zostanie wypełniony poprawnie, Marian może kontynuować. Zostanie przeniesiony przez swoją przeglądarkę do kroku drugiego kreatora (rys. \ref{subfig:web_add2}). 
+			
+			W tym etapie kreator tworzenia przewodnika udostępnia możliwość dodania atrybutów, czyli ogólnych informacji o danym miejscu. Marian może dodać takie informacje jak historia, wskazówki dojazdu, ciekawostki, noclegi itp. Na tym etapie atrybuty można dowolnie dodawać i usuwać korzystając z przycisków ,,Dodaj atrybut'' i ,,Usuń ten atrybut''. Każdy atrybut traktowany jest niezależnie i przy każdym atrybucie pola \textit{Tytuł}, \textit{Opis} i \textit{Symbol} są wymagane. Kliknięcie przycisku ,,Wybierz'' pod etykietą \textit{Symbol} powoduje wyświetlenie dodatkowego okna z wyborem możliwych symboli. 
+			
+			Gdy Marian kończy dodawanie atrybutów naciska przycisk ,,Zapisz i Kontynuuj'' i przechodzi do trzeciego kroku kreatora (rys. \ref{subfig:web_add3}).
+			
+			W tym etapie należy dodać zestaw interesujących obiektów w danym miejscu. Proces dodawania wygląda następująco: Marian klika na mapie wybierając lokalizację obiektu. Może także skorzystać z wyszukiwarki umieszczonej na górze mapy. Następnie uzupełnia pola \textit{Nazwa}, \textit{Opis} oraz \textit{Kategoria}. Pole \textit{Kategoria} jest polem typu lista rozwijalna i zawiera takie pozycje jak: \textit{Zamki i Pałace}, \textit{Pomniki}, \textit{Kościoły i Cmentarze} itp. Wszystkie pola są wymagane i jest to sprawdzane podczas zapisu.
+			Finalnie Marian wybiera obrazek reprezentujący dane miejsce. Proces dodawania obrazka jest taki sam jak w pierwszym kroku kreatora.
+			
+			Kiedy miejsca zostaną dodane, Marian klika przycisk ,,Zapisz i Kontynuuj''. Przewodnik zostaje zapisany a on zostaje przekierowany na stronę podsumowania (rys \ref{subfig:web_view}).
+			
+			\subsubsection{Edycja przewodnika}
+			
+			Strona podsumowania jest jednocześnie stroną, z której możliwa jest edycja przewodnika. Aby edytować opis, nazwę lub zdjęcie danego miejsca, Marian klika zielony przycisk ,,Edytuj''. Statyczna sekcja z opisem zostaje dynamicznie zastąpiona formularzem (rys. \ref{subfig:web_edit}). Tutaj Marian może wprowadzić żądane zmiany. Ponownie jednak żadne pole nie może pozostać puste. Jeżeli na szare pole nie zostanie przeciągnięty żaden obrazek, poprzednia okładka zostaje zachowana. Zmiany można anulować klikając przycisk z symbolem X w prawym, górnym rogu formularza. 
+			
+			Analogicznie Marian może edytować atrybuty oraz miejsca. Może również usuwać bądź dodawać nowe korzystając z odpowiednich przycisków. Przycisk ,,Dodaj miejsce'' (rys. \ref{subfig:web_edit2}) aktywuje możliwość dodawania markera do mapy oraz dodaje formularz podobny do tego z kroku trzeciego kreatora. 
+			
+			Przy każdym z miejsc istnieją dwa przyciski: ,,Edytuj'' oraz ,,Pokaż na mapie''. Pierwszy przycisk zastępuje statyczną treść formularzem, podobnie jak ma to miejsce w przypadku informacji ogólnych. Drugi przycisk przenosi użytkownika z powrotem do mapy i oznacza wybrane miejsce chmurką z opisem. 
+			
+			\subsubsection{Przegląd i publikacja}
 		
-		Aplikacja internetowa działa także na urządzeniach o mniejszych rozdzielczościach takich jak tablety czy telefony.
+		Korzystając z menu podręcznego Marian wybiera opcję ,,Przewodniki'' $\rightarrow$ ,,Pokaż''. Zostaje przekierowany do widoku tabeli, w której znajdują się wszystkie dodane przez niego przewodniki (rys. \ref{subfig:web_all}). Oprócz okładki, nazwy i opisu widzi on także status każdego przewodnika. Nieopublikowane przewodniki nie są dostępne do pobrania przez użytkowników aplikacji mobilnej. Aby opublikować swój przewodnik Marian musi nacisnąć przycisk ,,Publikuj''. Od teraz przewodnik może być pobrany na urządzenie mobilne a jego status oznaczony jest zieloną etykietą ,,Opublikowany''. 
 		
-		\section{Instalacja}
-		
-		Aplikacja mobilna \appName w chwili obecnej zainstalowana może być jedynie na telefonach z odblokowaną opcją deweloperską. Docelowo jednak program zostanie umieszczony w sklepie \emph{Windows Store}, skąd będzie dostępny do pobrania dla użytkowników polsko- i angielskojęzycznych. 
-		
-		Aplikacja internetowa nie wymaga instalacji. Dostępna jest dla każdego, kto jest podłączony do Internetu, dysponuje kompatybilną przeglądarką internetową i posiada uprawnienia do dodawania nowych przewodników. 
+	
 		
 	\chapter{Testowanie}
 	
