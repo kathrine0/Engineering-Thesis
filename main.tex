@@ -335,21 +335,12 @@
 			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_mobile}. 
 			
 		\section{Najważniejsze algorytmy}
-				
-			\subsection{Wyznaczanie odległości między punktami na mapie}
-						
-			\ksremark{To trzeba przerobić, bo nie do końca jest poprawne, $\mathrm{haversin}(\theta) = \mathrm{sem}(\theta) = \sin^2\left(\frac{\theta}{2}\right) $ jest dość rzadko dziś używaną funkcją. Kiedyś była popularniejsza, bo obliczenia nawigacyjne i astronomiczne wykonywano ręcznie, więc tablicowano funkcje $\mathrm{haversin}(\theta)$ dla łatwiejszych rachunków.}
 			
-			{\color{blue}
-			Obliczenie długości ortodromy łączącej punkty $A$ i $B$ o współrzędnych geograficznych odpowiednio $A(\varphi_a, \lambda_a)$ i $B(\varphi_b, \lambda_b)$ na sferze jest dość proste. Wystarczy skonstruować trójkąt sferyczny biorąc jeden z biegunów. Z prawa kosinusów dla trójkąta sferycznego mamy \cite{id:Mietelski1989Atronomia}:
-			\begin{comment}
-			@book{id:Mietelski1989Atronomia,
-			   author = {Jan Mietelski},
-			   title  = {Astronomia w geografii},
-			   year   = {1989},
-			   publisher = {Pa{\'{n}}stwowe Wydawnictwo Naukowe},
-			}
-			\end{comment}
+			\subsection{Wyznaczanie odległości między punktami na mapie}
+				
+			W celu wyznaczenia odległości pomiędzy miejscami $A$ i $B$ o współrzędnych geograficznych odpowiednio $A(\varphi_a, \lambda_a)$ i $B(\varphi_b, \lambda_b)$ obliczono długość ortodromy łączącej te punkty. Algorytm taki jest dość prosty: należy skonstruować 
+			trójkąt sferyczny biorąc jeden z biegunów. Z prawa kosinusów dla trójkąta sferycznego wiemy \cite{id:Mietelski1989Atronomia}:		
+		
 			\begin{align}
 			\cos l & = \cos (\pi/2 - \varphi_a) \cos (\pi/2 - \varphi_b) + \sin (\pi/2 - \varphi_a) \sin (\pi/2 - \varphi_b) \cos (\lambda_a - \lambda_b),
 			\end{align}
@@ -371,40 +362,8 @@
             d = 2R_{\earth} \arcsin\sqrt{\sin^{2}\left(\frac{\varphi_a - \varphi_b}{2}\right) + \cos\varphi_a\cos\varphi_b\sin^{2}\left(\frac{\lambda_a - \lambda_b}{2}\right) }.
 			\end{align}
 						
-			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. 
-			}
+			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. Jednakże taki błąd jest dopuszczalny w przypadku aplikacji \appName.
 			
-			Aby obliczyć odległość między dwoma obiektami na mapie została wykorzystana funkcja Harvesin. Jest to funkcja, która pozwala na obliczenie linii ortodromy mając dane szerokości i długości geograficzne punktów. 
-						
-    		Matematyczne równanie dla tej funkcji prezentuje się następująco:
-			
-			$haversin (\dfrac{d}{r}) = \haversin(\phi_{2} - \phi_{1}) + \cos(\phi_{1})\cos(\phi_{2})\haversin(\lambda_{2} - \lambda_{1})$
-			
-			gdzie:
-			
-			\begin{itemize}
-				\item \textit{haversin} -- funkcja haversin:
-				
-				$\haversin(\theta) = sin^{2}(\dfrac{\theta}{2}) = \dfrac{1-\cos(\theta)}{2}$,
-				
-				\item \textit{d} -- dystans między dwoma punktami (po kole wielkim\footnote{Koło wielkie - największe koło, jakie można wpisać w kulę. Jego średnica jest równa średnicy kuli, a samo koło dzieli ją na dwie symetryczne połowy zwane półkulami.}),
-				
-				\item \textit{r} -- promień kuli,
-				
-				\item $\phi_{1}$, $\phi_{2}$ -- szerokość geograficzna obu punktów,
-				
-				\item $\lambda_{1}$, $\lambda_{2}$ -- wysokość geograficzna obu punktów.
-			\end{itemize}
-		
-		Szukaną wartością jest \textit{d}. Drogą przekształceń matematycznych dystans można wyznaczyć następująco:
-		
-				$d = r\haversin^{-1}(h) = 2r \arcsin(\sqrt{h})$, gdzie
-				
-				$h = \haversin(\dfrac{d}{r}) $, zatem
-				
-				$d = 2r \arcsin(\sqrt{\haversin(\phi_{2} - \phi_{1}) + \cos(\phi_{1})\cos(\phi_{2})\haversin(\lambda_{2} - \lambda_{1})}) \Rightarrow $
-				
-				\boldmath{$d = 2r \arcsin(\sqrt{sin^{2}(\frac{\phi_{2} - \phi_{1}}{2}) + \cos(\phi_{1})\cos(\phi_{2})\sin^{2}(\frac{\lambda_{2} - \lambda_{1}}{2}) }) $}
 		
 		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:haversin}.
 		
