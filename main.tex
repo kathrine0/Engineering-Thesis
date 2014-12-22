@@ -158,13 +158,15 @@
 			\end{figure}
 		
 			\section{Organizacja pracy}
-	
+			\ksremark{Zakomentowałbym tytuł podrozdziału.}
+	        \ksremark{Praca jest zorganizowana w następujący sposób:}
+	        %
 			Rozdział \ref{id:cha:wstep} opisuje wprowadzenie do zagadnienia i uzasadnienie podjęcia się takiej tematyki. 
 			Rozdział \ref{id:cha:technologia} przedstawia użyte technologie, zarówno w części serwerowej (podrozdział \ref{id:sec:appserv}), internetowej (podrozdział \ref{id:sec:web}) jak i mobilnej (podrozdział \ref{id:sec:mobile}). 
 			Rozdział \ref{id:cha:specyfikacja_wewnetrzna} zawiera specyfikację wewnętrzną, w tym: opis architektury (podrozdział \ref{id:sec:architektura}), najważniejsze algorytmy (podrozdział \ref{id:sec:algorytmy}) oraz przypadki użycia (podrozdział \ref{id:sec:przypadki_uzycia}). 
 			Rozdział \ref{id:cha:specyfikacja_zewnetrzna} zawiera specyfikację zewnętrzną, w tym: wymagania systemowe (podrozdział \ref{id:sec:wymagania}), opis instalacji poszczególnych aplikacji (podrozdział \ref{id:sec:instalacja}) i instrukcję obsługi dla użytkowników końcowych aplikacji mobilnej i internetowej wraz ze zdjęciami systemu (podrozdział \ref{id:sec:instrukcja_obslugi}).
 			Rozdział \ref{id:cha:testowanie} opisuje sposób, w jaki projekt był testowany oraz prezentuje wybrane scenariusze testowe. 
-			
+			%
 			%DOKOŃCZYĆ
 			Rozdział \ref{id:cha:wnioski_koncowe} przedstawia wnioski końcowe \ldots				
 	
@@ -317,7 +319,8 @@
 			\label{sec:ArchitekturaAplikacjiMobilnej}	
 			
 			
-			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych (rys. \ref{fig:mvvmpattern}).
+			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych (rys. \ref{fig:mvvmpattern}). \ksremark{Trochę niskiej jakości jest ten obrazek i po angielsku, i odbiega graficznie od pozostałych obrazków w pracy. Zdaję sobie sprawę, że rysunki są czasochłonne, ale warto by go zrobić samemu.}
+			\ksremark{Warto też opisać trochę szerzej ten wzorzec i dodać odnośnik.}
 			
 			\begin{figure}
 				\centering
@@ -371,13 +374,14 @@
 			\end{align}
 			Z tego względu, że dla blisko położonych punktów mogą pojawić się problemy numeryczne (co w dzisiejszych czasach jest już rzadsze), można wzór \eqref{id:eq:d} przekształcić do łatwiejszej obliczeniowo postaci
 			\begin{align}
+			\label{id:eq:d-haversin}
             d = 2R_{\earth} \arcsin\sqrt{\sin^{2}\left(\frac{\varphi_a - \varphi_b}{2}\right) + \cos\varphi_a\cos\varphi_b\sin^{2}\left(\frac{\lambda_a - \lambda_b}{2}\right) }.
 			\end{align}
 						
-			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. Jednakże taki błąd jest dopuszczalny w przypadku aplikacji \appName.
+			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. Jednakże taki błąd jest dopuszczalny w przypadku aplikacji \appName. \ksremark{bez spacji przed kropką}
 			
 		
-		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:haversin}.
+		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:haversin}. \ksremark{Nie jestem przekonany, czy umieszczać listing w pracy. Tym bardziej, że, implementacja używa funkcji \lstinline!Atan2!, której nie ma we wzorze \ref{id:eq:d-haversin}.}
 		
 		\begin{lstlisting}[label={lst:haversin},caption=Funkcja obliczająca dystans pomiędzy pozycją użytkownika a punktem na mapie]
 		
@@ -418,7 +422,8 @@
 
 		\section{Przypadki użycia}
 		\label{id:sec:przypadki_uzycia}
-		Diagram przypadków użycia (rys. \ref{fig:usecase}) przedstawia ogólny schemat działania aplikacji.
+		Diagram przypadków użycia (rys. \ref{fig:usecase}) przedstawia ogólny schemat działania aplikacji. \ksremark{Trzeba to opisać tekstem. Diagram jest pomocniczy. Najłatwiej jest wypisać funkcjonalność aplikacji, przekłada się ona bardzo prosto na przypadki użycia. Jak się mają zaznaczone przypadki użycia do funkcjonalności? Czy funkcjonalność aplikacji nie jest większa niż wyszczególnione przypadki użycia?} \ksremark{Rysunek jest trochę słabej jakości. StarUML umożliwia zapis w formacie wektorowym, jest on trochę nieżyciowy, ale można go zaimportować do Inkscape'a i zapisać jako pdf.}
+		
 		
 		\begin{figure}		
 			\centering
