@@ -162,7 +162,7 @@
 	        \ksremark{Praca jest zorganizowana w następujący sposób:}
 	        %
 			Rozdział \ref{id:cha:wstep} opisuje wprowadzenie do zagadnienia i uzasadnienie podjęcia się takiej tematyki. 
-			Rozdział \ref{id:cha:technologia} przedstawia użyte technologie, zarówno w części serwerowej (podrozdział \ref{id:sec:appserv}), internetowej (podrozdział \ref{id:sec:web}) jak i mobilnej (podrozdział \ref{id:sec:mobile}). 
+			Rozdział \ref{id:cha:technologia} przedstawia użyte technologie, zarówno w części serwerowej (podrozdział \ref{id:sec:aplikacja_serwerowa}), internetowej (podrozdział \ref{id:sec:web}) jak i mobilnej (podrozdział \ref{id:sec:mobile}). 
 			Rozdział \ref{id:cha:specyfikacja_wewnetrzna} zawiera specyfikację wewnętrzną, w tym: opis architektury (podrozdział \ref{id:sec:architektura}), najważniejsze algorytmy (podrozdział \ref{id:sec:algorytmy}) oraz przypadki użycia (podrozdział \ref{id:sec:przypadki_uzycia}). 
 			Rozdział \ref{id:cha:specyfikacja_zewnetrzna} zawiera specyfikację zewnętrzną, w tym: wymagania systemowe (podrozdział \ref{id:sec:wymagania}), opis instalacji poszczególnych aplikacji (podrozdział \ref{id:sec:instalacja}) i instrukcję obsługi dla użytkowników końcowych aplikacji mobilnej i internetowej wraz ze zdjęciami systemu (podrozdział \ref{id:sec:instrukcja_obslugi}).
 			Rozdział \ref{id:cha:testowanie} opisuje sposób, w jaki projekt był testowany oraz prezentuje wybrane scenariusze testowe. 
@@ -202,7 +202,7 @@
 		
 %		\section{Technologia wykorzystana w części serwerowej}
 		\section{Aplikacja serwerowa}
-		\label{id:sec:appserv}
+		\label{id:sec:aplikacja_serwerowa}
 		Część serwerowa, realizowana jako WebService, wykonana została z wykorzystaniem platformy ASP.NET WebApi 2 \cite{id:WebApi}. Całość opiera się na platformie .NET 4.5 i napisana jest w języku C\#.
 		
 		W tej części wykorzystano szereg bibliotek. Aby przyspieszyć pracę i zapewnić większe bezpieczeństwo aplikacji, do celów identyfikacji i uwierzytelniania użytkowników została wykorzystana biblioteka AspNet.Identity \cite{id:ASPIdentity}.
@@ -245,7 +245,7 @@
 		\label{id:sec:mobile}
 		Na część mobilną składa się aplikacja dedykowana dla platformy Windows Phone 8.1. Projekt zrealizowany został w modelu Universal Apps, więc cała logika wydzielona jest do osobnego projektu.
 		
-		Aplikacja wykonana została przy wykorzystaniu platformy .NET, języka C\# oraz XAML. Zaimplementowany został wzorzec architektoniczny MVVM (\emph{Model View ViewModel}, \emph{vide} rozdział \ref{sec:ArchitekturaAplikacjiMobilnej}). W tym celu do projektu dołączona została biblioteka MVVM Light \cite{id:MVVMLight}. 
+		Aplikacja wykonana została przy wykorzystaniu platformy .NET, języka C\# oraz XAML. Zaimplementowany został wzorzec architektoniczny MVVM (\emph{Model View ViewModel}, \emph{vide} rozdział \ref{id:subsec:architektura_aplikacji_mobilnej}). W tym celu do projektu dołączona została biblioteka MVVM Light \cite{id:MVVMLight}. 
 		
 		Aplikacja pobiera dane z WebService i zapisuje je w swojej lokalnej bazie danych. Działa ona dzięki SQLight \cite{id:SQLite}. Do projektu dołączony jest adapter SQLite. Pobrane dane parsowane są do obiektów za pomocą biblioteki Newtonsoft.JSON.
 
@@ -269,8 +269,6 @@
 		\ksremark{Dodałbym jedno, dwa zdania opisujące rysunek.}
 			
 			\subsection{Architektura aplikacji serwerowej}
-			
-			
 			
 			Aplikacja serwerowa stworzona jest przy wykorzystaniu platformy ASP.NET WebApi 2 i zgodnie ze wzorcem architektonicznym REST\footnote{\emph{Representational State Transfer}}. Wzorzec ten zakłada kilka warunków:
 			
@@ -300,8 +298,6 @@
 			
 			\subsection{Architektura aplikacji internetowej}		
 			
-			
-
 			Aplikacja internetowa została stworzona przy użyciu platformy AngularJS i~w~całości działa bez przeładowania strony (\emph{Single Page Application}). Zawiera główny widok napisany w języku HTML, do którego w zależności od kontekstu załączane są widoki cząstkowe (\emph{partial views}). Z każdym widokiem powiązany jest kontroler. 
 			
 			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z~powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~wiązany (\emph{Bind}) z~widokiem.								
@@ -316,7 +312,7 @@
     		\end{figure}		
 			
 			\subsection{Architektura aplikacji mobilnej}
-			\label{sec:ArchitekturaAplikacjiMobilnej}	
+			\label{id:subsec:architektura_aplikacji_mobilnej}	
 			
 			
 			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych (rys. \ref{fig:mvvmpattern}). \ksremark{Trochę niskiej jakości jest ten obrazek i po angielsku, i odbiega graficznie od pozostałych obrazków w pracy. Zdaję sobie sprawę, że rysunki są czasochłonne, ale warto by go zrobić samemu.}
@@ -831,6 +827,32 @@
 	
 	\chapter{Wnioski końcowe}
 	\label{id:cha:wnioski_koncowe}
+	
+	%​We wnioskach końcowych można opisać:
+	%* ​uzyskane wyniki w świetle postawionego celu
+	%* kierunki ewentualnych dalszych prac (rozbudowa funkcjonalności)
+	%* problemy napotkane w czasie pracy
+	
+	\section{Kierunek dalszych prac}
+	
+	Projekt przebiegł pomyślnie i udało się osiągnąć założone cele. Powstała w pełni funkcjonalna aplikacja mobilna, która gotowa jest do użytku przez użytkowników końcowych. Aplikacja internetowa wymaga jeszcze kilku dodatkowych funkcjonalności przed wdrożeniem jej do publicznego użytku. Są to: funkcja edycji konta użytkownika, funkcja przywracania i zmiany hasła, rola administratora i możliwość zarządzania użytkownikami, tworzenie nowych kont dla twórców. W przyszłości warto byłoby wdrożyć także panel administracyjny dla użytkowników-podróżników, gdzie mieliby oni wgląd do pobranych przez siebie przewodników oraz mogliby pobierać kolejne. Jedną z dodatkowych możliwości rozwoju jest umożliwienie podróżnikom tworzenie i publikowanie własnych przewodników.
+	
+	Aplikacja mobilna także posiada bardzo wiele perspektyw rozwoju. W pierwszej kolejności warto byłoby stworzyć wersję dla systemów iOS oraz Android, gdyż są one bardziej popularne niż platforma Windows Phone. Ponadto, do aplikacji można wdrożyć funkcję wirtualnego przewodnika. Polegałaby ona na tym, że użytkownik wybierałby miejsca, które chce odwiedzić a aplikacja obliczałaby optymalną drogę pomiędzy nimi. Następnie tryb mapy przełączałby się w tryb nawigacji i użytkownik byłby prowadzony do kolejnych punktów i informowany na bieżąco o tym, co znajduje się wokół niego. Można by tu także pomyśleć o wykorzystaniu rozszerzonej rzeczywistości. 
+	
+	\section{Napotkane problemy}
+	
+	Podczas realizacji projektu pojawiło się wiele nieoczekiwanych problemów. Po pierwszych testach aplikacji mobilnej okazało się, że pobieranie danych jest bardzo niewydajne. Algorytmy zostały więc zoptymalizowane i pobieranie znacznie przyśpieszyło. Problematyczne było także pierwsze zetknięcie z Bing Maps API. Dostosowanie zachowania mapy wymagało więcej czasu niż zakładano. 
+	
+	Również aplikacja serwerowa przeniosła kilka niespodziewanych problemów. Pierwotnie zaczęła być ona rozwijana w oparciu o platformę Groovy on Grails\cite{id:GroovyOnGrails}, szybko jednak została przeniesiona do technologii .NET. Zanim zdecydowano się na wykorzystanie platformy Web API poczyniono podejście do technologii WCF\cite{id:WCF}. Web Api zostało wybrane, gdyż jest ono znacznie prostsze niż WCF, nowsze lecz dobrze udokumentowane.
+	
+	Początkowo problematyczne było odpowiednie podzielenie solucji na projekty, co skutkowało wielokrotną refaktoryzacją kodu. Finalnie projekt nabrał prawidłowych kształtów zgodnych ze wzorcami projektowymi opisanymi w sekcji \ref{id:sec:architektura}. 
+	
+	Niespodziewanym problemem, który ujawnił się dopiero po instalacji aplikacji na zdalnym serwerze, była blokada zapytań pochodzącej z innej domeny. Problem oraz jego rozwiązanie zostały szczegółowo opisane w sekcji \ref{id:sec:aplikacja_serwerowa}.
+	
+	Aplikacja internetowa nie od razu została napisana przy użyciu platformy Angular. Przeprowadzono eksperymenty z EmberJS\cite{id:Ember} oraz BackboneJS\cite{id:Backbone}. EmberJS okazał się być zbyt młodą biblioteką, której zabrakło wsparcia dla serwisów Web API; Backbone okazał się zbyt ciężki oraz dość trudny w skonfigurowaniu w środowisku IIS. Finalnie wybrano więc AngularJS. Jako, że ta biblioteka była nowością dla autorki, sporo czasu zostało poświęcone na naukę i zrozumienie zasady działania platformy. Problematyczne było pierwsze podejście do konfiguracji, jednakże dzięki bogatym zasobom w Internecie udało się ten problem sprawnie pokonać. 
+	
+	Zdecydowana większość problemów wynikała z tego, że było to pierwsze podejście autorki do danej technologii. Wszystkie zostały rozwiązane dzięki poszukiwaniom odpowiedzi w Internecie, literaturze technicznej oraz dzięki zasięganiu porady u bardziej doświadczonych kolegów i koleżanek. 
+	
 	
 	\chapter{Zakończenie}
 	\label{id:cha:zakonczenie}
