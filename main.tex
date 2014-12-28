@@ -6,6 +6,7 @@
 \usepackage{tikz}
 \usepackage{indentfirst}
 \usepackage{comment}
+\PassOptionsToPackage{hyphens}{url}
 \usepackage{hyperref}
 \usepackage{breakurl}
 \usepackage{mathtools}
@@ -139,15 +140,15 @@
 			
 			Branżą, która rozwija się jeszcze szybciej niż turystyka, jest branża IT. Jeszcze 10 lat temu nikomu nie śniło się, że dziś prawie każdy posiadać będzie telefon typu smartfon\footnote{ang. \emph{smartphone} -- dosłownie ,,mądry telefon''}. Turystyka nie nadąża za rozwojem IT, więc w chwili obecnej na rynku istnieje nisza, jeśli chodzi o przewodniki elektroniczne.
 			
-			Celem niniejszego projektu jest stworzenie przyjaznej platformy \appName dedykowanej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składa się aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
+			Celem niniejszego projektu jest stworzenie przyjaznej platformy \appName\ dedykowanej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składać się będzie aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
 			
 			W Internecie można znaleźć bardzo wiele różnych informacji o ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
 			
 			Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
 			
-			Aplikacja \appName ma na celu połączenie zalet obu tych rozwiązań. Reprezentuje informacje w podobny sposób jak tradycyjny, książkowy przewodnik przy jednoczesnej możliwości szybkiej aktualizacji informacji. Ponadto dzięki temu, że zawiera się w smartfonie podróżnika, zwalnia go z noszenia ciężkich książek lub nieporęcznych drukowanych kartek. 
+			Aplikacja \appName\ ma na celu połączenie zalet obu tych rozwiązań. Reprezentować będzie informacje w podobny sposób jak tradycyjny, książkowy przewodnik przy jednoczesnej możliwości szybkiej aktualizacji informacji. Ponadto dzięki temu, że zawierać się będzie w smartfonie podróżnika, zwalnia go z noszenia ciężkich książek lub nieporęcznych drukowanych kartek. 
 			
-			Dzięki wykorzystaniu nowoczesnych technologii, aplikacja może podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych.  
+			Dzięki wykorzystaniu nowoczesnych technologii, aplikacja będzie mogła podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych.  
 			
 			\begin{figure}		
 				\centering
@@ -269,10 +270,10 @@
 			
 			\begin{description}
 				
-				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
-				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
-				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
-				\item[Lokalność]\footnote{ang. \textit{cachable}} -- serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
+				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName\ jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
+				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName\, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
+				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName\ przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
+				\item[Lokalność]\footnote{ang. \textit{cachable}} -- serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName\ nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
 				
 			\end{description}
 			
@@ -434,7 +435,7 @@
 		\begin{figure}		
 			\centering
 			\includegraphics[width=1.0\textwidth]{images/component.pdf}
-			\caption{Diagram przypadków użycia}
+			\caption{Diagram komponentów}
 			\label{fig:component}
 		\end{figure}
 		
@@ -457,7 +458,7 @@
 		
 		\section{Instalacja}
 		\label{id:sec:instalacja}
-		Aplikacja mobilna \appName w chwili obecnej zainstalowana może być jedynie na telefonach z odblokowaną opcją deweloperską. Docelowo jednak program zostanie umieszczony w sklepie \emph{Windows Store}, skąd będzie dostępny do pobrania dla użytkowników polsko- i angielskojęzycznych. 
+		Aplikacja mobilna \appName\ w chwili obecnej zainstalowana może być jedynie na telefonach z odblokowaną opcją deweloperską. Docelowo jednak program zostanie umieszczony w sklepie \emph{Windows Store}, skąd będzie dostępny do pobrania dla użytkowników polsko- i angielskojęzycznych. 
 		
 		Aplikacja internetowa nie wymaga instalacji. Dostępna jest dla każdego, kto jest podłączony do Internetu, dysponuje kompatybilną przeglądarką internetową i posiada uprawnienia do dodawania nowych przewodników. 
 	
