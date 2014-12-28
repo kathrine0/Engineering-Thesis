@@ -264,8 +264,7 @@
 			\label{fig:architektura}
 		\end{figure}
 		
-		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa (\emph{WebService}). Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
-		\ksremark{Dodałbym jedno, dwa zdania opisujące rysunek.}
+		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa (\emph{WebService}). Aplikacja serwerowa jest odpowiedzialna za komunikację pomiędzy główną bazą danych a aplikacjami klienckimi. Dostarcza ona API\footnote{Interfejs programistyczny aplikacji (ang. \textit{Application Programming Interface}) -- sposób, w jaki programy komunikują się między sobą.}. Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
 			
 			\subsection{Architektura aplikacji serwerowej}
 			
@@ -314,13 +313,12 @@
 			\label{id:subsec:architektura_aplikacji_mobilnej}	
 			
 			
-			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych (rys. \ref{fig:mvvmpattern}). \ksremark{Trochę niskiej jakości jest ten obrazek i po angielsku, i odbiega graficznie od pozostałych obrazków w pracy. Zdaję sobie sprawę, że rysunki są czasochłonne, ale warto by go zrobić samemu.}
-			\ksremark{Warto też opisać trochę szerzej ten wzorzec i dodać odnośnik.}
+			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych (rys. \ref{fig:mvvmpattern}). Chociaż w początkowym etapie projektu wprowadzenie go wymaga większego nakładu pracy to ma on bardzo wiele korzyści. W przeciwieństwie do utrzymywania kodu w \emph{Code Behind}, gwarantuje niezależność logiki od sposobu wyświetlania danych, brak sztywnych powiązań między widokiem a logiką oraz niezależność kodu od technologii, w której wykonana jest warstwa prezentacji \cite{id:MVVM}.
 			
 			\begin{figure}
 				\centering
-				\includegraphics[width=1.0\textwidth]{images/MVVMPattern.png}
-				\caption{Wzorzec MVVM \cite{id:mvvmpattern}}
+				\includegraphics[width=1.0\textwidth]{images/mvvm.pdf}
+				\caption{Wzorzec MVVM }
 				\label{fig:mvvmpattern}
 			\end{figure} 
 			
