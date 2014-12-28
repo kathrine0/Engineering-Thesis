@@ -415,14 +415,30 @@
 
 		\section{Przypadki użycia}
 		\label{id:sec:przypadki_uzycia}
-		Diagram przypadków użycia (rys. \ref{fig:usecase}) przedstawia ogólny schemat działania aplikacji. \ksremark{Trzeba to opisać tekstem. Diagram jest pomocniczy. Najłatwiej jest wypisać funkcjonalność aplikacji, przekłada się ona bardzo prosto na przypadki użycia. Jak się mają zaznaczone przypadki użycia do funkcjonalności? Czy funkcjonalność aplikacji nie jest większa niż wyszczególnione przypadki użycia?} \ksremark{Rysunek jest trochę słabej jakości. StarUML umożliwia zapis w formacie wektorowym, jest on trochę nieżyciowy, ale można go zaimportować do Inkscape'a i zapisać jako pdf.}
+		Zarówno aplikacja internetowa jak i mobilna przeznaczona jest dla użytkownika końcowego, jednak ta pierwsza służy użytkownikowi-twórcy a ta druga użytkownikowi-podróżnikowi. Twórca używa aplikacji w następujący sposób: dodaje przewodnik oraz dodaje jego komponenty (podstawowe informacje, miejsca, atrybuty). Następnie może opublikować przewodnik. Twórca ma możliwość także edycji stworzonego przez siebie przewodnika; może edytować jego podstawowe informacje, może edytować, dodawać i usuwać miejsca, atrybuty. 
+		
+		Użytkownik-podróżnik może pobierać przewodniki a następie je odczytywać i wykorzystywać. W skład tych akcji wchodzi odczyt atrybutów i miejsc a także lokalizowanie położenia tych miejsc i swojego położenia dzięki wbudowanemu w telefon modułowi GPS.  
+		 
+		Diagram \ref{fig:usecase}) przedstawia najważniejsze przypadki użycia aplikacji klienckich. Pominięta została m.in. funkcja logowania dostępna dla obu aplikacji oraz funkcja rejestracji użytkownika dostępna z poziomu aplikacji mobilnej.			
+		
+		\begin{figure}		
+			\centering
+			\includegraphics[width=1.0\textwidth]{images/UseCase.pdf}
+			\caption{Diagram przypadków użycia}
+			\label{fig:usecase}
+		\end{figure}
+		
+		\section{Komponenty}
+		\label{id:sec:komponenty}
+		Aplikacja serwerowa składa się z kilku komponentów. Do tych głównych należą menedżer użytkowników oraz menedżer przewodników. Menedżer użytkowników odpowiedzialny jest za obsługę logowania oraz rejestracji. Kontroluje on również czy żądanie HTTP jest odpowiednio autoryzowane i czy użytkownik jest uprawniony do wykonania zadanej akcji. Menedżer przewodników służy do zarządzania przewodnikami oraz ich częściami składowymi (miejscami, atrybutami, ikonami etc.). Koordynuje on zarówno proces dodawania, modyfikacji i usuwania ale także pobieranie przewodników, do których użytkownik jest uprawniony. 
+		Diagram \ref{fig:component} przedstawia komponenty aplikacji serwerowej. 
 		
 		
 		\begin{figure}		
 			\centering
-			\includegraphics[width=1.0\textwidth]{images/usecase.jpg}
+			\includegraphics[width=1.0\textwidth]{images/component.pdf}
 			\caption{Diagram przypadków użycia}
-			\label{fig:usecase}
+			\label{fig:component}
 		\end{figure}
 		
 		
