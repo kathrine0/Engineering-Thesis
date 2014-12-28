@@ -160,12 +160,10 @@
 	        Praca jest zorganizowana w następujący sposób: 	        
 			rozdział \ref{id:cha:wstep} opisuje wprowadzenie do zagadnienia i uzasadnienie podjęcia się takiej tematyki. 
 			Rozdział \ref{id:cha:technologia} przedstawia użyte technologie, zarówno w części serwerowej (podrozdział \ref{id:sec:aplikacja_serwerowa}), internetowej (podrozdział \ref{id:sec:web}) jak i mobilnej (podrozdział \ref{id:sec:mobile}). 
-			Rozdział \ref{id:cha:specyfikacja_wewnetrzna} zawiera specyfikację wewnętrzną, w tym: opis architektury (podrozdział \ref{id:sec:architektura}), najważniejsze algorytmy (podrozdział \ref{id:sec:algorytmy}) oraz przypadki użycia (podrozdział \ref{id:sec:przypadki_uzycia}). 
+			Rozdział \ref{id:cha:specyfikacja_wewnetrzna} zawiera specyfikację wewnętrzną, w tym: opis architektury (podrozdział \ref{id:sec:architektura}), najważniejsze algorytmy (podrozdział \ref{id:sec:algorytmy}), przypadki użycia (podrozdział \ref{id:sec:przypadki_uzycia}) oraz opis komponentów (podrozdział \ref{id:sec:komponenty}).
 			Rozdział \ref{id:cha:specyfikacja_zewnetrzna} zawiera specyfikację zewnętrzną, w tym: wymagania systemowe (podrozdział \ref{id:sec:wymagania}), opis instalacji poszczególnych aplikacji (podrozdział \ref{id:sec:instalacja}) i instrukcję obsługi dla użytkowników końcowych aplikacji mobilnej i internetowej wraz ze zdjęciami systemu (podrozdział \ref{id:sec:instrukcja_obslugi}).
 			Rozdział \ref{id:cha:testowanie} opisuje sposób, w jaki projekt był testowany oraz prezentuje wybrane scenariusze testowe. 
-			%
-			%DOKOŃCZYĆ
-			Rozdział \ref{id:cha:wnioski_koncowe} przedstawia wnioski końcowe \ldots				
+			Rozdział \ref{id:cha:wnioski_koncowe} przedstawia wnioski końcowe, w tym kierunek dalszych prac (podrozdział \ref{id:sec:kierunek_dalszych_prac}) i napotkane problemy (podrozdział \ref{id:sec:napotkane_problemy}). Zakończenie znajduje się w rozdziale \ref{id:cha:zakonczenie}.			
 	
 	
 	
@@ -372,9 +370,9 @@
 			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. Jednakże taki błąd jest dopuszczalny w przypadku aplikacji \appName.
 			
 		
-		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:haversin}. \ksremark{Nie jestem przekonany, czy umieszczać listing w pracy. Tym bardziej, że, implementacja używa funkcji \lstinline!Atan2!, której nie ma we wzorze \ref{id:eq:d-haversin}.}
+		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:ortodroma}.
 		
-		\begin{lstlisting}[label={lst:haversin},caption=Funkcja obliczająca dystans pomiędzy pozycją użytkownika a punktem na mapie]
+		\begin{lstlisting}[label={lst:ortodroma},caption=Funkcja obliczająca dystans pomiędzy pozycją użytkownika a punktem na mapie]
 		
 		public void SetDistance(Geoposition currentPosition)
 		{
@@ -834,12 +832,14 @@
 	%* problemy napotkane w czasie pracy
 	
 	\section{Kierunek dalszych prac}
+	\label{id:sec:kierunek_dalszych_prac}
 	
 	Projekt przebiegł pomyślnie i udało się osiągnąć założone cele. Powstała w pełni funkcjonalna aplikacja mobilna, która gotowa jest do użytku przez użytkowników końcowych. Aplikacja internetowa wymaga jeszcze kilku dodatkowych funkcjonalności przed wdrożeniem jej do publicznego użytku. Są to: funkcja edycji konta użytkownika, funkcja przywracania i zmiany hasła, rola administratora i możliwość zarządzania użytkownikami, tworzenie nowych kont dla twórców. W przyszłości warto byłoby wdrożyć także panel administracyjny dla użytkowników-podróżników, gdzie mieliby oni wgląd do pobranych przez siebie przewodników oraz mogliby pobierać kolejne. Jedną z dodatkowych możliwości rozwoju jest umożliwienie podróżnikom tworzenie i publikowanie własnych przewodników.
 	
 	Aplikacja mobilna także posiada bardzo wiele perspektyw rozwoju. W pierwszej kolejności warto byłoby stworzyć wersję dla systemów iOS oraz Android, gdyż są one bardziej popularne niż platforma Windows Phone. Ponadto, do aplikacji można wdrożyć funkcję wirtualnego przewodnika. Polegałaby ona na tym, że użytkownik wybierałby miejsca, które chce odwiedzić a aplikacja obliczałaby optymalną drogę pomiędzy nimi. Następnie tryb mapy przełączałby się w tryb nawigacji i użytkownik byłby prowadzony do kolejnych punktów i informowany na bieżąco o tym, co znajduje się wokół niego. Można by tu także pomyśleć o wykorzystaniu rozszerzonej rzeczywistości. 
 	
 	\section{Napotkane problemy}
+	\label{id:sec:napotkane_problemy}
 	
 	Podczas realizacji projektu pojawiło się wiele nieoczekiwanych problemów. Po pierwszych testach aplikacji mobilnej okazało się, że pobieranie danych jest bardzo niewydajne. Algorytmy zostały więc zoptymalizowane i pobieranie znacznie przyśpieszyło. Problematyczne było także pierwsze zetknięcie z Bing Maps API. Dostosowanie zachowania mapy wymagało więcej czasu niż zakładano. 
 	
