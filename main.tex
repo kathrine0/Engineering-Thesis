@@ -138,7 +138,7 @@
 			
 			Warto jednak wspomnieć, że jeszcze do niedawna podróże zarezerwowane były dla nielicznych. Ograniczeniem były  finanse i brak szybkich środków lokomocji, ale i ludzki strach przed nieznanym. Dopiero po 1945 roku \cite{id:historia_podrozy}, wraz z rozwojem motoryzacji, kolei i lotnictwa oraz ogólnym polepszeniem standardu życia, zagraniczne wakacje stały się popularne na skalę masową. Spowodowało to gwałtowną ekspansję branży turystycznej, na którą składają się nie tylko biura podróży czy hotele, ale i wydawnictwa podróżnicze wydające przewodniki turystyczne. 
 			
-			Branżą, która rozwija się jeszcze szybciej niż turystyka, jest branża IT. Jeszcze 10 lat temu nikomu nie śniło się, że dziś prawie każdy posiadać będzie telefon typu smartfon\footnote{ang. \emph{smartphone} -- dosłownie ,,mądry telefon''}. Turystyka nie nadąża za rozwojem IT, więc w chwili obecnej na rynku istnieje nisza, jeśli chodzi o przewodniki elektroniczne.
+			Branżą, która rozwija się jeszcze szybciej niż turystyka, jest branża IT. Jeszcze 10 lat temu nikomu nie śniło się, że dziś prawie każdy posiadać będzie telefon typu smartfon\footnote{ang. \emph{smartphone} -- dosłownie ,,mądry telefon''}\ksremark{Nie jestem przekonany, czy jest konieczne tłumaczenie <<smartfon>>.}. Turystyka nie nadąża za rozwojem IT, więc w chwili obecnej na rynku istnieje nisza, jeśli chodzi o przewodniki elektroniczne.
 			
 			Celem niniejszego projektu jest stworzenie przyjaznej platformy \appName\ dedykowanej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składać się będzie aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
 			
@@ -165,9 +165,9 @@
 			Rozdział \ref{id:cha:testowanie} opisuje sposób, w jaki projekt był testowany oraz prezentuje wybrane scenariusze testowe. 
 			Rozdział \ref{id:cha:wnioski_koncowe} przedstawia wnioski końcowe, w tym kierunek dalszych prac (podrozdział \ref{id:sec:kierunek_dalszych_prac}) i napotkane problemy (podrozdział \ref{id:sec:napotkane_problemy}). Zakończenie znajduje się w rozdziale \ref{id:cha:zakonczenie}.			
 	
+	        \ksremark{Wstęp jest OK.}
 	
-	
-	\chapter{Technologia}
+	\chapter{Technologie i narzędzia}
 	\label{id:cha:technologia}
 	
 	Rozdział opisuje technologie i narzędzia użyte do stworzenia części webowej, serwerowej i mobilnej aplikacji.
@@ -248,187 +248,24 @@
 % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % % %
 
 
-	\chapter{Specyfikacja wewnętrzna}
-	\label{id:cha:specyfikacja_wewnetrzna}
-	
-		\section{Architektura}
-		\label{id:sec:architektura}
-		\begin{figure}		
-			\centering
-			\includegraphics[width=0.5\textwidth]{images/architektura.pdf}
-			\caption{Architektura systemu}
-			\label{fig:architektura}
-		\end{figure}
-		
-		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa (\emph{WebService}). Aplikacja serwerowa jest odpowiedzialna za komunikację pomiędzy główną bazą danych a aplikacjami klienckimi. Dostarcza ona API\footnote{Interfejs programistyczny aplikacji (ang. \textit{Application Programming Interface}) -- sposób, w jaki programy komunikują się między sobą.}. Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
-			
-			\subsection{Architektura aplikacji serwerowej}
-			
-			Aplikacja serwerowa stworzona jest przy wykorzystaniu platformy ASP.NET WebApi 2 i zgodnie ze wzorcem architektonicznym REST\footnote{\emph{Representational State Transfer}}. Wzorzec ten zakłada kilka warunków:
-			
-			\begin{description}
-				
-				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName\ jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
-				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName\, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
-				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName\ przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
-				\item[Lokalność]\footnote{ang. \textit{cachable}} -- serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName\ nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
-				
-			\end{description}
-			
-			\begin{figure}
-							\centering
-							\includegraphics[width=0.5\textwidth]{images/architektura_server.pdf}
-							\caption{Architektura aplikacji serwerowej}
-							\label{fig:architektura_server}
-		    \end{figure}
-						
-			Wewnętrznie aplikacja składa się z wielu warstw, które komunikują się ze sobą. Każde odebrane zapytanie HTTP jest obsługiwane przez odpowiednią akcję kontrolera. Zapytania realizowane są czterema standardowymi metodami HTTP: \emph{GET}, \emph{POST}, \emph{PUT}, \emph{DELETE}.
-			
-			Zazwyczaj akcja wymaga interakcji z bazą danych. Kontroler nie komunikuje się z nią jednak bezpośrednio. Zamiast tego składa odpowiednio sparametryzowane zapytanie do warstwy repozytorium. Parametrem może być cyfra (\texttt{Integer}), ciąg znaków (\texttt{String}) lub obiekt typu modelu wiążącego (\emph{Binding Model}). Parametr może być także pusty. 
-			
-			Repozytorium przetwarza żądanie. Jeżeli parametrem był obiekt typu modelu wiążącego mapuje go na model, a następnie za pomocą \emph{Entity Framework} komunikuje się z bazą danych. Rezultat jest następnie ponownie mapowany na model wiążący i przekazywany do akcji kontrolera. Kontroler zwraca wynik w postaci odpowiedzi HTTP (\emph{HTTP Response}).
-			
-			Schemat architektury aplikacji serwerowej przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
-			
-			\subsection{Architektura aplikacji internetowej}		
-			
-			Aplikacja internetowa została stworzona przy użyciu platformy AngularJS i~w~całości działa bez przeładowania strony (\emph{Single Page Application}). Zawiera główny widok napisany w języku HTML, do którego w zależności od kontekstu załączane są widoki cząstkowe (\emph{partial views}). Z każdym widokiem powiązany jest kontroler. 
-			
-			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z~powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~wiązany (\emph{Bind}) z~widokiem.								
 
-			Schemat architektury aplikacji internetowej przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
-			
-			\begin{figure}
-				\centering
-				\includegraphics[width=0.5\textwidth]{images/architektura_webapp.pdf}
-				\caption{Architektura aplikacji internetowej}
-				\label{fig:architektura_webapp}
-    		\end{figure}		
-			
-			\subsection{Architektura aplikacji mobilnej}
-			\label{id:subsec:architektura_aplikacji_mobilnej}	
-			
-			
-			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych (rys. \ref{fig:mvvmpattern}). Chociaż w początkowym etapie projektu wprowadzenie go wymaga większego nakładu pracy to ma on bardzo wiele korzyści. W przeciwieństwie do utrzymywania kodu w \emph{Code Behind}, gwarantuje niezależność logiki od sposobu wyświetlania danych, brak sztywnych powiązań między widokiem a logiką oraz niezależność kodu od technologii, w której wykonana jest warstwa prezentacji \cite{id:MVVM}.
-			
-			\begin{figure}
-				\centering
-				\includegraphics[width=1.0\textwidth]{images/mvvm.pdf}
-				\caption{Wzorzec MVVM }
-				\label{fig:mvvmpattern}
-			\end{figure} 
-			
-			Program przy pierwszym uruchomieniu łączy się z aplikacją serwerową i~pobiera dane, do których uprawniony jest zalogowany użytkownik. Dane te są zapisywane w lokalnej bazie danych obsługiwanej przez silnik SQLite. 
-			
-			Użytkownik wchodzi w interakcję z aplikacją przy pomocy zachowań typowych dla obsługi aplikacji mobilnych. Są to gesty takie jak dotknięcie ekranu, dłuższe przytrzymanie ekranu czy posuwisty ruch dłonią po ekranie smartfona. 
-			Po stronie aplikacji odbiorcą takich poleceń jest warstwa widoku (\emph{View}). Komunikuje się ona następnie z warstwą pośrednią (\emph{ViewModel}) wprost lub za pomocą konwerterów (\emph{Converter}). Komunikacja odbywa się dzięki wykorzystaniu poleceń (\emph{Commands}. 
-			
-			Warstwa pośrednia realizuje zadanie zadane przez użytkownika. Jeżeli wymaga to komunikacji z bazą danych, łączy się ona z warstwą repozytorium (\emph{Repository}). Repozytorium operuje na dwóch typach obiektów: na modelach (\emph{Model}) i na modelach wiążących (\emph{Binding model}). Modele odwzorowują schemat bazy danych w postaci obiektów języka C\# i są wykorzystywane w komunikacji z nią. Modele wiążące to modele zmodyfikowane na potrzeby danego zadania.  % \ksremark{To zdanie jest trochę niejasne, warto by je nieco rozwinąć.}
-			Są one zmodyfikowane o dodatkowe pola, zbędne pola nie są zaś uwzględnione. Przykładowo, model wiążący wykorzystywany do rejestracji użytkownika stworzony jest na bazie modelu użytkownika. Nie uwzględnia on takich informacji jak ,,Data rejestracji'' bądź ,,Konto Aktywne''. Z drugiej strony jest uzupełniony o takie pole jak ,,Powtórz hasło''.
-			
-			Za komunikację z aplikacją serwerową odpowiada warstwa serwisów (\emph{Service}), która wysyła do niej odpowiednie zapytania w formacie RESTful. 
-			
-			Warstwa pośrednia nie wie o istnieniu modeli. Od repozytorium otrzymuje ona jedynie kolekcje modeli wiążących. Finalnie są one przetwarzane i przekazywane do warstwy widoku za pomocą mechanizmu wiązania (\emph{binding}).
-			\begin{figure}
-				\centering
-				\includegraphics[width=0.5\textwidth]{images/architektura_mobile.pdf}
-				\caption{Architektura aplikacji mobilnej}
-				\label{fig:architektura_mobile}
-			\end{figure}
-			
-			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_mobile}. 
-			
-		\section{Najważniejsze algorytmy}
-		\label{id:sec:algorytmy}
-			\subsection{Wyznaczanie odległości między punktami na mapie}
-				
-			W celu wyznaczenia odległości pomiędzy miejscami $A$ i $B$ o współrzędnych geograficznych odpowiednio $A(\varphi_a, \lambda_a)$ i $B(\varphi_b, \lambda_b)$ obliczono długość ortodromy łączącej te punkty. Algorytm taki jest dość prosty: należy skonstruować 
-			trójkąt sferyczny biorąc jeden z biegunów. Z prawa kosinusów dla trójkąta sferycznego wiemy \cite{id:Mietelski1989Atronomia}:		
-		
-			\begin{align}
-			\cos l & = \cos (\pi/2 - \varphi_a) \cos (\pi/2 - \varphi_b) + \sin (\pi/2 - \varphi_a) \sin (\pi/2 - \varphi_b) \cos (\lambda_a - \lambda_b),
-			\end{align}
-			gdzie $l$ to kąt ortodromy, wzór można przekształcić
-			\begin{align}
-			\cos l & = \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b).\label{id:eq:cos:l:2}						
-			\end{align}
-			Wyznaczenie długości $d$ ortodromy jest proste:
-			\begin{align}
-			d & =   R_{\earth} l,
-			\end{align}
-			gdzie $R_{\earth} \approx 6371{,}0\,$km to średni promień Ziemi.
-			Uwzględniając równanie \eqref{id:eq:cos:l:2} otrzymujemy
-			\begin{align}
-		    d & =   R_{\earth} \arccos \left( \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b) \right),\label{id:eq:d}
-			\end{align}
-			Z tego względu, że dla blisko położonych punktów mogą pojawić się problemy numeryczne (co w dzisiejszych czasach jest już rzadsze), można wzór \eqref{id:eq:d} przekształcić do łatwiejszej obliczeniowo postaci
-			\begin{align}
-			\label{id:eq:d-haversin}
-            d = 2R_{\earth} \arcsin\sqrt{\sin^{2}\left(\frac{\varphi_a - \varphi_b}{2}\right) + \cos\varphi_a\cos\varphi_b\sin^{2}\left(\frac{\lambda_a - \lambda_b}{2}\right) }.
-			\end{align}
-						
-			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. Jednakże taki błąd jest dopuszczalny w przypadku aplikacji \appName.
-			
-		
-		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:ortodroma}.
-		
-		\begin{lstlisting}[label={lst:ortodroma},caption=Funkcja obliczająca dystans pomiędzy pozycją użytkownika a punktem na mapie]
-		
-		public void SetDistance(Geoposition currentPosition)
-		{
-			const double degreesToRadians = (Math.PI / 180.0);
-			const double earthRadius = 6371; // kilometers
-			
-			// convert latitude and longitude values to radians
-			double prevRadLat = _placeLatitude * degreesToRadians;
-			double prevRadLong = _placeLongitude * degreesToRadians;
-			double currRadLat = currentPosition.Coordinate.Point.Position.Latitude * degreesToRadians;
-			double currRadLong = currentPosition.Coordinate.Point.Position.Longitude * degreesToRadians;
-			
-			// calculate ortodroma
-			var exp1 = Math.Pow((Math.Sin((prevRadLat - currRadLat) / 2), 2);
-			var exp2 = Math.Cos(prevRadLat)*Math.Cos(currRadLat)*Math.Pow(Math.Sin((prevRadLong-currRadLong)/2) ,2);
-			var ortodroma = 2 * earthRadius * Math.Asin(Math.Sqrt(exp1+exp2));
-			
-			// calculate radian delta between each position.            
-			this.Distance = ortodroma * 1000;  // return results as meters
-		}
-		
-		\end{lstlisting}
-
-		%Czy komentarze w kodzie powinny być po polsku?
-
-		\section{Przypadki użycia}
-		\label{id:sec:przypadki_uzycia}
-		Zarówno aplikacja internetowa jak i mobilna przeznaczona jest dla użytkownika końcowego, jednak ta pierwsza służy użytkownikowi-twórcy a ta druga użytkownikowi-podróżnikowi. Twórca używa aplikacji w następujący sposób: dodaje przewodnik oraz dodaje jego komponenty (podstawowe informacje, miejsca, atrybuty). Następnie może opublikować przewodnik. Twórca ma możliwość także edycji stworzonego przez siebie przewodnika; może edytować jego podstawowe informacje, może edytować, dodawać i usuwać miejsca, atrybuty. 
-		
-		Użytkownik-podróżnik może pobierać przewodniki a następie je odczytywać i wykorzystywać. W skład tych akcji wchodzi odczyt atrybutów i miejsc a także lokalizowanie położenia tych miejsc i swojego położenia dzięki wbudowanemu w telefon modułowi GPS.  
-		 
-		Diagram \ref{fig:usecase}) przedstawia najważniejsze przypadki użycia aplikacji klienckich. Pominięta została m.in. funkcja logowania dostępna dla obu aplikacji oraz funkcja rejestracji użytkownika dostępna z poziomu aplikacji mobilnej.			
-		
-		\begin{figure}		
-			\centering
-			\includegraphics[width=1.0\textwidth]{images/UseCase.pdf}
-			\caption{Diagram przypadków użycia}
-			\label{fig:usecase}
-		\end{figure}
-		
-		\section{Komponenty}
-		\label{id:sec:komponenty}
-		Aplikacja serwerowa składa się z kilku komponentów. Do tych głównych należą menedżer użytkowników oraz menedżer przewodników. Menedżer użytkowników odpowiedzialny jest za obsługę logowania oraz rejestracji. Kontroluje on również czy żądanie HTTP jest odpowiednio autoryzowane i czy użytkownik jest uprawniony do wykonania zadanej akcji. Menedżer przewodników służy do zarządzania przewodnikami oraz ich częściami składowymi (miejscami, atrybutami, ikonami etc.). Koordynuje on zarówno proces dodawania, modyfikacji i usuwania ale także pobieranie przewodników, do których użytkownik jest uprawniony. 
-		Diagram \ref{fig:component} przedstawia komponenty aplikacji serwerowej. 
-		
-		
-		\begin{figure}		
-			\centering
-			\includegraphics[width=1.0\textwidth]{images/component.pdf}
-			\caption{Diagram komponentów}
-			\label{fig:component}
-		\end{figure}
-		
-		
 	\chapter{Specyfikacja zewnętrzna}
 	\label{id:cha:specyfikacja_zewnetrzna}
+		
+		\section{Słownik pojęć}
+		
+		W pracy pojawiają się sformułowania, które zdefiniowane są poniżej.  
+		
+		\begin{description}
+			\item[Użytkownik-twórca] -- jest to użytkownik, który posiada uprawnienia do tworzenia nowych treści. Może je dodawać za pomocą aplikacji internetowej.
+			\item[Użytkownik-podróżnik] -- jest to użytkownik, który korzystając z aplikacji mobilnej korzysta z treści dodanych przez twórcę. 
+			\item[Przewodnik] -- w kontekście aplikacji \appName\ jest to obiekt zawierający zbiór informacji o danym mieście, regionie lub kraju. Zawiera informacje ogólne, atrybuty i miejsca.
+			\item[Informacje ogólne przewodnika] -- jest to część przewodnika. Zawiera fotografię, nazwę, opis i współrzędne geograficzne.
+			\item[Atrybuty przewodnika] -- jest to zbiór dodatkowych informacji o przewodniku. Może zawierać takie informacje jak np. historia regionu czy wskazówki dojazdu, polecane restauracje, opis życia nocnego itp. Każdy atrybut zawiera tytuł, treść oraz ikonę wybraną z udostępnionego zbioru.
+			\item[Miejsca przewodnika] -- jest to zbiór ciekawych turystycznie miejsc znajdujących się w okolicy opisywanej przez przewodnik. Miejsce zawiera nazwę, opis, fotografię oraz współrzędne geograficzne. 
+			\item[Elementy składowe przewodnika] -- jest to określenie agregujące opisane powyżej miejsca oraz atrybuty.
+		\end{description}
+	
 		\section{Wymagania}
 		\label{id:sec:wymagania}
 		Aplikacja mobilna zaprojektowana jest z myślą o platformie \emph{Windows Phone 8.1}. Na chwilę obecną nie jest dostępna dla użytkowników systemów \emph{Android} czy \emph{iOS}, jednakże docelowo zostanie dodane wsparcie dla tych platform. Jeżeli użytkownik posiada telefon z systemem \emph{Windows Phone 8}, powinien najpierw zaktualizować swój system. Następnie może pobrać i korzystać z aplikacji. System \emph{Windows Phone 7} nie jest wspierany.
@@ -525,7 +362,7 @@
 			\end{subfigure}
 		\end{figure}
 		
-		Niech przykładowym użytkownikiem systemu będzie Marian Pisarz. Marian chce dodać nowy przewodnik o Lizbonie i udostępnić go podróżnikom. Chce również mieć możliwość edycji dodanego przez siebie przewodnika. Poniższy rozdział opisuje sposób dodawania, modyfikacji, przeglądania i publikacji przewodników przez twórców.
+		Niech przykładowym użytkownikiem systemu będzie Marian Pisarz. Marian jest użytkownikiem-twórcą i chce dodać nowy przewodnik o Lizbonie i udostępnić go podróżnikom. Chce również mieć możliwość edycji dodanego przez siebie przewodnika. Poniższy rozdział opisuje sposób dodawania, modyfikacji, przeglądania i publikacji przewodników przez twórców.
 		
 			\subsubsection{Tworzenie przewodnika}
 			
@@ -643,6 +480,186 @@
 		
 		Powrót do poprzednich widoków odbywa się w sposób standardowy z obsługą systemu \emph{Windows Phone 8.1}; za pomocą fizycznego przycisku wstecz. 		 
 	
+	\chapter{Specyfikacja wewnętrzna}
+	\label{id:cha:specyfikacja_wewnetrzna}
+	
+		\section{Przypadki użycia}
+		\label{id:sec:przypadki_uzycia}
+
+		
+		Zarówno aplikacja internetowa jak i mobilna przeznaczona jest dla użytkownika końcowego, jednak ta pierwsza służy użytkownikowi-twórcy, a ta druga użytkownikowi-podróżnikowi. Twórca używa aplikacji w następujący sposób: dodaje przewodnik oraz dodaje jego części składowe: podstawowe informacje, miejsca, atrybuty \ksremark{Po raz pierwszy pojawia się słowo <<atrybut>>. Co ono oznacza?}. Następnie może opublikować przewodnik. Twórca ma możliwość także edycji stworzonego przez siebie przewodnika; może edytować jego podstawowe informacje, może edytować, dodawać i usuwać miejsca, atrybuty. 
+		
+		Użytkownik-podróżnik może pobierać przewodniki, a następie je odczytywać i wykorzystywać. W skład tych akcji wchodzi odczyt atrybutów i miejsc, a także lokalizowanie położenia tych miejsc i swojego położenia dzięki wbudowanemu w telefon modułowi GPS.  
+		 
+		Diagram \ref{fig:usecase}) przedstawia najważniejsze przypadki użycia aplikacji klienckich. Pominięta została m.in. funkcja logowania dostępna dla obu aplikacji oraz funkcja rejestracji użytkownika dostępna z poziomu aplikacji mobilnej.			
+		
+		\begin{figure}		
+			\centering
+			\includegraphics[width=1.0\textwidth]{images/UseCase.pdf}
+			\caption{Diagram przypadków użycia}
+			\label{fig:usecase}
+		\end{figure}
+		
+		\section{Architektura}
+		\label{id:sec:architektura}
+		\begin{figure}		
+			\centering
+			\includegraphics[width=0.5\textwidth]{images/architektura.pdf}
+			\caption{Architektura systemu}
+			\label{fig:architektura}
+		\end{figure}
+		
+		Na cały system składają się trzy aplikacje: aplikacja mobilna (\emph{Mobile app}), aplikacja internetowa (\emph{Website}) oraz aplikacja serwerowa (\emph{WebService}). Aplikacja serwerowa jest odpowiedzialna za komunikację pomiędzy główną bazą danych a aplikacjami klienckimi. Dostarcza ona API\footnote{Interfejs programistyczny aplikacji (ang. \textit{Application Programming Interface}) -- sposób, w jaki programy komunikują się między sobą.}. Związek pomiędzy tymi aplikacjami przedstawiony jest na rysunku \ref{fig:architektura}. 
+			
+			\subsection{Architektura aplikacji serwerowej}
+			
+			Aplikacja serwerowa stworzona jest przy wykorzystaniu platformy ASP.NET WebApi 2 i zgodnie ze wzorcem architektonicznym REST\footnote{\emph{Representational State Transfer}}. Wzorzec ten zakłada kilka warunków:
+			
+			\begin{description}
+				
+				\item[Klient-serwer] -- aplikacja powinna składać się z~dwóch odrębnych części: klienta i serwera. Klient nie powinien mieć dostępu do magazynu danych. Serwer z kolei nie powinien zawierać informacji na temat interfejsu użytkownika. I tak też aplikacja serwerowa systemu \appName\ jest jedyną, która ma dostęp do bazy danych. Nie zawiera ona żadnych widoków, a ze światem 				komunikuje się za pomocą zapytań HTTP\footnote{\emph{Hypertext Transfer Protocol} – protokół przesyłania dokumentów hipertekstowych}.
+				\item[Bezstanowość] -- każde żądanie HTTP (\emph{request}) wysyłane do serwera jest niezależne od pozostałych. I tak też w aplikacji serwerowej systemu \appName\, za odbiór żądań odpowiada warstwa kontrolera. Każda akcja kontrolera obsługuje jedno żądanie. Akcje są od siebie niezależne.
+				\item[Wielowarstwowość] -- klient nie wie, czy jest podłączony bezpośrednio do serwera, czy też otrzymuje informacje przez systemy pośrednie. Dzięki takiej skalowalności, systemy pośrednie mogą zostać wykorzystane, aby zwiększyć wydajność całości. Aplikacja serwerowa systemu \appName\ przyjmuje żądania HTTP a odpowiedź wysyła w formacie JSON. Można więc dołożyć kolejne systemu pośrednie zgodnie z zapotrzebowaniem. 
+				\item[Lokalność]\footnote{ang. \textit{cachable}} -- serwer powinien zwracać informację, które z odpowiedzi mogą zostać zapisane w pamięci podręcznej (\emph{cache}) przeglądarki. W przypadku aplikacji serwerowej systemu \appName\ nie jest to zaimplementowane, gdyż żadna z odpowiedzi nie powinna być zapisywana.
+				
+			\end{description}
+			
+			\begin{figure}
+							\centering
+							\includegraphics[width=0.5\textwidth]{images/architektura_server.pdf}
+							\caption{Architektura aplikacji serwerowej}
+							\label{fig:architektura_server}
+		    \end{figure}
+						
+			Wewnętrznie aplikacja składa się z wielu warstw, które komunikują się ze sobą. Każde odebrane zapytanie HTTP jest obsługiwane przez odpowiednią akcję kontrolera. Zapytania realizowane są czterema standardowymi metodami HTTP: \emph{GET}, \emph{POST}, \emph{PUT}, \emph{DELETE}.
+			
+			Zazwyczaj akcja wymaga interakcji z bazą danych. Kontroler nie komunikuje się z nią jednak bezpośrednio. Zamiast tego składa odpowiednio sparametryzowane zapytanie do warstwy repozytorium. Parametrem może być cyfra (\texttt{Integer}), ciąg znaków (\texttt{String}) lub obiekt typu modelu wiążącego (\emph{Binding Model}). Parametr może być także pusty. 
+			
+			Repozytorium przetwarza żądanie. Jeżeli parametrem był obiekt typu modelu wiążącego mapuje go na model, a następnie za pomocą \emph{Entity Framework} komunikuje się z bazą danych. Rezultat jest następnie ponownie mapowany na model wiążący i przekazywany do akcji kontrolera. Kontroler zwraca wynik w postaci odpowiedzi HTTP (\emph{HTTP Response}).
+			
+			Schemat architektury aplikacji serwerowej przedstawiony jest na rysunku \ref{fig:architektura_server}. 			
+			
+			\subsection{Architektura aplikacji internetowej}		
+			
+			Aplikacja internetowa została stworzona przy użyciu platformy AngularJS i~w~całości działa bez przeładowania strony (\emph{Single Page Application}). Zawiera główny widok napisany w języku HTML, do którego w zależności od kontekstu załączane są widoki cząstkowe (\emph{partial views}). Z każdym widokiem powiązany jest kontroler. 
+			
+			Kiedy użytkownik wchodzi w interakcję z aplikacją, jego akcje są wysyłane do odpowiednich akcji kontrolera. Kontroler następnie obsługuje daną operację lub, jeżeli jest ona bardziej skomplikowana, odwołuje się do odpowiedniej metody z warstwy serwisu. Jeżeli wymagane jest pobranie danych z WebService, warstwa serwisu komunikuje się z warstwą repozytorium, która następnie wysyła odpowiednio skonstruowane zapytanie. Otrzymany wynik jest przekazywany z~powrotem do warstwy serwisu, przetwarzany, przekazywany do kontrolera i~wiązany (\emph{Bind}) z~widokiem.								
+
+			Schemat architektury aplikacji internetowej przedstawiony jest na rysunku \ref{fig:architektura_webapp}.	
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\textwidth]{images/architektura_webapp.pdf}
+				\caption{Architektura aplikacji internetowej}
+				\label{fig:architektura_webapp}
+    		\end{figure}		
+			
+			\subsection{Architektura aplikacji mobilnej}
+			\label{id:subsec:architektura_aplikacji_mobilnej}	
+			
+			
+			Aplikacja mobilna dedykowana jest dla platformy Windows Phone 8.1. Została stworzona przy użyciu wzorca MVVM (\emph{Model View ViewModel}). Wzorzec ten polega na rozdzieleniu warstwy widoku (\emph{View}) od warstwy danych (\emph{Model}). Są one połączone za pomocą warstwy pośredniej (\emph{ViewModel}), która zawiera większą część logiki związanej z prezentacją danych (rys. \ref{fig:mvvmpattern}). Chociaż w początkowym etapie projektu wprowadzenie go wymaga większego nakładu pracy to ma on bardzo wiele korzyści. W przeciwieństwie do utrzymywania kodu w \emph{Code Behind}, gwarantuje niezależność logiki od sposobu wyświetlania danych, brak sztywnych powiązań między widokiem a logiką oraz niezależność kodu od technologii, w której wykonana jest warstwa prezentacji \cite{id:MVVM}.
+			
+			\begin{figure}
+				\centering
+				\includegraphics[width=1.0\textwidth]{images/mvvm.pdf}
+				\caption{Wzorzec MVVM }
+				\label{fig:mvvmpattern}
+			\end{figure} 
+			
+			Program przy pierwszym uruchomieniu łączy się z aplikacją serwerową i~pobiera dane, do których uprawniony jest zalogowany użytkownik. Dane te są zapisywane w lokalnej bazie danych obsługiwanej przez silnik SQLite. 
+			
+			Użytkownik wchodzi w interakcję z aplikacją przy pomocy zachowań typowych dla obsługi aplikacji mobilnych. Są to gesty takie jak dotknięcie ekranu, dłuższe przytrzymanie ekranu czy posuwisty ruch dłonią po ekranie smartfona. 
+			Po stronie aplikacji odbiorcą takich poleceń jest warstwa widoku (\emph{View}). Komunikuje się ona następnie z warstwą pośrednią (\emph{ViewModel}) wprost lub za pomocą konwerterów (\emph{Converter}). Komunikacja odbywa się dzięki wykorzystaniu poleceń (\emph{Commands}. 
+			
+			Warstwa pośrednia realizuje zadanie zadane przez użytkownika. Jeżeli wymaga to komunikacji z bazą danych, łączy się ona z warstwą repozytorium (\emph{Repository}). Repozytorium operuje na dwóch typach obiektów: na modelach (\emph{Model}) i na modelach wiążących (\emph{Binding model}). Modele odwzorowują schemat bazy danych w postaci obiektów języka C\# i są wykorzystywane w komunikacji z nią. Modele wiążące to modele zmodyfikowane na potrzeby danego zadania.  % \ksremark{To zdanie jest trochę niejasne, warto by je nieco rozwinąć.}
+			Są one zmodyfikowane o dodatkowe pola, zbędne pola nie są zaś uwzględnione. Przykładowo, model wiążący wykorzystywany do rejestracji użytkownika stworzony jest na bazie modelu użytkownika. Nie uwzględnia on takich informacji jak ,,Data rejestracji'' bądź ,,Konto Aktywne''. Z drugiej strony jest uzupełniony o takie pole jak ,,Powtórz hasło''.
+			
+			Za komunikację z aplikacją serwerową odpowiada warstwa serwisów (\emph{Service}), która wysyła do niej odpowiednie zapytania w formacie RESTful. 
+			
+			Warstwa pośrednia nie wie o istnieniu modeli. Od repozytorium otrzymuje ona jedynie kolekcje modeli wiążących. Finalnie są one przetwarzane i przekazywane do warstwy widoku za pomocą mechanizmu wiązania (\emph{binding}).
+			\begin{figure}
+				\centering
+				\includegraphics[width=0.5\textwidth]{images/architektura_mobile.pdf}
+				\caption{Architektura aplikacji mobilnej}
+				\label{fig:architektura_mobile}
+			\end{figure}
+			
+			Schemat architektury aplikacji mobilnej przedstawiony jest na rysunku \ref{fig:architektura_mobile}. 
+			
+		\section{Najważniejsze algorytmy}
+		\ksremark{Tytuł jest w liczbie mnogiej, poczym jest opisany tylko jeden algorytm.}
+		\label{id:sec:algorytmy}
+			\subsection{Wyznaczanie odległości między punktami na mapie}
+				
+			W celu wyznaczenia odległości pomiędzy miejscami $A$ i $B$ o współrzędnych geograficznych odpowiednio $A(\varphi_a, \lambda_a)$ i $B(\varphi_b, \lambda_b)$ obliczono długość ortodromy łączącej te punkty. Algorytm taki jest dość prosty: należy skonstruować 
+			trójkąt sferyczny biorąc jeden z biegunów. Z prawa kosinusów dla trójkąta sferycznego wiemy \cite{id:Mietelski1989Atronomia}:		
+		
+			\begin{align}
+			\cos l & = \cos (\pi/2 - \varphi_a) \cos (\pi/2 - \varphi_b) + \sin (\pi/2 - \varphi_a) \sin (\pi/2 - \varphi_b) \cos (\lambda_a - \lambda_b),
+			\end{align}
+			gdzie $l$ to kąt ortodromy, wzór można przekształcić
+			\begin{align}
+			\cos l & = \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b).\label{id:eq:cos:l:2}						
+			\end{align}
+			Wyznaczenie długości $d$ ortodromy jest proste:
+			\begin{align}
+			d & =   R_{\earth} l,
+			\end{align}
+			gdzie $R_{\earth} \approx 6371{,}0\,$km to średni promień Ziemi.
+			Uwzględniając równanie \eqref{id:eq:cos:l:2} otrzymujemy
+			\begin{align}
+		    d & =   R_{\earth} \arccos \left( \sin\varphi_a \sin \varphi_b + \cos\varphi_a \cos\varphi_b \cos (\lambda_a - \lambda_b) \right),\label{id:eq:d}
+			\end{align}
+			Z tego względu, że dla blisko położonych punktów mogą pojawić się problemy numeryczne (co w dzisiejszych czasach jest już rzadsze), można wzór \eqref{id:eq:d} przekształcić do łatwiejszej obliczeniowo postaci
+			\begin{align}
+			\label{id:eq:d-haversin}
+            d = 2R_{\earth} \arcsin\sqrt{\sin^{2}\left(\frac{\varphi_a - \varphi_b}{2}\right) + \cos\varphi_a\cos\varphi_b\sin^{2}\left(\frac{\lambda_a - \lambda_b}{2}\right) }.
+			\end{align}
+						
+			Oczywiście trzeba pamiętać, że rachunki powyższe nie uwzględniają tego, że Ziemia nie jest kulą, dlatego są obarczone pewnym błędem. Jednakże taki błąd jest dopuszczalny w przypadku aplikacji \appName.
+			
+		
+		Implementacja funkcji w projekcie w języku C\# została przedstawiona na listingu \ref{lst:ortodroma}.
+		
+		\begin{lstlisting}[label={lst:ortodroma},caption=Funkcja obliczająca dystans pomiędzy pozycją użytkownika a punktem na mapie]
+		
+		public void SetDistance(Geoposition currentPosition)
+		{
+			const double degreesToRadians = (Math.PI / 180.0);
+			const double earthRadius = 6371; // kilometers
+			
+			// convert latitude and longitude values to radians
+			double prevRadLat = _placeLatitude * degreesToRadians;
+			double prevRadLong = _placeLongitude * degreesToRadians;
+			double currRadLat = currentPosition.Coordinate.Point.Position.Latitude * degreesToRadians;
+			double currRadLong = currentPosition.Coordinate.Point.Position.Longitude * degreesToRadians;
+			
+			// calculate ortodroma
+			var exp1 = Math.Pow((Math.Sin((prevRadLat - currRadLat) / 2), 2);
+			var exp2 = Math.Cos(prevRadLat)*Math.Cos(currRadLat)*Math.Pow(Math.Sin((prevRadLong-currRadLong)/2) ,2);
+			var ortodroma = 2 * earthRadius * Math.Asin(Math.Sqrt(exp1+exp2));
+			
+			// calculate radian delta between each position.            
+			this.Distance = ortodroma * 1000;  // return results as meters
+		}
+		
+		\end{lstlisting}
+
+		\section{Komponenty}
+		\label{id:sec:komponenty}
+		Aplikacja serwerowa składa się z kilku komponentów. Do tych głównych należą menedżer użytkowników oraz menedżer przewodników. Menedżer użytkowników odpowiedzialny jest za obsługę logowania oraz rejestracji. Kontroluje on również, czy żądanie HTTP jest odpowiednio autoryzowane i czy użytkownik jest uprawniony do wykonania zadanej akcji. Menedżer przewodników służy do zarządzania przewodnikami oraz ich częściami składowymi (miejscami, atrybutami, ikonami etc.). Koordynuje on zarówno proces dodawania, modyfikacji i usuwania, ale także pobieranie przewodników, do których użytkownik jest uprawniony. 
+		Diagram \ref{fig:component} przedstawia komponenty aplikacji serwerowej. 
+		
+		
+		\begin{figure}		
+			\centering
+			\includegraphics[width=1.0\textwidth]{images/component.pdf}
+			\caption{Diagram komponentów aplikacji serwerowej.}
+			\label{fig:component}
+		\end{figure}
+		
+		
 	\chapter{Testowanie}
 	\label{id:cha:testowanie}
 	
@@ -856,11 +873,195 @@
 	
 	\chapter{Zakończenie}
 	\label{id:cha:zakonczenie}
-	
-		W wyniku przeprowadzonego projektu powstała w pełni użyteczna platforma \appName\ gotowa do wdrożenia do użytku przez użytkowników końcowych. Program ułatwia podróżnikom zwiedzanie nowych miejsc i może zastąpić tradycyjne przewodniki. Dodatkową przewagą nad książkowymi przewodnikami jest wykorzystanie danych geolokalizacyjnych pobranych z urządzenia GPS wbudowanego smartfon oraz możliwość stałego aktualizowania treści. Na całość składa się aplikacja mobilna na platformę Windows Phone 8.1 oraz aplikacja działająca w przeglądarce internetowej. 
+		W wyniku przeprowadzonego projektu powstała w pełni użyteczna platforma \appName\ gotowa do wdrożenia do użytku przez użytkowników końcowych. Program ułatwia podróżnikom zwiedzanie nowych miejsc i może zastąpić tradycyjne przewodniki. 
 		
-	\bibliographystyle{plain}
-	\bibliography{bibliografia}
+		Na całość składa się aplikacja mobilna na platformę Windows Phone 8.1, aplikacja działająca w przeglądarce internetowej oraz aplikacja serwerowa odpowiedzialna za pośredniczenie w komunikacji pomiędzy aplikacjami klienckimi i bazą danych. 
+		
+		Aplikacja internetowa przeznaczona jest dla użytkowników-twórców, którzy mają możliwość dodawania nowych przewodników za pomocą przyjaznego i dynamicznego kreatora. Te przewodniki są następnie publikowane i stają się dostępne dla użytkowników aplikacji mobilnej. 
+		
+		Użytkownicy-podróżnicy mają możliwość pobrania przewodników na swoje telefony i wykorzystania ich w trakcie zwiedzania nowych miejsc (także w trybie offline). Aplikacja przedstawi im najciekawsze informacje, przydatne wskazówki a także wyświetli mapę z miejscami wartymi zobaczenia posortowanymi po kategoriach. Ponadto, gdy użytkownik aktywuje urządzenie GPS w swoim smartfonie, aplikacja wyświetli mu jego pozycję (co nie uniemożliwi zgubienie się w nowym miejscu) oraz pokaże ciekawe obiekty w najbliższej okolicy. 
+		
+		Funkcja wykorzystująca dane geolokalizacyjne jest największą przewagą aplikacji \appName\ nad książkowymi przewodnikami. Dodatkową korzyścią jest także możliwość aktualizacji treści tak, że nie ma ryzyka iż ulegną one przedawnieniu. No i wreszcie -- użytkownik-podróżnik nie musi już martwić się wizytą w księgarni przed wyjazdem na urlop. W swój przewodnik zaopatrzy się nawet na lotnisku czy w innym dowolnym miejscu z dostępem do Internetu.
+
+% % % % % % % % % % % % % % % % % % % %
+% Zamiast ponizszych dwoch linii		
+		
+%	\bibliographystyle{plain}
+%	\bibliography{bibliografia}
+
+% % % % % % % % % % % % % % % % % % % % %
+% skopiowalem zawartosc pliku main.bbl
+% Teraz mozna zmieniac kolejnosc wpisow i BiBTeX tego nie nadpisze :-)
+
+\begin{thebibliography}{10}
+
+\bibitem{id:Mietelski1989Atronomia}
+Jan Mietelski.
+\newblock {\em Astronomia w geografii}.
+\newblock Pa{\'{n}}stwowe Wydawnictwo Naukowe, 1989.
+
+
+
+\bibitem{id:AdminLTE}
+Admin{L}{T}{E}.
+\newblock \url{http://almsaeedstudio.com/AdminLTE/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:AngularTranslate}
+Angular{T}ranslate{J}{S}.
+\newblock \url{http://angular-translate.github.io/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:ASPCors}
+{A}{S}{P}.{N}{E}{T} {C}ors.
+\newblock \url{https://www.nuget.org/packages/Microsoft.AspNet.Cors/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:ASPIdentity}
+{A}{S}{P}.{N}{E}{T} {I}dentity.
+\newblock \url{https://aspnetidentity.codeplex.com/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:WebApi}
+{A}{S}{P}.{N}{E}{T} {W}eb{A}pi 2.
+\newblock
+  \url{http://msdn.microsoft.com/en-us/library/dn448365\%28v=vs.118\%29.aspx}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:Automapper}
+Automapper.
+\newblock \url{https://github.com/AutoMapper/AutoMapper}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:Backbone}
+Backbone.
+\newblock \url{http://backbonejs.org/}.
+\newblock [data dostępu: 23 grudnia 2014].
+
+\bibitem{id:Bazaar}
+Bazaar.
+\newblock \url{http://bazaar.canonical.com}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:Ember}
+Ember{J}{S}.
+\newblock \url{http://emberjs.com/}.
+\newblock [data dostępu: 23 grudnia 2014].
+
+\bibitem{id:EnterpriseArchitect}
+Enterprise {A}rchitect
+\newblock \url{http://www.sparxsystems.com/products/ea/}.
+\newblock [data dostępu: 31 grudnia 2014].
+
+\bibitem{id:EntityFramework}
+Entity {F}ramework.
+\newblock \url{http://msdn.microsoft.com/en-us/data/ef.aspx}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:fly4free}
+{F}ly4{F}ree.pl.
+\newblock
+  \url{http://www.fly4free.pl/forum/wasze-sposoby-na-planowanie-zwiedzania-nowych-miejsc,18,59116}.
+\newblock [data dostępu: 6 grudnia 2014].
+
+\bibitem{id:GIT}
+{G}{I}{T}.
+\newblock \url{http://git-scm.com}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:GroovyOnGrails}
+{G}roovy on {G}rails.
+\newblock \url{https://grails.org/}.
+\newblock [data dostępu: 23 grudnia 2014].
+
+\bibitem{id:historia_podrozy}
+Historia turystyki na świecie.
+\newblock
+  \url{http://pl.wikibooks.org/wiki/Podstawy_turystyki/Historia_turystyki_na_%C5%9Bwiecie}.
+\newblock [data dostępu: 28 grudnia 2014].
+
+\bibitem{id:jQuery}
+{j}{Q}uery.
+\newblock \url{http://jquery.com/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:Leaflet}
+Leaflet{J}{S}.
+\newblock \url{http://leafletjs.com/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:Mecurial}
+Mecurial.
+\newblock \url{http://mercurial.selenic.com}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:MVVMLight}
+{M}{V}{V}{M} light.
+\newblock \url{https://mvvmlight.codeplex.com/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:NewtonsoftJSON}
+Newtonsoft {J}{S}{O}{N}.
+\newblock \url{http://james.newtonking.com/json}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:OpenStreetMaps}
+{O}pen{S}treet{M}aps.
+\newblock \url{http://www.openstreetmap.org/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:StarUML}
+Star{U}{M}{L}
+\newblock
+\url{http://staruml.io/}.
+\newblock [data dostępu: 31 grudnia 2014].
+
+\bibitem{id:SQLServer}
+{S}{Q}{L} {S}erver 2014.
+\newblock
+  \url{http://www.microsoft.com/pl-pl/server-cloud/products/sql-server/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:SQLite}
+{S}{Q}{L}ite.
+\newblock \url{http://www.sqlite.org/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:SVN}
+{S}{V}{N}.
+\newblock \url{https://subversion.apache.org}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:TFS}
+{T}{F}{S}.
+\newblock
+  \url{http://www.visualstudio.com/en-us/products/tfs-overview-vs.aspx}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:Bootstrap}
+Twitter {B}ootstrap.
+\newblock \url{http://getbootstrap.com/}.
+\newblock [data dostępu: 21 grudnia 2014].
+
+\bibitem{id:WCF}
+{W}{C}{F} {D}ata {S}ervices.
+\newblock \url{http://msdn.microsoft.com/pl-pl/library/ff843374.aspx}.
+\newblock [data dostępu: 23 grudnia 2014].
+
+\bibitem{id:MVVM}
+Wzorzec {M}{V}{V}{M}.
+\newblock
+  \url{http://msdn.microsoft.com/pl-pl/library/wprowadzenie-do-wzorca-projektowego-model-view-viewmodel-na-przykladzie-aplikacji-wpf.aspx}.
+\newblock [data dostępu: 27 grudnia 2014].
+
+\end{thebibliography}
+
+
+% % % % % % % % % % % % % % % % % % % % %	
+	
+	\chapter*{Załączniki}
+	
+	Do pracy dołączona jest płyta CD zawierająca ten dokument w wersji elektronicznej oraz kod źródłowy aplikacji \appName. 
 	
 \end{document}
 
