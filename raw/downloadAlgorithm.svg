@@ -1,0 +1,1858 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:osb="http://www.openswatchbook.org/uri/2009/osb"
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   width="664"
+   height="888"
+   id="svg2"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="downloadAlgorithm.pdf">
+  <metadata
+     id="metadata702">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1304"
+     inkscape:window-height="745"
+     id="namedview700"
+     showgrid="false"
+     inkscape:zoom="0.53153153"
+     inkscape:cx="155.58935"
+     inkscape:cy="297.06948"
+     inkscape:window-x="54"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg2" />
+  <defs
+     id="defs4">
+    <linearGradient
+       id="linearGradient4799"
+       osb:paint="solid">
+      <stop
+         style="stop-color:#000000;stop-opacity:1;"
+         offset="0"
+         id="stop4801" />
+    </linearGradient>
+  </defs>
+  <g
+     id="g4805">
+    <g
+       transform="translate(-10,-10)"
+       id="g8">
+      <path
+         d="m 20,20 644,0 0,868 -644,0 0,-868"
+         stroke-miterlimit="10"
+         id="path10"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g12">
+      <path
+         d="m 20,20 0,22 155,0 11,-11 0,-11 -166,0"
+         id="path14"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="matrix(1.3275891,0,0,1,-16.551783,-10)"
+       id="g16">
+      <path
+         d="m 20,20 0,22 155,0 11,-11 0,-11 -166,0 0,0"
+         stroke-miterlimit="10"
+         id="path18"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(7.294154,-9.3348402)"
+       id="g20">
+      <g
+         id="g22">
+        <path
+           id="path24"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="72"
+           y="37.5"
+           id="text26"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Pobieranie danych</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g28">
+      <g
+         id="g30">
+        <path
+           id="path32"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="20"
+           y="37.5"
+           id="text34"
+           style="font-size:13px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">interaction</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g36">
+      <path
+         d="m 104,192 509,0 10,10 0,525 -519,0 0,-535"
+         id="path38"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g40">
+      <path
+         d="m 104,192 509,0 10,10 0,525 -519,0 0,-535 0,0"
+         stroke-miterlimit="10"
+         id="path42"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g44">
+      <path
+         d="m 613,192 0,10 10,0 -10,-10"
+         stroke-miterlimit="10"
+         id="path46"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g48">
+      <g
+         id="g50">
+        <path
+           id="path52"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="109"
+           y="208"
+           id="text54"
+           style="font-size:11px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">par</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g56">
+      <rect
+         x="151"
+         y="71"
+         width="66"
+         height="39"
+         id="rect58"
+         style="opacity:0.2;fill:#c0c0c0;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g60">
+      <rect
+         x="144"
+         y="64"
+         width="66"
+         height="39"
+         id="rect62"
+         style="fill:#ffffb9;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g64">
+      <path
+         d="m 144,64 66,0 0,39 -66,0 0,-39 z"
+         stroke-miterlimit="10"
+         id="path66"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g68">
+      <g
+         id="g70">
+        <path
+           id="path72"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="168.5"
+           y="81.5"
+           id="text74"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">GUI</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g76">
+      <path
+         d="m 178,104 0,784"
+         stroke-miterlimit="10"
+         id="path78"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g80">
+      <path
+         d="m 63.570909,71.3 c 0,-3.479394 2.878402,-6.3 6.429091,-6.3 3.550689,0 6.429091,2.820606 6.429091,6.3 0,3.479394 -2.878402,6.3 -6.429091,6.3 -3.550689,0 -6.429091,-2.820606 -6.429091,-6.3 z"
+         id="path82"
+         inkscape:connector-curvature="0"
+         style="fill:#ffffb9;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g84">
+      <path
+         d="m 63.570909,71.3 c 0,-3.479394 2.878402,-6.3 6.429091,-6.3 3.550689,0 6.429091,2.820606 6.429091,6.3 0,3.479394 -2.878402,6.3 -6.429091,6.3 -3.550689,0 -6.429091,-2.820606 -6.429091,-6.3 z"
+         stroke-miterlimit="10"
+         id="path86"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g88">
+      <path
+         d="m 70,77.6 0,12.8"
+         stroke-miterlimit="10"
+         id="path90"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g92">
+      <path
+         d="m 63.192727,82.4 13.614546,0"
+         stroke-miterlimit="10"
+         id="path94"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g96">
+      <path
+         d="M 70,90.4 60.545455,103"
+         stroke-miterlimit="10"
+         id="path98"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g100">
+      <path
+         d="M 70,90.4 79.454545,103"
+         stroke-miterlimit="10"
+         id="path102"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g104">
+      <g
+         id="g106">
+        <path
+           id="path108"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="40.5"
+           y="121.5"
+           id="text110"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Użytkownik:</text>
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="46.5"
+           y="132.5"
+           id="text112"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Podróżnik</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g114">
+      <path
+         d="m 71,138 0,750"
+         stroke-miterlimit="10"
+         id="path116"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g118">
+      <rect
+         x="283"
+         y="67"
+         width="67"
+         height="39"
+         id="rect120"
+         style="opacity:0.2;fill:#c0c0c0;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g122">
+      <rect
+         x="276"
+         y="60"
+         width="67"
+         height="39"
+         id="rect124"
+         style="fill:#ffffb9;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g126">
+      <path
+         d="m 276,60 67,0 0,39 -67,0 0,-39 z"
+         stroke-miterlimit="10"
+         id="path128"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g130">
+      <g
+         id="g132">
+        <path
+           id="path134"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="287"
+           y="77.5"
+           id="text136"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Warstwa</text>
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="289.5"
+           y="88.5"
+           id="text138"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">serwisu</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g140">
+      <path
+         d="m 310.5,100 0,788"
+         stroke-miterlimit="10"
+         id="path142"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g144">
+      <rect
+         x="551"
+         y="67"
+         width="83"
+         height="39"
+         id="rect146"
+         style="opacity:0.2;fill:#c0c0c0;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g148">
+      <rect
+         x="544"
+         y="60"
+         width="83"
+         height="39"
+         id="rect150"
+         style="fill:#ffffb9;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g152">
+      <path
+         d="m 544,60 83,0 0,39 -83,0 0,-39 z"
+         stroke-miterlimit="10"
+         id="path154"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g156">
+      <g
+         id="g158">
+        <path
+           id="path160"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="564"
+           y="77.5"
+           id="text162"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Aplikacja</text>
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="556"
+           y="88.5"
+           id="text164"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Serwerowa</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g166">
+      <path
+         d="m 586.5,100 0,788"
+         stroke-miterlimit="10"
+         id="path168"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g170">
+      <path
+         d="m 70.5,180 100,0"
+         stroke-miterlimit="10"
+         id="path172"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g174">
+      <path
+         d="M 160.33733,184.20952 170.5,180 160.33733,175.79048"
+         stroke-miterlimit="10"
+         id="path176"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g178">
+      <g
+         id="g180">
+        <path
+           id="path182"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="40"
+           y="170"
+           id="text184"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">1 : Odśwież listę przewodników</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g186">
+      <rect
+         x="170.5"
+         y="180"
+         width="13"
+         height="28"
+         id="rect188"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g190">
+      <path
+         d="m 170.5,180 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path192"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g194">
+      <path
+         d="M 177.5,236 303,236"
+         stroke-miterlimit="10"
+         id="path196"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g198">
+      <path
+         d="M 292.83733,240.20952 303,236 292.83733,231.79048"
+         stroke-miterlimit="10"
+         id="path200"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g202">
+      <g
+         id="g204">
+        <path
+           id="path206"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="113"
+           y="227"
+           id="text208"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">2 : pobierz posiadane przewodniki</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g210">
+      <rect
+         x="303"
+         y="236"
+         width="13"
+         height="219"
+         id="rect212"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g214">
+      <path
+         d="m 303,236 13,0 0,219 -13,0 0,-219 z"
+         stroke-miterlimit="10"
+         id="path216"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g218">
+      <rect
+         x="415"
+         y="67"
+         width="96"
+         height="39"
+         id="rect220"
+         style="opacity:0.2;fill:#c0c0c0;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g222">
+      <rect
+         x="408"
+         y="60"
+         width="96"
+         height="39"
+         id="rect224"
+         style="fill:#ffffb9;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g226">
+      <path
+         d="m 408,60 96,0 0,39 -96,0 0,-39 z"
+         stroke-miterlimit="10"
+         id="path228"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g230">
+      <g
+         id="g232">
+        <path
+           id="path234"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="433.5"
+           y="77.5"
+           id="text236"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Warstwa</text>
+        <text
+           font-size="11px"
+           font-style="normal"
+           font-weight="bold"
+           text-decoration="none"
+           x="423"
+           y="88.5"
+           id="text238"
+           style="font-size:11px;font-style:normal;font-weight:bold;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">Repozytorium</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g240">
+      <path
+         d="m 457,100 0,788"
+         stroke-miterlimit="10"
+         id="path242"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g244">
+      <path
+         d="m 316,252 263,0"
+         stroke-miterlimit="10"
+         id="path246"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g248">
+      <path
+         d="M 568.83733,256.20952 579,252 568.83733,247.79048"
+         stroke-miterlimit="10"
+         id="path250"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g252">
+      <g
+         id="g254">
+        <path
+           id="path256"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="400"
+           y="249"
+           id="text258"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">3 : pobierz zawartość</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g260">
+      <rect
+         x="579"
+         y="252"
+         width="13"
+         height="28"
+         id="rect262"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g264">
+      <path
+         d="m 579,252 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path266"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g268">
+      <path
+         d="m 579,268 -263,0"
+         stroke-miterlimit="10"
+         id="path270"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g272">
+      <path
+         d="M 326.16267,263.79048 316,268 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path274"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g276">
+      <g
+         id="g278">
+        <path
+           id="path280"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="0px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="435"
+           y="278"
+           id="text282"
+           style="font-size:0px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">4 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g284">
+      <path
+         d="m 316,304 133.5,0"
+         stroke-miterlimit="10"
+         id="path286"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g288">
+      <path
+         d="M 439.33733,308.20952 449.5,304 439.33733,299.79048"
+         stroke-miterlimit="10"
+         id="path290"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g292">
+      <g
+         id="g294">
+        <path
+           id="path296"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="382"
+           y="301"
+           id="text298"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">5 : zapisz pobrane</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g300">
+      <rect
+         x="449.5"
+         y="304"
+         width="13"
+         height="28"
+         id="rect302"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g304">
+      <path
+         d="m 449.5,304 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path306"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g308">
+      <path
+         d="M 449.5,324 316,324"
+         stroke-miterlimit="10"
+         id="path310"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g312">
+      <path
+         d="M 326.16267,319.79048 316,324 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path314"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g316">
+      <g
+         id="g318">
+        <path
+           id="path320"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="1px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="370"
+           y="335"
+           id="text322"
+           style="font-size:1px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">6 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g324">
+      <path
+         d="m 316,356 263,0"
+         stroke-miterlimit="10"
+         id="path326"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g328">
+      <path
+         d="M 568.83733,360.20952 579,356 568.83733,351.79048"
+         stroke-miterlimit="10"
+         id="path330"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g332">
+      <g
+         id="g334">
+        <path
+           id="path336"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="374"
+           y="352"
+           id="text338"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">7 : pobierz multimedia</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g340">
+      <rect
+         x="579"
+         y="356"
+         width="13"
+         height="28"
+         id="rect342"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g344">
+      <path
+         d="m 579,356 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path346"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g348">
+      <path
+         d="m 579,376 -263,0"
+         stroke-miterlimit="10"
+         id="path350"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g352">
+      <path
+         d="M 326.16267,371.79048 316,376 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path354"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g356">
+      <g
+         id="g358">
+        <path
+           id="path360"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="1px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="435"
+           y="387"
+           id="text362"
+           style="font-size:1px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">8 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g364">
+      <path
+         d="m 316,400 133.5,0"
+         stroke-miterlimit="10"
+         id="path366"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g368">
+      <path
+         d="M 439.33733,404.20952 449.5,400 439.33733,395.79048"
+         stroke-miterlimit="10"
+         id="path370"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g372">
+      <g
+         id="g374">
+        <path
+           id="path376"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="373"
+           y="397"
+           id="text378"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">9 : zapisz multimedia</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g380">
+      <rect
+         x="449.5"
+         y="400"
+         width="13"
+         height="28"
+         id="rect382"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g384">
+      <path
+         d="m 449.5,400 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path386"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g388">
+      <path
+         d="M 449.5,416 316,416"
+         stroke-miterlimit="10"
+         id="path390"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g392">
+      <path
+         d="M 326.16267,411.79048 316,416 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path394"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g396">
+      <g
+         id="g398">
+        <path
+           id="path400"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="1px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="366"
+           y="427"
+           id="text402"
+           style="font-size:1px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">10 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g404">
+      <path
+         d="m 303,428 -119.5,0"
+         stroke-miterlimit="10"
+         id="path406"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g408">
+      <path
+         d="M 193.66267,423.79048 183.5,428 l 10.16267,4.20952"
+         id="path410"
+         inkscape:connector-curvature="0"
+         style="fill:#800000;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g412">
+      <path
+         d="M 193.66267,423.79048 183.5,428 l 10.16267,4.20952 0,-8.41904"
+         stroke-miterlimit="10"
+         id="path414"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g416">
+      <g
+         id="g418">
+        <path
+           id="path420"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="235"
+           y="445"
+           id="text422"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">11 : przewodniki</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g424">
+      <rect
+         x="170.5"
+         y="428"
+         width="13"
+         height="28"
+         id="rect426"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g428">
+      <path
+         d="m 170.5,428 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path430"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g432">
+      <path
+         d="m 170.5,436 -94,0"
+         stroke-miterlimit="10"
+         id="path434"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g436">
+      <path
+         d="M 86.662675,431.79048 76.5,436 l 10.162675,4.20952"
+         id="path438"
+         inkscape:connector-curvature="0"
+         style="fill:#800000;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g440">
+      <path
+         d="M 86.662675,431.79048 76.5,436 l 10.162675,4.20952 0,-8.41904"
+         stroke-miterlimit="10"
+         id="path442"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       style="fill-opacity:1;fill:#000000"
+       transform="translate(-10,-10)"
+       id="g444">
+      <g
+         style="fill-opacity:1;fill:#000000"
+         id="g446">
+        <path
+           id="path448"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:#000000;stroke:none;fill-opacity:1" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="71"
+           y="428"
+           id="text450"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial;fill-opacity:1">12 : wyświetl listę</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g452">
+      <rect
+         x="63.5"
+         y="436"
+         width="13"
+         height="28"
+         id="rect454"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g456">
+      <path
+         d="m 63.5,436 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path458"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g460">
+      <path
+         d="M 177.5,488 303,488"
+         stroke-miterlimit="10"
+         id="path462"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g464">
+      <path
+         d="M 292.83733,492.20952 303,488 292.83733,483.79048"
+         stroke-miterlimit="10"
+         id="path466"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g468">
+      <g
+         id="g470">
+        <path
+           id="path472"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="110"
+           y="482"
+           id="text474"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">13 : pobierz sugerowane przewodniki</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g476">
+      <rect
+         x="303"
+         y="488"
+         width="13"
+         height="259"
+         id="rect478"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g480">
+      <path
+         d="m 303,488 13,0 0,259 -13,0 0,-259 z"
+         stroke-miterlimit="10"
+         id="path482"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g484">
+      <path
+         d="m 316,496 263,0"
+         stroke-miterlimit="10"
+         id="path486"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g488">
+      <path
+         d="M 568.83733,500.20952 579,496 568.83733,491.79048"
+         stroke-miterlimit="10"
+         id="path490"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-6.6742012,-10)"
+       id="g492">
+      <g
+         id="g494">
+        <path
+           id="path496"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="350"
+           y="492"
+           id="text498"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">14 : pobierz tytuły i opisy</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g500">
+      <rect
+         x="579"
+         y="496"
+         width="13"
+         height="28"
+         id="rect502"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g504">
+      <path
+         d="m 579,496 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path506"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g508">
+      <path
+         d="m 579,515 -263,0"
+         stroke-miterlimit="10"
+         id="path510"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g512">
+      <path
+         d="M 326.16267,510.79048 316,515 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path514"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g516">
+      <g
+         id="g518">
+        <path
+           id="path520"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="1px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="431"
+           y="526"
+           id="text522"
+           style="font-size:1px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">15 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g524">
+      <path
+         d="m 316,558 133.5,0"
+         stroke-miterlimit="10"
+         id="path526"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g528">
+      <path
+         d="M 439.33733,562.20952 449.5,558 439.33733,553.79048"
+         stroke-miterlimit="10"
+         id="path530"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g532">
+      <g
+         id="g534">
+        <path
+           id="path536"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="373"
+           y="555"
+           id="text538"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">16 : zapisz pobrane</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g540">
+      <rect
+         x="449.5"
+         y="558"
+         width="13"
+         height="28"
+         id="rect542"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g544">
+      <path
+         d="m 449.5,558 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path546"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g548">
+      <path
+         d="M 449.5,585 316,585"
+         stroke-miterlimit="10"
+         id="path550"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g552">
+      <path
+         d="M 326.16267,580.79048 316,585 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path554"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g556">
+      <g
+         id="g558">
+        <path
+           id="path560"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="1px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="366"
+           y="596"
+           id="text562"
+           style="font-size:1px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">17 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g564">
+      <path
+         d="m 316,628 263,0"
+         stroke-miterlimit="10"
+         id="path566"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g568">
+      <path
+         d="M 568.83733,632.20952 579,628 568.83733,623.79048"
+         stroke-miterlimit="10"
+         id="path570"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g572">
+      <g
+         id="g574">
+        <path
+           id="path576"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="445"
+           y="625"
+           id="text578"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">18 : pobierz multimedia</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g580">
+      <rect
+         x="579"
+         y="628"
+         width="13"
+         height="28"
+         id="rect582"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g584">
+      <path
+         d="m 579,628 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path586"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g588">
+      <path
+         d="m 579,648 -263,0"
+         stroke-miterlimit="10"
+         id="path590"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g592">
+      <path
+         d="M 326.16267,643.79048 316,648 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path594"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g596">
+      <g
+         id="g598">
+        <path
+           id="path600"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="1px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="431"
+           y="659"
+           id="text602"
+           style="font-size:1px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">19 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g604">
+      <path
+         d="m 316,700 133.5,0"
+         stroke-miterlimit="10"
+         id="path606"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g608">
+      <path
+         d="M 439.33733,704.20952 449.5,700 439.33733,695.79048"
+         stroke-miterlimit="10"
+         id="path610"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g612">
+      <g
+         id="g614">
+        <path
+           id="path616"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="372"
+           y="697"
+           id="text618"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">20 : zapisz multimedia</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g620">
+      <rect
+         x="449.5"
+         y="700"
+         width="13"
+         height="28"
+         id="rect622"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g624">
+      <path
+         d="m 449.5,700 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path626"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g628">
+      <path
+         d="M 449.5,716 316,716"
+         stroke-miterlimit="10"
+         id="path630"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10;stroke-dasharray:3" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g632">
+      <path
+         d="M 326.16267,711.79048 316,716 l 10.16267,4.20952"
+         stroke-miterlimit="10"
+         id="path634"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g636">
+      <g
+         id="g638">
+        <path
+           id="path640"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="1px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="366"
+           y="727"
+           id="text642"
+           style="font-size:1px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">21 : .</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g644">
+      <path
+         d="m 303,732 -119.5,0"
+         stroke-miterlimit="10"
+         id="path646"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g648">
+      <path
+         d="M 193.66267,727.79048 183.5,732 l 10.16267,4.20952"
+         id="path650"
+         inkscape:connector-curvature="0"
+         style="fill:#800000;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g652">
+      <path
+         d="M 193.66267,727.79048 183.5,732 l 10.16267,4.20952 0,-8.41904"
+         stroke-miterlimit="10"
+         id="path654"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g656">
+      <g
+         id="g658">
+        <path
+           id="path660"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="235"
+           y="749"
+           id="text662"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">22 : przewodniki</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g664">
+      <rect
+         x="170.5"
+         y="732"
+         width="13"
+         height="28"
+         id="rect666"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g668">
+      <path
+         d="m 170.5,732 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path670"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g672">
+      <path
+         d="m 170.5,752 -94,0"
+         stroke-miterlimit="10"
+         id="path674"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g676">
+      <path
+         d="M 86.662675,747.79048 76.5,752 l 10.162675,4.20952"
+         id="path678"
+         inkscape:connector-curvature="0"
+         style="fill:#800000;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g680">
+      <path
+         d="M 86.662675,747.79048 76.5,752 l 10.162675,4.20952 0,-8.41904"
+         stroke-miterlimit="10"
+         id="path682"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#800000;stroke-miterlimit:10" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g684">
+      <g
+         id="g686">
+        <path
+           id="path688"
+           d=""
+           inkscape:connector-curvature="0"
+           style="fill:none;stroke:none" />
+        <text
+           font-size="13px"
+           font-style="normal"
+           font-weight="normal"
+           text-decoration="none"
+           x="71"
+           y="769"
+           id="text690"
+           style="font-size:13px;font-style:normal;font-weight:normal;text-decoration:none;fill:#000000;stroke:none;font-family:Arial">23 : wyświetl listę</text>
+      </g>
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g692">
+      <rect
+         x="63.5"
+         y="752"
+         width="13"
+         height="28"
+         id="rect694"
+         style="fill:#ffffff;stroke:none" />
+    </g>
+    <g
+       transform="translate(-10,-10)"
+       id="g696">
+      <path
+         d="m 63.5,752 13,0 0,28 -13,0 0,-28 z"
+         stroke-miterlimit="10"
+         id="path698"
+         inkscape:connector-curvature="0"
+         style="fill:none;stroke:#000000;stroke-miterlimit:10" />
+    </g>
+  </g>
+</svg>
