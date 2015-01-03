@@ -650,7 +650,7 @@
 
 		\subsection{Pobieranie danych w aplikacji mobilnej}
 		
-		W celu zoptymalizowania pobierania danych zastosowano algorytmy wykonywane równolegle. Gdy użytkownik zażąda pobrania danych bądź też aplikacja jest uruchomiana po raz pierwszy, do warstwy serwisów przekazane jest polecenie pobrania danych. Wysyła ona równolegle dwa zapytania do aplikacji serwerowej: o przewodniki posiadane przez użytkownika oraz o listę elementów rekomendowanych do pobrania. Gdy zapytanie zwróci odpowiednie dane, są one od razu zapisywane do lokalnej bazy danych oraz wyświetlane jako lista użytkownikowi. 
+		W celu zoptymalizowania pobierania danych zastosowano algorytmy wykonywane równolegle. Gdy użytkownik zażąda pobrania danych bądź też aplikacja jest uruchomiana po raz pierwszy, do warstwy serwisów przekazane jest polecenie pobrania danych. Wysyła ona równolegle dwa zapytania do aplikacji serwerowej: o przewodniki posiadane przez użytkownika oraz o listę elementów rekomendowanych do pobrania. Gdy zapytanie zwróci odpowiednie dane, są one od razu zapisywane do lokalnej bazy danych za pośrednictwem warstwy repozytorium oraz wyświetlane jako lista użytkownikowi. 
 		
 		W tym samym czasie aplikacja mobilna odpytuje aplikację serwerową raz jeszcze, tym razem w celu pobrania odpowiednich multimediów. Gdy pobieranie zostanie zakończone, obrazki są zapisane do lokalnej pamięci i wyświetlone w programie.
 		
