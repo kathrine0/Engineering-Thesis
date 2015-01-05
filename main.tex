@@ -1,4 +1,4 @@
-\documentclass[a4paper]{book}
+\documentclass[11pt,a4paper,twoside]{book}
 %11pt,a4paper,twoside
 \usepackage{polski}
 \usepackage[utf8]{inputenc}
@@ -19,6 +19,29 @@
 % ustawienia marginesow
 %\usepackage[cm]{fullpage}
 %\usepackage[top=2.5cm, bottom=2.5cm, inner=3.5cm, outer=2.5cm, twoside]{geometry}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\usepackage{showframe}
+
+% ustawienia marginesow
+\usepackage[cm]{fullpage}
+%\usepackage[top=2.5cm, bottom=2.5cm, left=2.5cm, right=2.5cm]{geometry}
+\usepackage[top=3.5cm, bottom=3.5cm, inner=3.5cm, outer=2cm, twoside]{geometry}
+
+\linespread{1.3} % interlinia 1,5
+
+\addtolength{\voffset}{-1cm}
+\addtolength{\textheight}{2cm}
+
+%\addtolength{\hoffset}{-1.5cm}
+%\addtolength{\textwidth}{3.0cm}
+%\addtolength{\marginparwidth}{-3cm}
+
+%\setlength{\topmargin}{0cm}
+\setlength{\headsep}{0.6cm}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % ustawienia obrazow %
 \usepackage{graphicx}
@@ -135,19 +158,19 @@
 	\label{id:cha:wstep}
 		 
 			Ludzi od lat fascynowały dalekie podróże i nieznane lądy. Już starożytni zastanawiali się co znajduje się za wielką wodą. Chyba każdy ze szkoły zna opowieść o mitycznym Odyseuszu i jego wyprawie autorstwa Homera czy też \textit{Anabazę} pióra Ksenofonta opisującą brawurowy powrót greckiego wojska najemnego spod Kunaksy w Babilonii do Grecji. Kiedy w czasach renesansu pojawiła się ku temu możliwość, ludzie wsiedli na statki i wypłynęli w szerokie morze w poszukiwaniu nowych, nieznanych terenów. I tak też w 1492 roku Krzysztof Kolumb dopłynął aż do Ameryki, a w 1519 Ferdynand Magellan wyruszył opłynąć cały świat. 
-			
+			%
 			Warto jednak wspomnieć, że jeszcze do niedawna podróże zarezerwowane były dla nielicznych. Ograniczeniem były  finanse i brak szybkich środków lokomocji, ale i ludzki strach przed nieznanym. Dopiero po 1945 roku \cite{id:historia_podrozy}, wraz z rozwojem motoryzacji, kolei i lotnictwa oraz ogólnym polepszeniem standardu życia, zagraniczne wakacje stały się popularne na skalę masową. Spowodowało to gwałtowną ekspansję branży turystycznej, na którą składają się nie tylko biura podróży czy hotele, ale i wydawnictwa podróżnicze wydające przewodniki turystyczne. 
 			
 			Branżą, która rozwija się jeszcze szybciej niż turystyka, jest branża IT. Jeszcze 10 lat temu nikomu nie śniło się, że dziś prawie każdy posiadać będzie telefon typu smartfon. Turystyka nie nadąża za rozwojem IT, więc w chwili obecnej na~rynku istnieje nisza, jeśli chodzi o~przewodniki elektroniczne.
 			
 			Celem niniejszego projektu jest stworzenie przyjaznej platformy \appName\ przeznaczonej dla osób podróżujących. Program ma ułatwić użytkownikowi zwiedzanie nowych miejsc oraz zupełnie zastąpić tradycyjny, książkowy przewodnik. Na całość składać się będzie aplikacja mobilna na~platformę Windows Phone 8.1 oraz aplikacja działająca w~przeglądarce internetowej. 
-			
+			%
 			W Internecie można znaleźć bardzo wiele różnych informacji o~ciekawych miejscach turystycznych, brakuje jednak przyjaznej formy przedstawienia ich podróżnikowi. 
-			
+			%
 			Rysunek~\ref{fig:fly4freeAnkieta} przedstawia wyniki ankiety przeprowadzonej wśród 234 użytkowników forum Fly4Free.pl \cite{id:fly4free}. Jak się okazuje, zdecydowana większość podróżników zakupuje przewodnik o miejscu docelowym bądź pobiera stosowne informacje z sieci i drukuje je na swój użytek.
-			
+			%
 			Aplikacja \appName\ ma na celu połączenie zalet obu tych rozwiązań. Prezentować będzie informacje w podobny sposób jak tradycyjny książkowy przewodnik przy jednoczesnej możliwości szybkiej aktualizacji informacji. Ponadto dzięki temu, że zawierać się będzie w smartfonie podróżnika, zwalnia go z~noszenia ciężkich książek lub nieporęcznych drukowanych kartek. 
-			
+			%
 			Dzięki wykorzystaniu nowoczesnych technologii, aplikacja będzie mogła podawać użytkownikowi najciekawsze informacje bazując na jego danych geolokalizacyjnych.  
 			
 			\begin{figure}		
@@ -712,7 +735,7 @@
 		\centering
 		\caption{Scenariusz testowy dla akcji <<Tworzenie przewodnika>>.}
 		\label{tab:1}				    	
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+			\begin{tabular}{| p {.45\textwidth} | p {.45\textwidth} |}							
 				\hline
 				\textbf{Cel testu} & Testowanie poprawnego dodawania przewodnika \\
 				\hline
@@ -736,7 +759,7 @@
 		\centering
 		\caption{Scenariusz testowy dla akcji <<Tworzenie przewodnika z błędami>>.}	  
 		\label{tab:2}		  	
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}					
+			\begin{tabular}{| p {.45\textwidth} | p {.45\textwidth} |}					
 				\hline
 				\textbf{Cel testu} & Testowanie walidacji pól podczas dodawania przewodnika \\
 				\hline
@@ -758,7 +781,7 @@
 		\centering
 		\caption{Scenariusz testowy dla akcji <<Modyfikacja atrybutu przewodnika>>.}
 		\label{tab:3}		
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}					
+			\begin{tabular}{| p {.45\textwidth} | p {.45\textwidth} |}					
 				\hline
 				\textbf{Cel testu} & Testowanie edycji atrybutu przewodnika \\
 				\hline
@@ -781,7 +804,7 @@
 		\centering
 		\caption{Scenariusz testowy dla akcji <<Odczytanie informacji o obiekcie turystycznym z przewodnika>>.}
 		\label{tab:4}		    	
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+			\begin{tabular}{| p {.45\textwidth} | p {.45\textwidth} |}							
 				\hline
 				\textbf{Cel testu} & Testowanie poprawnego odczytu informacji o danym miejscu \\
 				\hline
@@ -803,7 +826,7 @@
 		\centering
 		\caption{Scenariusz testowy dla akcji <<Nawigacja z kompasem>>.}
 		\label{tab:5}
-      		\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+      		\begin{tabular}{| p {.45\textwidth} | p {.45\textwidth} |}							
 				\hline
 				\textbf{Cel testu} & Testowanie poprawnego działania nawigacji z kompasem \\
 				\hline
@@ -824,7 +847,7 @@
 		\centering
 		\caption{Scenariusz testowy dla akcji <<Pobieranie danych>>.}
 		\label{tab:6}
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+			\begin{tabular}{| p {.45\textwidth} | p {.45\textwidth} |}							
 				\hline
 				\textbf{Cel testu} & Testowanie poprawnego działania pobierania danych \\
 				\hline
@@ -844,7 +867,7 @@
 		\centering
 		\caption{Scenariusz testowy dla akcji <<Nieudana próba pobrania danych>>.}
 		\label{tab:7}
-			\begin{tabular}{| p {.5\textwidth} | p {.5\textwidth} |}							
+			\begin{tabular}{| p {.45\textwidth} | p {.45\textwidth} |}							
 				\hline
 				\textbf{Cel testu} & Testowanie obsługi błędów podczas pobierania danych \\
 				\hline

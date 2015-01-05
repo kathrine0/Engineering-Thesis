@@ -3,15 +3,15 @@
 
 
 % *************** Strona tytu³owa ***************
-\pagestyle{empty}
-\sffamily
+\newgeometry{left=3cm,bottom=0.1cm}
+\begin{titlepage}
 
 \noindent
 \begin{center}
     \Large
     Politechnika Śląska\\
     Wydział Automatyki, Elektroniki i Informatyki
-    %\\ Nazwa kierunku
+    %\\ kierunek informatyka
 \end{center}
 
 \begin{figure}[h]
@@ -20,7 +20,12 @@
 \end{center}
 \end{figure}
 
-\vfill\vfill
+\begin{center}
+    \Large
+    kierunek informatyka
+\end{center}
+
+\vfill
 \begin{center}
     \Large
     Katarzyna Biernat
@@ -34,14 +39,14 @@
 
 \vfill
 \begin{center}
-    \Large
+    \LARGE\bfseries
     projekt inżynierski
 \end{center}
 
 \vfill\vfill\vfill
 \begin{center}
     \Large
-    Promotor/kierujący pracą: dr inż. Krzysztof Simiński
+    kierujący pracą:  dr inż. Krzysztof Simiński
 \end{center}
 
 \vfill
@@ -50,6 +55,8 @@
    Gliwice, \today
 \end{center}
 
+\end{titlepage}
+\restoregeometry
 \cleardoublepage
 
 %% *************** Dedykacja ***************
